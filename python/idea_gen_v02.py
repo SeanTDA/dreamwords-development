@@ -64,6 +64,8 @@ def getOnlineList():
     onlineList += getWordsFromURL("https://raw.githubusercontent.com/glitchdotcom/friendly-words/master/words/collections.txt")
     onlineList += getWordsFromURL("https://raw.githubusercontent.com/glitchdotcom/friendly-words/master/words/predicates.txt")
     onlineList += getWordsFromURL("https://raw.githubusercontent.com/glitchdotcom/friendly-words/master/words/teams.txt")
+    onlineList += getWordsFromURL("http://www.desiquintans.com/downloads/nounlist/nounlist.txt")
+  #  onlineList += getWordsFromURL("https://raw.githubusercontent.com/dwyl/english-words/master/words.txt")
     
 
     #onlineList += getWordsFromURL("https://gist.githubusercontent.com/Rhomboid/8a61864a5fe1fca3013ba94ed0be9e83/raw/17cc35afc904e36a8141053636a96fdf9729fd0a/nouns.txt")    
