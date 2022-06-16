@@ -215,7 +215,7 @@ body {
 }
 
 
-/*
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -229,7 +229,40 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-*/
+
+::-moz-scrollbar {
+  width: 20px;
+}
+::-moz-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-moz-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+::-moz-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+::-o-scrollbar {
+  width: 20px;
+}
+::-o-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-o-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+::-o-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+
+
 
 
 
