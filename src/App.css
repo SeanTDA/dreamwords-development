@@ -110,11 +110,11 @@ body {
 
   margin-left: 10px;
   
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 
@@ -277,11 +277,11 @@ a.helpMenu-link-twitter {
 
   text-align: center;
   
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 
