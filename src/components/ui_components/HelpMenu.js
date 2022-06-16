@@ -52,12 +52,12 @@ function HelpMenu() {
                     <div className = "helpMenu-guide"> 
 
 
-                    Guess each letter of the <b>Daydream.</b><br/>
+                    Guess each letter from the 4 <b>Daydreams.</b><br/>
                     You have 3 chances. <br/><br/>
                     
-                    Boost your 🔥 daily streak by winning each day. Rack up a ⚡ super streak by surviving with all ❤️❤️❤️ hearts intact.<br/><br/>
+                    Boost your 🔥 daily streak by winning each day. <br/>Rack up a ⚡ super streak by surviving with all ❤️❤️❤️ hearts intact.<br/><br/>
 
-                    A new <b>Daydream</b> is available every day!<br/><br/>
+                    <b>A new set of Daydreams will appear every day!</b><br/><br/>
 
 
                     ----<br/>
