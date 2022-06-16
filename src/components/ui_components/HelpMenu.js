@@ -51,11 +51,30 @@ function HelpMenu() {
                     </div>
                     <div className = "helpMenu-guide"> 
 
-                        dssssssssdsgjkafk ldgkjlafdlhjlkadf lkjhakldfhk lakjd lfh dsagjhjkafdhj fkdjshjklsfkljhd fdshksdfh
-                        12 2389582309658 239085982309862438906 406389469803490798 42848290 547457 23879059293065
-                        askjfkjladsfgljajfkd jalkfdhkalkfdhklakjlfdh kjadfvnafdnmkbafdhnjlk jlkfdkjlafdhakldfhlkjadkjlhg aklfdhkj
-                        890438699834 39046098346908908340986 98034968039486980908357809 39069083409869834966750 6508-056890-
 
+                    Guess each letter of the <b>Daydream.</b><br/>
+                    You have 3 chances. <br/><br/>
+                    
+                    Boost your 🔥 daily streak by winning each day. Rack up a ⚡ super streak by surviving with all ❤️❤️❤️ hearts intact.<br/><br/>
+
+                    A new <b>Daydream</b> is available every day!<br/><br/>
+
+
+                    ----<br/>
+                    example carousel goes here <br/>
+                    ----<br/><br/>
+
+                    <i>Tip #1: Work out what features all 4 images share. <br/>
+                    Tip #2: If you are stuck, try out common letters. <br/><br/>
+
+                    
+
+                    Created by<br/>
+                    <a className="helpMenu-link-tda" href="https://www.t-da.io/"><b>T&DA</b></a> <br/><br/>
+                    Sean - <a className="helpMenu-link-twitter" href="https://twitter.com/Those6Faces">@thosesixfaces</a> - Programming & Art<br/>
+                    Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung">@raymondleung</a> - Design<br/>
+
+                    </i>
                     </div>
 
                     </div> 

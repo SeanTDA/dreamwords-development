@@ -161,9 +161,8 @@ body {
   height: 75%;
   margin: auto;
 
-	background-color: rgba(0,0,0);
+	background-color: rgba(0,0,0,0);
 
-	background-color: rgb(0, 255, 255);
   
   border-color: rgb(255, 255, 255);
   border-width: 2px;
@@ -185,6 +184,12 @@ body {
 .helpMenu-header {
   width: 100%;
   padding-top:15px;
+  white-space: nowrap;
+
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 
@@ -207,13 +212,28 @@ body {
 }
 
 .helpMenu-guide {
-  font-size: 50px;
+  font-size: 20px;
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 30px;
+
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
 }
 
+a.helpMenu-link-tda {
+  color:rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+a.helpMenu-link-twitter {
+  color:rgb(0, 183, 255);
+  text-decoration: none;
+}
 
 
 ::-webkit-scrollbar {
@@ -227,34 +247,6 @@ body {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-
-::-moz-scrollbar {
-  width: 20px;
-}
-::-moz-scrollbar-track {
-  background: #f1f1f1; 
-}
-::-moz-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-::-moz-scrollbar-thumb:hover {
-  background: #555; 
-}
-
-::-o-scrollbar {
-  width: 20px;
-}
-::-o-scrollbar-track {
-  background: #f1f1f1; 
-}
-::-o-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-::-o-scrollbar-thumb:hover {
   background: #555; 
 }
 
