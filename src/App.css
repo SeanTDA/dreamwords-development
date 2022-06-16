@@ -35,8 +35,8 @@ body {
 /* HEADER */
 
 .header {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  
+  padding-bottom: 60px;
   background-color: #000000;
 
   display: block;
@@ -53,23 +53,46 @@ body {
 
 }
 
-.header-left {
-  opacity: 100%;
-  float: left;
-}
-
 .header-center {
+
+  position:absolute;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 30px;
   margin-top:10px;
-  float:none;
+  
+  --var-shadow-color: #474747;
+  text-shadow: -1px 1px var(--var-shadow-color), 
+  -2px 2px var(--var-shadow-color),
+  -3px 3px var(--var-shadow-color),
+  -4px 4px var(--var-shadow-color),
+  -5px 5px var(--var-shadow-color);
+  
+}
+
+.header-left {
+  opacity: 100%;
+  position:absolute;
 }
 
 .header-right {
-  opacity: 0%;
-  float: right;
+  position:absolute;
+  opacity: 100%;
+  left: 100%;
+  transform: translate(-100%, 0);
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -122,7 +145,7 @@ body {
 
 
 .helpMenu-fader-active {
-	background-color: rgba(0,0,0, 0.9);
+	background-color: rgba(0,0,0, 0.95);
   transition: background-color 500ms;
   pointer-events: all;
 }
@@ -130,10 +153,12 @@ body {
 
 .helpMenu-container {
   position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 75%;
+  height: 75%;
   margin: auto;
 
 	background-color: rgba(0,0,0);
@@ -143,12 +168,67 @@ body {
   border-width: 2px;
   border-style: solid;
 
+
+}
+
+
+
+.helpMenu-contents {
+  position:absolute;
+  word-wrap: break-word;
+  overflow: auto;
+  max-height: 100%;
+  width: 100%;
 }
 
 .helpMenu-header {
-  display: grid;
-
+  width: 100%;
+  padding-top:15px;
 }
+
+
+.helpMenu-left {
+  position:absolute;
+}
+
+.helpMenu-center {
+  position:absolute;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.helpMenu-right {
+  position:absolute;
+  top: -10px;
+  left: 100%;
+  transform: translate(-100%, 0);
+}
+
+.helpMenu-guide {
+  font-size: 50px;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 30px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 
 
 
@@ -163,11 +243,10 @@ body {
   border-width: 2px;
   border-style: solid;
 
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-top: 15px;
 
-  align-items: right;
+  text-align: center;
   
   width: 50px;
   height: 50px;

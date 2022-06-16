@@ -14,15 +14,15 @@ function Header() {
 
     return (
         <div className="header">
-        <div className="header-container">
+            <div className="header-container">
 
-            <div className="header-left">
-            <HelpButton/>
-            </div>
+                <div className="header-left">
+                <HelpButton/>
+                </div>
 
-            <div className="header-center">
-            {gameTitle}
-            </div>
+                <div className="header-center">
+                {gameTitle}
+                </div>
             </div>
         </div>);
 }

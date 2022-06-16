@@ -49,12 +49,12 @@ function App() {
 
 
   // CONSTANTS
-  const GAME_TITLE = "Dream Guesser";
+  const GAME_TITLE = "Daydreams";
   const GAME_URL = "www.blah.com";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
   const INTERVAL = 1; // 0 = day, 1 = minute
-  const KEY_DELAY_MS = 400;
+  const KEY_DELAY_MS = 200;
 
 
   // EVENTS
@@ -108,7 +108,7 @@ function App() {
   console.log(">>>>>>>>>>> todo: test mobile share button copy (android / ios)");
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure ergonomic keyboard/scaling on mobile");
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- fix letters moving on new line");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- header help button is pushing the title off the center (fix alignment)");
+  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure its all web compliant/security checks");
 
 
 
