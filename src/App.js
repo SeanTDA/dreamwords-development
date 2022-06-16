@@ -52,6 +52,7 @@ function App() {
   const GAME_TITLE = "Dream Guesser";
   const GAME_URL = "www.blah.com";
   const DEMO_MODE = false;
+  const BUILD_MODE = "BUILD"; // BUILD / PROD
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 400;
 
@@ -147,7 +148,7 @@ function App() {
 
 
         // Check to see if new day has passed (compare it to the previous save time stamp and update it)
-        let previousPageOpenDate = new Date(localStorage.getItem("SAVE_TIMESTAMP_OPEN")); // todo < test with a different thing (as a new user)
+        let previousPageOpenDate = new Date(localStorage.getItem(BUILD_MODE+"_"+"SAVE_TIMESTAMP_OPEN")); // todo < test with a different thing (as a new user)
         if (previousPageOpenDate === null)
           previousPageOpenDate = todayTimestamp;
 
@@ -186,21 +187,21 @@ function App() {
         // If new day arrived, 
         if (newDayArrived) {
           // and the previous level hasnt been completed yet
-          const saveDataPreviousCompletedLevel = localStorage.getItem("SAVE_COMPLETED_LEVEL");
+          const saveDataPreviousCompletedLevel = localStorage.getItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL");
           if (saveDataPreviousCompletedLevel != null && parseInt(saveDataPreviousCompletedLevel) === 0) {
 
             // reset streak
             if (!DEMO_MODE) {
-              localStorage.setItem("SAVE_STREAK", 0);
-              localStorage.setItem("SAVE_STREAK_SUPER", 0);
+              localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK", 0);
+              localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER", 0);
             }
           }
 
           // clear save data
-          localStorage.setItem("SAVE_PRESSED_LETTERS", []);
-          localStorage.setItem("SAVE_CORRECT_LETTERS", []);
-          localStorage.setItem("SAVE_WRONG_LETTERS", []);
-          localStorage.setItem("SAVE_COMPLETED_LEVEL", 0);
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS", []);
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS", []);
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", []);
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL", 0);
           console.log("!!!! New day arrived");
         }
 
@@ -210,46 +211,46 @@ function App() {
         if (moreThanOneNewDayArrived) {
           // reset streak
           if (!DEMO_MODE) {
-            localStorage.setItem("SAVE_STREAK", 0);
-            localStorage.setItem("SAVE_STREAK_SUPER", 0);
+            localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK", 0);
+            localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER", 0);
           }
 
         }
 
 
         // Update saved timestamp to now
-        localStorage.setItem("SAVE_TIMESTAMP_OPEN", (new Date()).toString());
+        localStorage.setItem(BUILD_MODE+"_"+"SAVE_TIMESTAMP_OPEN", (new Date()).toString());
 
         // Load Save Data
-        const saveDataCompletedLevel = localStorage.getItem("SAVE_COMPLETED_LEVEL");
+        const saveDataCompletedLevel = localStorage.getItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL");
         if (saveDataCompletedLevel !== null)
           setCompletedLevel(parseInt(saveDataCompletedLevel));
 
-        const saveDataPressedLetters = localStorage.getItem("SAVE_PRESSED_LETTERS");
+        const saveDataPressedLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS");
         if (saveDataPressedLetters !== null)
           setPressedLetters(saveDataPressedLetters);
 
-        const saveDataCorrectLetters = localStorage.getItem("SAVE_CORRECT_LETTERS");
+        const saveDataCorrectLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS");
         if (saveDataCorrectLetters !== null)
           setCorrectLetters(saveDataCorrectLetters);
 
-        const saveDataWrongLetters = localStorage.getItem("SAVE_WRONG_LETTERS");
+        const saveDataWrongLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS");
         if (saveDataWrongLetters !== null)
           setWrongLetters(saveDataWrongLetters);
 
-        const saveDataStreak = localStorage.getItem("SAVE_STREAK");
+        const saveDataStreak = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK");
         if (saveDataStreak !== null)
           setStreak(parseInt(saveDataStreak));
 
-        const saveDataSuperStreak = localStorage.getItem("SAVE_STREAK_SUPER");
+        const saveDataSuperStreak = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER");
         if (saveDataSuperStreak !== null)
           setSuperStreak(parseInt(saveDataSuperStreak));
 
-        const saveDataSuperStreakHighScore = localStorage.getItem("SAVE_STREAK_SUPER_HIGH_SCORE");
+        const saveDataSuperStreakHighScore = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER_HIGH_SCORE");
         if (saveDataSuperStreakHighScore !== null)
           setSuperStreakHighScore(parseInt(saveDataSuperStreakHighScore));
 
-        const saveDataHistory = localStorage.getItem("SAVE_HISTORY");
+        const saveDataHistory = localStorage.getItem(BUILD_MODE+"_"+"SAVE_HISTORY");
         if (saveDataHistory !== null)
           setHistory(JSON.parse(saveDataHistory));
 
@@ -264,9 +265,9 @@ function App() {
 
 
         // Display the help menu for first time players
-        const isFirstTime = localStorage.getItem("SAVE_FIRST_TIME");
+        const isFirstTime = localStorage.getItem(BUILD_MODE+"_"+"SAVE_FIRST_TIME");
         if (isFirstTime === null || parseInt(isFirstTime) === 0) {
-          localStorage.setItem("SAVE_FIRST_TIME", 1);
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_FIRST_TIME", 1);
           setHelpMenuShown(1);
         }
 
@@ -298,7 +299,7 @@ function App() {
     const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
     if (isGameOver) {
 
-      if (gameState == "GAME_WON") {
+      if (gameState === "GAME_WON") {
         setGameState("GAME_WON");
 
         // single fire on completion 
@@ -313,7 +314,7 @@ function App() {
             setSuperStreak(0);
         }
       }
-      else if (gameState == "GAME_LOST") {
+      else if (gameState === "GAME_LOST") {
 
         // single fire on completion
         if (completedLevel === 0) {
@@ -333,7 +334,7 @@ function App() {
         let newHistory = {...currentHistory};
         
         // initialises if history is empty
-        if (Object.keys(newHistory).length == 0) {
+        if (Object.keys(newHistory).length === 0) {
           newHistory["daysPlayed"] = [];
           newHistory["results"] = {};
         }
@@ -367,45 +368,45 @@ function App() {
   // Save Data
   useEffect(() => {
     if (pressedLetters.length === 0) return;
-    localStorage.setItem("SAVE_PRESSED_LETTERS", pressedLetters);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS", pressedLetters);
   }, [pressedLetters]);
   useEffect(() => {
     if (correctLetters.length === 0) return;
-    localStorage.setItem("SAVE_CORRECT_LETTERS", correctLetters);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS", correctLetters);
   }, [correctLetters]);
   useEffect(() => {
     if (wrongLetters.length === 0) return;
-    localStorage.setItem("SAVE_WRONG_LETTERS", wrongLetters);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", wrongLetters);
   }, [wrongLetters]);
 
   useEffect(() => {
     if (streak === -1) return;
     if (DEMO_MODE) return;
-    localStorage.setItem("SAVE_STREAK", streak);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK", streak);
     console.log("Streak is now: " + streak);
   }, [streak]);
 
   useEffect(() => {
     if (superStreak === -1) return;
     if (DEMO_MODE) return;
-    localStorage.setItem("SAVE_STREAK_SUPER", superStreak);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER", superStreak);
   }, [superStreak]);
 
   useEffect(() => {
     if (superStreakHighScore === -1) return;
     if (DEMO_MODE) return;
-    localStorage.setItem("SAVE_STREAK_SUPER_HIGH_SCORE", superStreakHighScore);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER_HIGH_SCORE", superStreakHighScore);
   }, [superStreakHighScore]);
 
   useEffect(() => {
     if (completedLevel === -1) return;
-    localStorage.setItem("SAVE_COMPLETED_LEVEL", completedLevel);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL", completedLevel);
   }, [completedLevel]);
 
 
   useEffect(() => {
     if (Object.keys(history).length === 0) return;
-    localStorage.setItem("SAVE_HISTORY", JSON.stringify(history));
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_HISTORY", JSON.stringify(history));
     console.log("History is saved as " + JSON.stringify(history));
   }, [history]);
 
@@ -442,7 +443,6 @@ function App() {
         <Header />
         <Game />
 
-        <Footer />
 
 
         <HelpMenu />
@@ -451,4 +451,5 @@ function App() {
     </div>);
 }
 
+//<Footer />
 export default App;
