@@ -10,6 +10,7 @@ import HelpMenu from "./components/ui_components/HelpMenu.js";
 import { getHydranoidSpungus, getSprondlemonusTrobian } from './levelData';
 
 import { checkGameLost, checkGameWon } from './gameOver';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 export const AppContext = createContext();
 
@@ -94,6 +95,37 @@ function App() {
   }
 
 
+  // HELPER
+  
+  function storageSave (storageKey, storageNewData) {
+    localStorage.setItem(BUILD_MODE +"_"+ storageKey, storageNewData);
+  }
+
+  function storageLoad (storageKey) {
+    return localStorage.getItem(BUILD_MODE +"_"+ storageKey);
+  }
+
+  function newDay () {
+    // and the previous level hasnt been completed yet
+    const saveDataPreviousCompletedLevel = storageLoad("SAVE_COMPLETED_LEVEL");
+    if (saveDataPreviousCompletedLevel != null && parseInt(saveDataPreviousCompletedLevel) === 0) {
+
+      // reset streak
+      if (!DEMO_MODE) {
+        storageSave("SAVE_STREAK", 0);
+        storageSave("SAVE_STREAK_SUPER", 0);
+      }
+    }
+
+    // clear save data
+    storageSave("SAVE_PRESSED_LETTERS", "[]");
+    storageSave("SAVE_CORRECT_LETTERS", "[]");
+    storageSave("SAVE_WRONG_LETTERS", "[]");
+    storageSave("SAVE_COMPLETED_LEVEL", 0);
+  }
+
+
+
 
   console.log(">>>>>>>>>>> todo: once you win / lose, add end screen");
   console.log(">>>>>>>>>>> todo: add [?] help guide with example carousel"); // should explain streak / superstreak
@@ -106,9 +138,12 @@ function App() {
   console.log(">>>>>>>>>>> todo: add proper footer stuff");
   console.log(">>>>>>>>>>> todo: do a test deploy");
   console.log(">>>>>>>>>>> todo: test mobile share button copy (android / ios)");
+  
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure ergonomic keyboard/scaling on mobile");
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- fix letters moving on new line");
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure its all web compliant/security checks");
+
+
 
 
 
@@ -129,7 +164,7 @@ function App() {
 
 
   useEffect(() => {
- //   localStorage.clear();
+   // localStorage.clear();
 
 
   //  localStorage.clear("SAVE_HISTORY");
@@ -148,7 +183,7 @@ function App() {
 
 
         // Check to see if new day has passed (compare it to the previous save time stamp and update it)
-        let previousPageOpenDate = new Date(localStorage.getItem(BUILD_MODE+"_"+"SAVE_TIMESTAMP_OPEN")); // todo < test with a different thing (as a new user)
+        let previousPageOpenDate = new Date(storageLoad("SAVE_TIMESTAMP_OPEN"));
         if (previousPageOpenDate === null)
           previousPageOpenDate = todayTimestamp;
 
@@ -158,17 +193,14 @@ function App() {
         // get a new date with just the DAY
         if (INTERVAL === 0)
           previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate()); // day previous
-
         if (INTERVAL === 1)
           previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate(), previousPageOpenDate.getHours(), previousPageOpenDate.getMinutes()); // minute previous
 
 
         let oneDayAfterPreviousPageOpenDay = new Date();
 
-
         if (INTERVAL === 0)
           oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate() + 1);
-
         if (INTERVAL === 1)
           oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate(), previousPageOpenDay.getHours(), previousPageOpenDay.getMinutes() + 1);
 
@@ -176,7 +208,7 @@ function App() {
         let newDayArrived = previousPageOpenDay < todayDay;
         let moreThanOneNewDayArrived = oneDayAfterPreviousPageOpenDay < todayDay;
 
-        // ensures every refresh will clear data
+        // ensures every refresh will clear data on demo mode
         if (DEMO_MODE)
           newDayArrived = true;
 
@@ -184,24 +216,12 @@ function App() {
         console.log("Comparing days: " + previousPageOpenDay + "  " + todayDay);
 
 
+
+
+
         // If new day arrived, 
         if (newDayArrived) {
-          // and the previous level hasnt been completed yet
-          const saveDataPreviousCompletedLevel = localStorage.getItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL");
-          if (saveDataPreviousCompletedLevel != null && parseInt(saveDataPreviousCompletedLevel) === 0) {
-
-            // reset streak
-            if (!DEMO_MODE) {
-              localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK", 0);
-              localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER", 0);
-            }
-          }
-
-          // clear save data
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS", "[]");
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS", "[]");
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", "[]");
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL", 0);
+          newDay();
           console.log("!!!! New day arrived");
         }
 
@@ -211,49 +231,49 @@ function App() {
         if (moreThanOneNewDayArrived) {
           // reset streak
           if (!DEMO_MODE) {
-            localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK", 0);
-            localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER", 0);
+            storageSave("SAVE_STREAK", 0);
+            storageSave("SAVE_STREAK_SUPER", 0);
           }
 
         }
 
 
         // Update saved timestamp to now
-        localStorage.setItem(BUILD_MODE+"_"+"SAVE_TIMESTAMP_OPEN", (new Date()).toString());
+        storageSave("SAVE_TIMESTAMP_OPEN", (new Date()).toString());
 
         // Load Save Data
-        const saveDataCompletedLevel = localStorage.getItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL");
+        const saveDataCompletedLevel = storageLoad("SAVE_COMPLETED_LEVEL");
         if (saveDataCompletedLevel !== null)
           setCompletedLevel(parseInt(saveDataCompletedLevel));
 
-        const saveDataPressedLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS");
-        if (saveDataPressedLetters !== null)
+        const saveDataPressedLetters = storageLoad("SAVE_PRESSED_LETTERS");
+        if (saveDataPressedLetters !== null && saveDataPressedLetters !== undefined)
           setPressedLetters(JSON.parse(saveDataPressedLetters));
 
-        const saveDataCorrectLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS");
-        if (saveDataCorrectLetters !== null)
+        const saveDataCorrectLetters = storageLoad("SAVE_CORRECT_LETTERS");
+        if (saveDataCorrectLetters !== null && saveDataCorrectLetters !== undefined)
           setCorrectLetters(JSON.parse(saveDataCorrectLetters));
 
-        const saveDataWrongLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS");
-        if (saveDataWrongLetters !== null)
+        const saveDataWrongLetters = storageLoad("SAVE_WRONG_LETTERS");
+        if (saveDataWrongLetters !== null && saveDataWrongLetters !== undefined)
           setWrongLetters(JSON.parse(saveDataWrongLetters));
 
         console.log("setting WWRONG LETTERS to " + saveDataWrongLetters);
 
-        const saveDataStreak = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK");
-        if (saveDataStreak !== null)
+        const saveDataStreak = storageLoad("SAVE_STREAK");
+        if (saveDataStreak !== null && saveDataStreak !== undefined)
           setStreak(parseInt(saveDataStreak));
 
-        const saveDataSuperStreak = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER");
-        if (saveDataSuperStreak !== null)
+        const saveDataSuperStreak = storageLoad("SAVE_STREAK_SUPER");
+        if (saveDataSuperStreak !== null && saveDataSuperStreak !== undefined)
           setSuperStreak(parseInt(saveDataSuperStreak));
 
-        const saveDataSuperStreakHighScore = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER_HIGH_SCORE");
-        if (saveDataSuperStreakHighScore !== null)
+        const saveDataSuperStreakHighScore = storageLoad("SAVE_STREAK_SUPER_HIGH_SCORE");
+        if (saveDataSuperStreakHighScore !== null && saveDataSuperStreakHighScore !== undefined)
           setSuperStreakHighScore(parseInt(saveDataSuperStreakHighScore));
 
-        const saveDataHistory = localStorage.getItem(BUILD_MODE+"_"+"SAVE_HISTORY");
-        if (saveDataHistory !== null)
+        const saveDataHistory = storageLoad("SAVE_HISTORY");
+        if (saveDataHistory !== null && saveDataHistory !== undefined)
           setHistory(JSON.parse(saveDataHistory));
 
 
@@ -267,9 +287,9 @@ function App() {
 
 
         // Display the help menu for first time players
-        const isFirstTime = localStorage.getItem(BUILD_MODE+"_"+"SAVE_FIRST_TIME");
+        const isFirstTime = storageLoad("SAVE_FIRST_TIME");
         if (isFirstTime === null || parseInt(isFirstTime) === 0) {
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_FIRST_TIME", 1);
+          storageSave("SAVE_FIRST_TIME", 1);
           setHelpMenuShown(1);
         }
 
@@ -370,45 +390,45 @@ function App() {
   // Save Data
   useEffect(() => {
     if (pressedLetters.length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS",  JSON.stringify(pressedLetters));
+    storageSave("SAVE_PRESSED_LETTERS",  JSON.stringify(pressedLetters));
   }, [pressedLetters]);
   useEffect(() => {
     if (correctLetters.length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS",  JSON.stringify(correctLetters));
+    storageSave("SAVE_CORRECT_LETTERS",  JSON.stringify(correctLetters));
   }, [correctLetters]);
   useEffect(() => {
     if (wrongLetters.length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", JSON.stringify(wrongLetters));
+    storageSave("SAVE_WRONG_LETTERS", JSON.stringify(wrongLetters));
   }, [wrongLetters]);
 
   useEffect(() => {
     if (streak === -1) return;
     if (DEMO_MODE) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK", streak);
+    storageSave("SAVE_STREAK", streak);
     console.log("Streak is now: " + streak);
   }, [streak]);
 
   useEffect(() => {
     if (superStreak === -1) return;
     if (DEMO_MODE) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER", superStreak);
+    storageSave("SAVE_STREAK_SUPER", superStreak);
   }, [superStreak]);
 
   useEffect(() => {
     if (superStreakHighScore === -1) return;
     if (DEMO_MODE) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_STREAK_SUPER_HIGH_SCORE", superStreakHighScore);
+    storageSave("SAVE_STREAK_SUPER_HIGH_SCORE", superStreakHighScore);
   }, [superStreakHighScore]);
 
   useEffect(() => {
     if (completedLevel === -1) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL", completedLevel);
+    storageSave("SAVE_COMPLETED_LEVEL", completedLevel);
   }, [completedLevel]);
 
 
   useEffect(() => {
     if (Object.keys(history).length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_HISTORY", JSON.stringify(history));
+    storageSave("SAVE_HISTORY", JSON.stringify(history));
     console.log("History is saved as " + JSON.stringify(history));
   }, [history]);
 

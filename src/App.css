@@ -17,6 +17,23 @@ body {
   min-height: 400px;
   margin-bottom: 100px;
   background-color: #121212;
+
+
+ /* night mode variables */
+
+ --var-color-correct-green-01:  #538d4e;
+ --var-color-correct-green-02:  #72ff90;
+ --var-color-correct-green-03:  #062400;
+
+ --var-color-mistake-red-01:  #9e0000;
+ --var-color-mistake-red-02:  #ff7b7b;
+ --var-color-mistake-red-03:  #310000;
+ 
+
+ --var-color-share-background:  #4c8247;
+
+
+
 }
 
 
@@ -43,7 +60,7 @@ body {
 
 .header {
   
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   background-color: #000000;
 
   display: block;
@@ -70,7 +87,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  margin-top:10px;
   
   --var-shadow-color: #474747;
   text-shadow: -1px 1px var(--var-shadow-color), 
@@ -384,8 +400,55 @@ a.helpMenu-link-twitter {
   color: #a99256;
 }
 
-.superStreakHighScore {
-  animation: superStreak-anim-colorChange 3s infinite;
+.superStreakHighScore-01 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 0ms;
+}
+.superStreakHighScore-02 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 200ms;
+}
+.superStreakHighScore-03 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 400ms;
+}
+.superStreakHighScore-04 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 600ms;
+}
+.superStreakHighScore-05 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 800ms;
+}
+.superStreakHighScore-06 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 1000ms;
+}
+.superStreakHighScore-07 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 1200ms;
+}
+.superStreakHighScore-08 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 1400ms;
+}
+.superStreakHighScore-09 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 1600ms;
+}
+.superStreakHighScore-10 {
+  padding: 0px;
+  animation: superStreak-anim-colorChange 2000ms infinite;
+  animation-delay: 1800ms;
 }
 
 
@@ -532,11 +595,11 @@ HANGMAN
 
 
 .hangmanLetter-gameOver-mistake {
-  color:  #ff7b7b;
+  color:  var(--var-color-mistake-red-02); 
 }
 
 .hangmanLetter-gameOver-correct {
-  color:  #72ff90;
+  color:  var(--var-color-correct-green-02);
 }
 
 
@@ -603,14 +666,16 @@ KEYBOARD
   height: 210px;*/
   background-color: #0a0a0a;
   transition: background-color 500ms, opacity 1s;
+  padding-top: 2px;
+  padding-bottom:2px;
 }
 
 .keyboard-correct {
-  background-color: #031200;
+  background-color: var(--var-color-correct-green-03);
 }
 
 .keyboard-mistake {
-  background-color: #0f0000;
+  background-color: var(--var-color-mistake-red-03);
 }
 
 .keyboard-gameOver {
@@ -644,15 +709,14 @@ KEYBOARD
 
 .keyboardKey-enabled {
   color: white;
-  background-color: #9a9a9a;
-  opacity: 70%;
+  background-color: #8d8d8d;
   transition: transform 50ms;/*, opacity 800ms;*/
   cursor: pointer;
 }
 
 
 .keyboardKey-enabled:hover {
-  opacity: 100%;
+  filter:brightness(120%);
 }
 
 .keyboardKey-enabled:active {
@@ -671,16 +735,17 @@ KEYBOARD
 }
 
 .keyboardKey-mistake {
-  background-color: #9e0000;
-  opacity: 50%;
+
+
+  background-color: var(--var-color-mistake-red-01); 
+  opacity: 100%;
 }
 
 
 .keyboardKey-correct {
-  background-color: #538d4e;
-  opacity: 50%;
+  background-color: var(--var-color-correct-green-01);
+  opacity: 100%;
 }
-
 
 
 
@@ -713,7 +778,7 @@ KEYBOARD
 
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    opacity: 50%;
+    opacity: 100%;
   }
 }
 
@@ -725,8 +790,10 @@ KEYBOARD
 .rating {
   
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 25px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--var-color-correct-green-02);
 }
 
 
@@ -746,7 +813,7 @@ KEYBOARD
   cursor: pointer;
 
 
-  background-color: #4c8247;
+  background-color: var(--var-color-share-background);
   color:#ffffff;
   
   border-radius: 15px;
@@ -801,26 +868,4 @@ KEYBOARD
 
   transition: opacity 50ms;
 
-}
-
-
-
-
-
-.notesDELETEME {
-  header_color: #000000;
-  header_text_color: #6e6e6e;
-  bg_color: #171717;
-  streak_color: #a99256;
-  streak_none_color: #7c7c7c;
-
-
-  hangmanfield_color: #bbbbbb;
-  life_color: #72ff90;
-  life_dead_color: #005d14;
-  keyboard_key_color: #818384;
-  good_letter: #72ff90;
-  bad_letter: #ff7b7b;
-  star_color: #ffdc7f;
-  share_color: #4c8247;
 }

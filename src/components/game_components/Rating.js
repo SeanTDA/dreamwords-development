@@ -28,7 +28,7 @@ function Rating () {
                 showStreak ?
 
                 <div>
-                    🔥 + 1
+                    🔥 +1
                 </div> : <div/>
             }
 
@@ -36,7 +36,7 @@ function Rating () {
                 showSuperStreak ?
 
                 <div>
-                    ⚡ + 1
+                    ⚡ +1
                 </div> :<div/>
             }
 
