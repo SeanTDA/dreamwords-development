@@ -13,7 +13,6 @@ function Streak({ streakType }) {
     let displaySuperStreak = superStreak;
     let displaySuperStreakHighScore = superStreakHighScore;
 
-    displaySuperStreak = 4;
 
     if (displayStreak <= 0) displayStreak = 0;
     if (displaySuperStreak <= 0) displaySuperStreak = 0;

@@ -52,8 +52,7 @@ function HelpMenu() {
                     <div className = "helpMenu-guide"> 
 
 
-                    Guess each letter from the set of <b>Daydreams.</b><br/>
-                    You have 3 chances. <br/><br/>
+                    Guess each letter from the set of <b>Daydreams.</b><br/><br/>
                     
                     Boost your 🔥 daily streak by winning each day. <br/>Rack up a ⚡ super streak by surviving with all ❤️❤️❤️ hearts intact.<br/><br/>
 
@@ -64,15 +63,11 @@ function HelpMenu() {
                     example carousel goes here <br/>
                     ----<br/><br/>
 
-                    <i>Tip #1: Work out what features all 4 images share. <br/>
-                    Tip #2: If you are stuck, try out common letters. <br/><br/>
-
+                    <i>
                     
-
-                    
-                    Created by <a className="helpMenu-link-tda" href="https://www.t-da.io/"><b>T&DA</b></a> <br/><br/>
-                    Sean - <a className="helpMenu-link-twitter" href="https://twitter.com/Those6Faces">@thosesixfaces</a><br/>Programming & Art<br/><br/>
-                    Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung">@raymondleung</a><br/>Design Touchups<br/>
+                    Created by <a className="helpMenu-link-tda" href="https://www.t-da.io/" target="_blank" rel="noopener noreferrer"><b>T&DA</b></a> <br/><br/>
+                    Sean - <a className="helpMenu-link-twitter" href="https://twitter.com/Those6Faces" target="_blank" rel="noopener noreferrer">@thosesixfaces</a><br/>Programming & Art<br/><br/>
+                    Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung" target="_blank" rel="noopener noreferrer">@raymondleung</a><br/>Design Touchups<br/>
 
                     </i>
                     </div>
