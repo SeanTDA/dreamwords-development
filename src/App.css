@@ -1,3 +1,10 @@
+
+/* GLOBALS */
+
+
+
+
+
 body {
   background-color: var(--color-background);
   margin: 0;
@@ -163,7 +170,7 @@ body {
 
 	background-color: rgba(0,0,0,0);
 
-  
+  border-radius: 60px;
   border-color: rgb(255, 255, 255);
   border-width: 2px;
   border-style: solid;
@@ -224,18 +231,28 @@ body {
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-
   padding-bottom:30px;
 }
 
+
+
+
 a.helpMenu-link-tda {
-  color:rgb(255, 0, 0);
-  text-decoration: none;
+  color:rgb(255, 100, 100);
+  padding:0px 5px 0px 5px;
+  
+  text-decoration-color:  rgb(255, 100, 100, 0.5);
+  text-decoration-style: dotted;
+  text-decoration-thickness: 3px;
 }
 
 a.helpMenu-link-twitter {
   color:rgb(0, 183, 255);
-  text-decoration: none;
+  padding:0px 5px 0px 5px;
+
+  text-decoration-color:  rgb(0, 183, 255, 0.5);
+  text-decoration-style: dotted;
+  text-decoration-thickness: 3px;
 }
 
 
@@ -702,8 +719,78 @@ KEYBOARD
 
 
 
+/*
+ SHARE BUTTON
+*/
 
 
+.shareButton-outerContainer {
+  padding-left: 50%;
+
+}
+
+.shareButton-container {
+  transform: translate(-50%, 0);
+
+  cursor: pointer;
+
+
+  background-color: #4c8247;
+  color:#ffffff;
+  
+  border-radius: 15px;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+  border-style: solid;
+
+
+  width:fit-content;
+  height: 50px;
+
+  opacity:100%;
+  transition: opacity 500ms;
+  pointer-events: all;
+
+
+  text-align: center;
+  vertical-align: middle;
+  
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+  overflow:hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-right: 20px;
+}
+
+
+
+.shareButton-icon {
+  height:100%;
+  width:auto;
+}
+
+.shareButton-validation {
+  padding-top:10px;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  opacity:0%;
+
+  
+  transition: opacity 800ms;
+}
+
+.shareButton-validation-appear {
+  opacity:100%;
+
+  transition: opacity 50ms;
+
+}
 
 
 

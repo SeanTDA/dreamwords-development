@@ -7,9 +7,10 @@ import { AppContext } from "../../App";
 function ShareButton () {
 
     const appContext = useContext(AppContext);
-    const { gameTitle, levelIndex, wrongLetters, superStreak, streak, gameURL } = appContext;
+    const { gameTitle, levelIndex, wrongLetters, superStreak, streak, gameURL, shareButtonClicked, setShareButtonClicked } = appContext;
 
     const hearts = 3 - wrongLetters.length;
+
 
 
     function getCopyData () {
@@ -30,13 +31,34 @@ function ShareButton () {
 
     function onShareButtonClicked () {
         navigator.clipboard.writeText(getCopyData());
+        setShareButtonClicked(true);
+
+        
+        setTimeout(() => {
+            setShareButtonClicked(false);
+        }, 500);
     }
 
+
+    let shareButtonClassName = "shareButton-validation";
+
+    if (shareButtonClicked)
+        shareButtonClassName = "shareButton-validation shareButton-validation-appear";
+
     return (<div>
-        
-        <button onClick={onShareButtonClicked}>
-         Share Button 
-         </button>
+
+            <div className="shareButton-outerContainer">
+            <div className="shareButton-container" onClick={onShareButtonClicked}>
+
+                <img className="shareButton-icon" src="images/share-icon.svg" alt="Share"/>
+
+                <span className="shareButton-text"> share</span>
+                 
+            </div>
+            </div>
+
+            <div className={shareButtonClassName}> Copied to Clipboard </div>
+
 
          </div>);
 

@@ -43,14 +43,17 @@ function App() {
   const [gameURL, setGameURL] = useState("");
   const [levelIndex, setLevelIndex] = useState(-1);
   const [livesCompletedPulse, setLivesCompletedPulse] = useState([-1, -1, -1]);
+  const [shareButtonClicked, setShareButtonClicked] = useState(false);
   const [helpMenuShown, setHelpMenuShown] = useState(-1);
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
 
 
 
+
+
   // CONSTANTS
   const GAME_TITLE = "Daydreams";
-  const GAME_URL = "www.blah.com";
+  const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
   const INTERVAL = 1; // 0 = day, 1 = minute
@@ -436,6 +439,7 @@ function App() {
         gameURL, setGameURL,
         levelIndex, setLevelIndex,
         livesCompletedPulse, setLivesCompletedPulse,
+        shareButtonClicked, setShareButtonClicked,
         helpMenuShown, setHelpMenuShown,
         history, setHistory
       }}>

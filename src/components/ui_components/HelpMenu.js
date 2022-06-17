@@ -69,10 +69,10 @@ function HelpMenu() {
 
                     
 
-                    Created by<br/>
-                    <a className="helpMenu-link-tda" href="https://www.t-da.io/"><b>T&DA</b></a> <br/><br/>
-                    Sean - <a className="helpMenu-link-twitter" href="https://twitter.com/Those6Faces">@thosesixfaces</a><br/>Programming & Art<br/>
-                    Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung">@raymondleung</a><br/>Design<br/>
+                    
+                    Created by <a className="helpMenu-link-tda" href="https://www.t-da.io/"><b>T&DA</b></a> <br/><br/>
+                    Sean - <a className="helpMenu-link-twitter" href="https://twitter.com/Those6Faces">@thosesixfaces</a><br/>Programming & Art<br/><br/>
+                    Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung">@raymondleung</a><br/>Design Touchups<br/>
 
                     </i>
                     </div>

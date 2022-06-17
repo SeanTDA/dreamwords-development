@@ -11,12 +11,14 @@ function Rating () {
 
 
 
-    return (<div> 
+    return (
+    
+        <div> 
         
-        {hearts}/3
+        {hearts}/3<br/>
         
-        <br/>
-         </div>
+        
+        </div>
          
          
          );
