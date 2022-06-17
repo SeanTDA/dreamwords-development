@@ -719,6 +719,17 @@ KEYBOARD
 
 
 
+
+
+
+.rating {
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+
 /*
  SHARE BUTTON
 */

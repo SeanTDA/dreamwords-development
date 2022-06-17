@@ -98,11 +98,8 @@ function App() {
   console.log(">>>>>>>>>>> todo: once you win / lose, add end screen");
   console.log(">>>>>>>>>>> todo: add [?] help guide with example carousel"); // should explain streak / superstreak
   console.log(">>>>>>>>>>> todo: better lives UI");
-  console.log(">>>>>>>>>>> todo: super streak high score");
   console.log(">>>>>>>>>>> todo: get images onto AWS");
   console.log(">>>>>>>>>>> todo: add button to load demo showoff mode");
-  console.log(">>>>>>>>>>> todo: keep a running track of how you went everyday  (array of {day, result} ) for prosperity / future proofing");
-  console.log(">>>>>>>>>>> todo: Test help menu when a first time player starts");
 
   console.log(">>>>>>>>>>> todo: test to see if the daily system works:  [daily image], [building streak / super streak], [skipping a day]");
   console.log(">>>>>>>>>>> todo: better streak icons UI");
@@ -201,9 +198,9 @@ function App() {
           }
 
           // clear save data
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS", []);
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS", []);
-          localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", []);
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS", "[]");
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS", "[]");
+          localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", "[]");
           localStorage.setItem(BUILD_MODE+"_"+"SAVE_COMPLETED_LEVEL", 0);
           console.log("!!!! New day arrived");
         }
@@ -231,15 +228,17 @@ function App() {
 
         const saveDataPressedLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS");
         if (saveDataPressedLetters !== null)
-          setPressedLetters(saveDataPressedLetters);
+          setPressedLetters(JSON.parse(saveDataPressedLetters));
 
         const saveDataCorrectLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS");
         if (saveDataCorrectLetters !== null)
-          setCorrectLetters(saveDataCorrectLetters);
+          setCorrectLetters(JSON.parse(saveDataCorrectLetters));
 
         const saveDataWrongLetters = localStorage.getItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS");
         if (saveDataWrongLetters !== null)
-          setWrongLetters(saveDataWrongLetters);
+          setWrongLetters(JSON.parse(saveDataWrongLetters));
+
+        console.log("setting WWRONG LETTERS to " + saveDataWrongLetters);
 
         const saveDataStreak = localStorage.getItem(BUILD_MODE+"_"+"SAVE_STREAK");
         if (saveDataStreak !== null)
@@ -371,15 +370,15 @@ function App() {
   // Save Data
   useEffect(() => {
     if (pressedLetters.length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS", pressedLetters);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_PRESSED_LETTERS",  JSON.stringify(pressedLetters));
   }, [pressedLetters]);
   useEffect(() => {
     if (correctLetters.length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS", correctLetters);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_CORRECT_LETTERS",  JSON.stringify(correctLetters));
   }, [correctLetters]);
   useEffect(() => {
     if (wrongLetters.length === 0) return;
-    localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", wrongLetters);
+    localStorage.setItem(BUILD_MODE+"_"+"SAVE_WRONG_LETTERS", JSON.stringify(wrongLetters));
   }, [wrongLetters]);
 
   useEffect(() => {
