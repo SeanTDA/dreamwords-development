@@ -1,6 +1,7 @@
 
 import './App.css';
 import React, { createContext, useEffect, useState } from "react";
+import ReactGa from 'react-ga';
 
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
@@ -162,6 +163,12 @@ function App() {
     todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate(), todayTimestamp.getHours(), todayTimestamp.getMinutes());   // minutes refresh
 
 
+  useEffect(() => {
+    ReactGa.initialize('G-0Q45YCXJ8Q');
+
+    ReactGa.pageview('/');
+
+  }, []);
 
 
 
