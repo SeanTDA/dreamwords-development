@@ -92,6 +92,10 @@ function HelpMenu() {
                     Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung" target="_blank" rel="noopener noreferrer">@raymondleung</a><br/>Design Touchups<br/>
 
                     </i>
+
+                    <br/><br/>
+                    v1.0.0
+
                     </div>
 
                     </div> 
