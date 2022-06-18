@@ -43,6 +43,7 @@ function App() {
   const [acceptSelectLetter, setAcceptSelectLetter] = useState(true);
   const [gameTitle, setGameTitle] = useState("");
   const [gameURL, setGameURL] = useState("");
+  const [versionCode, setVersionCode] = useState("");
   const [levelIndex, setLevelIndex] = useState(-1);
   const [livesCompletedPulse, setLivesCompletedPulse] = useState([-1, -1, -1]);
   const [shareButtonClicked, setShareButtonClicked] = useState(false);
@@ -58,6 +59,8 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
+  const VERSION_CODE = "1.0.0";
+
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
 
@@ -181,6 +184,7 @@ function App() {
 
     setGameTitle(GAME_TITLE);
     setGameURL(GAME_URL);
+    setVersionCode(VERSION_CODE);
 
     // Load Level
     getHydranoidSpungus(todayDay, DEMO_MODE, INTERVAL).then((hybronuSprillabrib) => {
@@ -466,6 +470,7 @@ function App() {
         setAcceptSelectLetter, acceptSelectLetter,
         gameTitle, setGameTitle,
         gameURL, setGameURL,
+        versionCode, setVersionCode,
         levelIndex, setLevelIndex,
         livesCompletedPulse, setLivesCompletedPulse,
         shareButtonClicked, setShareButtonClicked,

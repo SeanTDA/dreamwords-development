@@ -8,7 +8,7 @@ import { AppContext } from "../../App.js";
 function HelpMenu() {
 
     const appContext = useContext(AppContext);
-    const { setHelpMenuShown, helpMenuShown } = appContext;
+    const { setHelpMenuShown, helpMenuShown, versionCode } = appContext;
 
 
     function onButtonClicked () {
@@ -94,7 +94,7 @@ function HelpMenu() {
                     </i>
 
                     <br/><br/>
-                    v1.0.0
+                    {versionCode}
 
                     </div>
 
