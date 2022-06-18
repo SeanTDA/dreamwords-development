@@ -165,8 +165,9 @@ function App() {
 
   useEffect(() => {
     ReactGa.initialize('G-0Q45YCXJ8Q');
+    ReactGa.pageview('/app');
 
-    ReactGa.pageview('/');
+
 
   }, []);
 
