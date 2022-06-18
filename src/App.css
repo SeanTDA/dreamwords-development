@@ -559,12 +559,12 @@ HANGMAN
 
 .hangman-line {
 
-  background-color: #bbbbbb;
+  /*background-color: #bbbbbb;
 
   border-radius: 15px;
   border-color: rgb(255, 255, 255);
   border-width: 2px;
-  border-style: solid;
+  border-style: solid;*/
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -588,7 +588,7 @@ HANGMAN
   font-size: 25px;
   letter-spacing: 2px;
   word-spacing: 10px;
-  color: rgb(0, 0, 0);
+  color: #bbbbbb;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   position: relative;

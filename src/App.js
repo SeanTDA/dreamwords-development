@@ -140,7 +140,9 @@ function App() {
   console.log(">>>>>>>>>>> todo: test mobile share button copy (android / ios)");
   
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure ergonomic keyboard/scaling on mobile");
+  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- when users rotate their phone landscape, they should be able to zoom into the whole image");
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- fix letters moving on new line");
+  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- all images should preload e.g. share button icon pops in");
   console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure its all web compliant/security checks");
 
 
