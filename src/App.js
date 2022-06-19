@@ -63,7 +63,7 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
-  const VERSION_CODE = "1.0.5";
+  const VERSION_CODE = "1.0.6";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
@@ -394,10 +394,14 @@ function App() {
 
 
         // fires analytics event
-        console.log(" sending analytics... ");
-        logEvent(analytics, 'testComplete', {"testLevel" : levelIndex, "testHeartsRemaining": 3 - wrongLetters.length, "testCorrectLetters": correctLetters, "testWrongLetters":wrongLetters});
+      //  logEvent(analytics, 'testComplete', {"testLevel" : levelIndex,  "testHeartsRemaining": 3 - wrongLetters.length, "testCorrectLetters": correctLetters, "testWrongLetters":wrongLetters});
+      let eventToLog = {};
+      eventToLog["t02_completed"+levelIndex] = {"t02_heartsRemaining": 3-wrongLetters.length, "t02_wrongLetters": wrongLetters, "t02_correctLetters":correctLetters};
+      logEvent(analytics, "t02_levelComplete", eventToLog);
+      console.log("Sending analytics: " + JSON.stringify(eventToLog));
 
       }
+
 
 
       // switches single fire latch (requires loading a new day to switch is back)
