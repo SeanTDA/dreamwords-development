@@ -74,7 +74,7 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
-  const VERSION_CODE = "1.0.4";
+  const VERSION_CODE = "1.0.5";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
@@ -202,9 +202,9 @@ function App() {
     // Google Analytics
 
     console.log("Initialising Google Analytics");
-    logEvent(analytics, "blah");
-    logEvent(analytics, {"testState":123});
-    logEvent(analytics, {"x123":"HELLO","levelcomplete":5,"testdata":54,"random":Math.random()});
+    logEvent(analytics, "blah987", 123);
+    logEvent(analytics, "testState", "HELLO876");
+    logEvent(analytics, "x123", {"HELLO":"HI","levelcomplete":5,"testdata":54,"random":Math.random()});
 
 
     // Load Level
@@ -415,7 +415,7 @@ function App() {
 
         // fires analytics event
         console.log(" sending analytics... ");
-        logEvent(analytics, {"testAnalytics": 123, "testLevel" : levelIndex, "arrayOfData":wrongLetters});
+        logEvent(analytics, 'testComplete', {"testAnalytics": 123, "testLevel" : levelIndex, "arrayOfData":wrongLetters});
 
       }
 
