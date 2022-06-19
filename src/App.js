@@ -63,7 +63,7 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
-  const VERSION_CODE = "1.0.6";
+  const VERSION_CODE = "1.0.7";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
@@ -396,8 +396,13 @@ function App() {
         // fires analytics event
       //  logEvent(analytics, 'testComplete', {"testLevel" : levelIndex,  "testHeartsRemaining": 3 - wrongLetters.length, "testCorrectLetters": correctLetters, "testWrongLetters":wrongLetters});
       let eventToLog = {};
-      eventToLog["t02_completed"+levelIndex] = {"t02_heartsRemaining": 3-wrongLetters.length, "t02_wrongLetters": wrongLetters, "t02_correctLetters":correctLetters};
-      logEvent(analytics, "t02_levelComplete", eventToLog);
+      
+      eventToLog =  {"t03_level":levelIndex, "t03_heartsRemaining": 3-wrongLetters.length, "t03_wrongLetters": wrongLetters, "t03_correctLetters":correctLetters};
+
+    //  eventToLog["t02_completed"+levelIndex] = {"t02_heartsRemaining": 3-wrongLetters.length, "t02_wrongLetters": wrongLetters, "t02_correctLetters":correctLetters};
+    //  logEvent(analytics, "t02_levelComplete", eventToLog);
+      logEvent(analytics, "t03_levelComplete", eventToLog);
+
       console.log("Sending analytics: " + JSON.stringify(eventToLog));
 
       }
