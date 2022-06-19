@@ -1,11 +1,22 @@
 
 import './App.css';
 import React, { createContext, useEffect, useState } from "react";
-import ReactGa from 'react-ga4';
+
+
+
+import { analytics } from "./firebase";
+import {logEvent} from "firebase/analytics";
+
+
+
+
+//import * as firebase from "firebase/app";
+/*
+import {firebaseConfig} from "./firebaseConfig";
 
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent} from "firebase/analytics";
+import { getAnalytics, logEvent} from "firebase/analytics";*/
 
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
@@ -21,7 +32,7 @@ export const AppContext = createContext();
 
 
 
-
+//firebase.initializeApp(firebaseConfig);
 
 
 
@@ -63,7 +74,7 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
-  const VERSION_CODE = "1.0.3";
+  const VERSION_CODE = "1.0.4";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
@@ -171,20 +182,13 @@ function App() {
 
 
 
-  const analytics = getAnalytics(initializeApp({
-    apiKey: "AIzaSyDuWYdKBDeLZuxUo7ov_jx2UjeMTSIhc9U",
-    authDomain: "daydreams-40f3f.firebaseapp.com",
-    projectId: "daydreams-40f3f",
-    storageBucket: "daydreams-40f3f.appspot.com",
-    messagingSenderId: "830342415517",
-    appId: "1:830342415517:web:8edef4772d05c496778074",
-    measurementId: "G-WGK8NQK42E"  
-  }));
+ // firebaseTracker.analytics().logEvent("notification received");
+  //console.log("notification event sent");
 
-  logEvent(analytics, "Blah");
-  console.log("blah event logged");
 
   useEffect(() => {
+
+
 
 
 
@@ -198,7 +202,8 @@ function App() {
     // Google Analytics
 
     console.log("Initialising Google Analytics");
-    //ReactGa.initialize('G-41BYSZ7TZB');
+    logEvent(analytics, "blah");
+    logEvent(analytics, {"testState":123});
 
 
     // Load Level
