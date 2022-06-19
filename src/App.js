@@ -204,6 +204,7 @@ function App() {
     console.log("Initialising Google Analytics");
     logEvent(analytics, "blah");
     logEvent(analytics, {"testState":123});
+    logEvent(analytics, {"x123":"HELLO","levelcomplete":5,"testdata":54,"random":Math.random()});
 
 
     // Load Level
