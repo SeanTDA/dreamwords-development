@@ -395,7 +395,7 @@ function App() {
 
         // fires analytics event
         console.log(" sending analytics... ");
-        logEvent(analytics, 'testComplete', {"testLevel" : levelIndex, "testWrongLetters":wrongLetters});
+        logEvent(analytics, 'testComplete', {"testLevel" : levelIndex, "testHeartsRemaining": 3 - wrongLetters.length, "testCorrectLetters": correctLetters, "testWrongLetters":wrongLetters});
 
       }
 
