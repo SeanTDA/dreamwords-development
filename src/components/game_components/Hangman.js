@@ -21,21 +21,33 @@ function Hangman() {
 
     const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
 
+    
+
     const correctLetters = goalPhrase.split("");
 
     const className = "hangman";
     const classNameLine = isGameOver ? "hangman-line hangman-line-gameOver" : "hangman-line";
 
+    const renderLetters = () => {
+        const words = goalPhrase.split(" ");
+        return words.map((word) => {
+            const correctLetters = word.split("");
+            return (
+                <div className="word">
+                    {correctLetters.map((correctLetter) => { return <HangmanLetter letter={correctLetter} /> })}
+                </div>
+            )
+        })
+    }
 
     return (
         <div className={className}>
 
             <div className={classNameLine}>
-                <span>
+                    {renderLetters()}
                     {
-                        correctLetters.map((correctLetter) => { return <HangmanLetter letter={correctLetter} /> })
+                        //correctLetters.map((correctLetter) => { return <HangmanLetter letter={correctLetter} /> })
                     }
-                </span>
             </div>
         </div>);
 
