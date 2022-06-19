@@ -397,7 +397,7 @@ function App() {
       //  logEvent(analytics, 'testComplete', {"testLevel" : levelIndex,  "testHeartsRemaining": 3 - wrongLetters.length, "testCorrectLetters": correctLetters, "testWrongLetters":wrongLetters});
       let eventToLog = {};
       
-      eventToLog =  {"t03_level":levelIndex, "t03_heartsRemaining": 3-wrongLetters.length, "t03_wrongLetters": wrongLetters, "t03_correctLetters":correctLetters};
+      eventToLog =  {"t03_level":levelIndex, "t03_heartsRemaining": 3-wrongLetters.length, "t03_pressedLetters": pressedLetters};
 
     //  eventToLog["t02_completed"+levelIndex] = {"t02_heartsRemaining": 3-wrongLetters.length, "t02_wrongLetters": wrongLetters, "t02_correctLetters":correctLetters};
     //  logEvent(analytics, "t02_levelComplete", eventToLog);
