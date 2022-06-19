@@ -166,25 +166,23 @@ function App() {
     todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate(), todayTimestamp.getHours(), todayTimestamp.getMinutes());   // minutes refresh
 
 
-  useEffect(() => {
-    ReactGa.initialize('G-0Q45YCXJ8Q');
-    ReactGa.pageview('/app');
-
-
-
-  }, []);
-
-
 
   useEffect(() => {
-   // localStorage.clear();
 
 
-  //  localStorage.clear("SAVE_HISTORY");
 
+
+
+    // Game Properties
     setGameTitle(GAME_TITLE);
     setGameURL(GAME_URL);
     setVersionCode(VERSION_CODE);
+    
+    // Google Analytics
+    console.log("Initialising Google Analytics");
+    ReactGa.initialize('G-0Q45YCXJ8Q');
+    ReactGa.pageview('/app');
+
 
     // Load Level
     getHydranoidSpungus(todayDay, DEMO_MODE, INTERVAL).then((hybronuSprillabrib) => {
