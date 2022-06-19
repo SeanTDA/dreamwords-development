@@ -10,14 +10,6 @@ import {logEvent} from "firebase/analytics";
 
 
 
-//import * as firebase from "firebase/app";
-/*
-import {firebaseConfig} from "./firebaseConfig";
-
-
-import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent} from "firebase/analytics";*/
-
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
 import Footer from "./components/Footer.js";
@@ -30,9 +22,6 @@ import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 export const AppContext = createContext();
 
-
-
-//firebase.initializeApp(firebaseConfig);
 
 
 
@@ -182,9 +171,6 @@ function App() {
 
 
 
- // firebaseTracker.analytics().logEvent("notification received");
-  //console.log("notification event sent");
-
 
   useEffect(() => {
 
@@ -199,12 +185,6 @@ function App() {
     setGameURL(GAME_URL);
     setVersionCode(VERSION_CODE);
     
-    // Google Analytics
-
-    console.log("Initialising Google Analytics");
-    logEvent(analytics, "blah987", 123);
-    logEvent(analytics, "testState", "HELLO876");
-    logEvent(analytics, "x123", {"HELLO":"HI","levelcomplete":5,"testdata":54,"random":Math.random()});
 
 
     // Load Level
@@ -415,7 +395,7 @@ function App() {
 
         // fires analytics event
         console.log(" sending analytics... ");
-        logEvent(analytics, 'testComplete', {"testAnalytics": 123, "testLevel" : levelIndex, "arrayOfData":wrongLetters});
+        logEvent(analytics, 'testComplete', {"testLevel" : levelIndex, "testWrongLetters":wrongLetters});
 
       }
 
