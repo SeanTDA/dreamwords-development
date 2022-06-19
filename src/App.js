@@ -3,6 +3,10 @@ import './App.css';
 import React, { createContext, useEffect, useState } from "react";
 import ReactGa from 'react-ga4';
 
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent} from "firebase/analytics";
+
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
 import Footer from "./components/Footer.js";
@@ -59,7 +63,7 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
-  const VERSION_CODE = "1.0.2";
+  const VERSION_CODE = "1.0.3";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
@@ -167,6 +171,19 @@ function App() {
 
 
 
+  const analytics = getAnalytics(initializeApp({
+    apiKey: "AIzaSyDuWYdKBDeLZuxUo7ov_jx2UjeMTSIhc9U",
+    authDomain: "daydreams-40f3f.firebaseapp.com",
+    projectId: "daydreams-40f3f",
+    storageBucket: "daydreams-40f3f.appspot.com",
+    messagingSenderId: "830342415517",
+    appId: "1:830342415517:web:8edef4772d05c496778074",
+    measurementId: "G-WGK8NQK42E"  
+  }));
+
+  logEvent(analytics, "Blah");
+  console.log("blah event logged");
+
   useEffect(() => {
 
 
@@ -179,9 +196,9 @@ function App() {
     setVersionCode(VERSION_CODE);
     
     // Google Analytics
+
     console.log("Initialising Google Analytics");
-    ReactGa.initialize('G-41BYSZ7TZB');
-    ReactGa.send("/");
+    //ReactGa.initialize('G-41BYSZ7TZB');
 
 
     // Load Level
@@ -335,32 +352,40 @@ function App() {
 
       if (gameState === "GAME_WON") {
         setGameState("GAME_WON");
-
-        // single fire on completion 
-        if (completedLevel === 0) {
-
-          // increase streak
-          setStreak(streak <= 0 ? 1 : streak + 1);
-
-          if (wrongLetters.length === 0)
-            setSuperStreak(superStreak <= 0 ? 1 : superStreak + 1);
-          else
-            setSuperStreak(0);
-        }
       }
-      else if (gameState === "GAME_LOST") {
 
-        // single fire on completion
-        if (completedLevel === 0) {
-          // break streak
-          setStreak(0);
-          setSuperStreak(0);
-        }
-      }
+
 
 
       // single fire on completion
       if (completedLevel === 0) {
+
+
+        // win / lose
+        if (gameState === "GAME_WON") {
+          // increase streak
+          setStreak(streak <= 0 ? 1 : streak + 1);
+
+          if (wrongLetters.length === 0){
+            setSuperStreak(superStreak <= 0 ? 1 : superStreak + 1);
+          }  else {
+            setSuperStreak(0);
+          }
+        }  else if (gameState === "GAME_LOST") {
+            // break streak
+            setStreak(0);
+            setSuperStreak(0);
+        }
+
+
+
+
+
+
+
+
+
+        
         // ---- record history
         const currentHistory = history;
 
@@ -380,6 +405,10 @@ function App() {
         newHistory["results"][levelIndex] = historyResult;
 
         setHistory(newHistory);
+
+
+        // fires google analytics event
+
       }
 
 
