@@ -413,7 +413,9 @@ function App() {
         setHistory(newHistory);
 
 
-        // fires google analytics event
+        // fires analytics event
+        console.log(" sending analytics... ");
+        logEvent(analytics, {"testAnalytics": 123, "testLevel" : levelIndex, "arrayOfData":wrongLetters});
 
       }
 
@@ -425,7 +427,6 @@ function App() {
 
 
 
-    // record history
 
   }, [gameState]);
 
