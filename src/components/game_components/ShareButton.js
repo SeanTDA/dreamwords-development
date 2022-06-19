@@ -41,7 +41,7 @@ function ShareButton () {
             setShareButtonClicked(false);
         }, 500);
 
-        logEvent(analytics, "t03_shareButton", "clicked");
+        logEvent(analytics, "t04_shareButton", "clicked");
     }
 
 

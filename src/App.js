@@ -394,8 +394,8 @@ function App() {
 
 
         // Log analytic
-        const eventToLog =  {"t03_level":levelIndex, "t03_heartsRemaining": 3-wrongLetters.length, "t03_pressedLetters": pressedLetters};
-        logEvent(analytics, "t03_levelComplete", eventToLog);
+        const eventToLog =  {"t04_level":levelIndex, "t04_heartsRemaining": 3-wrongLetters.length, "t04_pressedLetters": pressedLetters};
+        logEvent(analytics, "t04_levelComplete", eventToLog);
 
       }
 
