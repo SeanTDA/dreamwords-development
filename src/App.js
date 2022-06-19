@@ -1,7 +1,7 @@
 
 import './App.css';
 import React, { createContext, useEffect, useState } from "react";
-import ReactGa from 'react-ga';
+import ReactGa from 'react-ga4';
 
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
@@ -59,7 +59,7 @@ function App() {
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "BUILD"; // BUILD / PROD
-  const VERSION_CODE = "1.0.0";
+  const VERSION_CODE = "1.0.1";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
   const KEY_DELAY_MS = 200;
@@ -181,7 +181,7 @@ function App() {
     // Google Analytics
     console.log("Initialising Google Analytics");
     ReactGa.initialize('G-0Q45YCXJ8Q');
-    ReactGa.pageview('/app');
+    ReactGa.send("/");
 
 
     // Load Level
