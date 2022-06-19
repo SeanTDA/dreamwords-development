@@ -2,6 +2,9 @@ import React, { useContext }  from 'react';
 import { AppContext } from "../../App";
 
 
+import { analytics } from "../../firebase";
+import {logEvent} from "firebase/analytics";
+
 
 
 function ShareButton () {
@@ -37,6 +40,8 @@ function ShareButton () {
         setTimeout(() => {
             setShareButtonClicked(false);
         }, 500);
+
+        logEvent(analytics, "t03_shareButton", "clicked");
     }
 
 
