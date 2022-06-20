@@ -16,11 +16,14 @@ body {
 
   min-height: 400px;
   margin-bottom: 100px;
-  background-color: #121212;
 
   animation-delay: 0ms;
 
+
  /* night mode variables */
+
+ --var-color-background:  #121212;
+ --var-color-header-background:  #000000;
 
  --var-color-correct-green-01:  #538d4e;
  --var-color-correct-green-02:  #72ff90;
@@ -40,6 +43,7 @@ body {
 
 .App {
   text-align: center;
+  background-color: var(--var-color-background);
   color: white;
   height: 100%;
 
@@ -62,7 +66,7 @@ body {
 .header {
   
   padding-bottom: 50px;
-  background-color: #000000;
+  background-color: var(--var-color-header-background);
 
   display: block;
 
@@ -169,7 +173,7 @@ body {
 
 
 .helpMenu-fader-active {
-	background-color: rgba(0,0,0, 0.95);
+	background-color: rgba(0,0,0, 0.7);
   transition: background-color 500ms;
   pointer-events: all;
 }
@@ -185,7 +189,7 @@ body {
   height: 75%;
   margin: auto;
 
-	background-color: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0.9);
 
   /*border-radius: 60px;*/
   border-color: rgb(255, 255, 255);
