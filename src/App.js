@@ -45,6 +45,7 @@ function App() {
   const [superStreak, setSuperStreak] = useState(-1);
   const [superStreakHighScore, setSuperStreakHighScore] = useState(-1);
   const [acceptSelectLetter, setAcceptSelectLetter] = useState(true);
+  const [selectedDreamDisplayIndex, setSelectedDreamDisplayIndex] = useState(0);
   const [gameTitle, setGameTitle] = useState("");
   const [gameURL, setGameURL] = useState("");
   const [versionCode, setVersionCode] = useState("");
@@ -55,7 +56,7 @@ function App() {
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
 
 
-
+  
 
 
   // CONSTANTS
@@ -482,7 +483,8 @@ function App() {
         streak, setStreak,
         superStreak, setSuperStreak,
         superStreakHighScore, setSuperStreakHighScore,
-        setAcceptSelectLetter, acceptSelectLetter,
+        acceptSelectLetter, setAcceptSelectLetter,
+        selectedDreamDisplayIndex, setSelectedDreamDisplayIndex,
         gameTitle, setGameTitle,
         gameURL, setGameURL,
         versionCode, setVersionCode,

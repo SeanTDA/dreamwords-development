@@ -52,6 +52,7 @@ function ShareButton () {
 
     return (<div>
 
+<div className={shareButtonClassName}> Copied to Clipboard </div>
             <div className="shareButton-outerContainer">
             <div className="shareButton-container" onClick={onShareButtonClicked}>
 
@@ -62,7 +63,6 @@ function ShareButton () {
             </div>
             </div>
 
-            <div className={shareButtonClassName}> Copied to Clipboard </div>
 
 
          </div>);

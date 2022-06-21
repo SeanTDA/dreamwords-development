@@ -529,23 +529,111 @@ a.helpMenu-link-twitter {
 /* IMAGE_CLUE */
 
 
-#imageClueImage {
-  width: 100%;
+.imageClueContainer {
+  /*width: 100%;*/
   border-radius: 15px;
   pointer-events: none;
+
+  overflow: hidden;
+  
+  aspect-ratio: 16 / 9;
 }
+
+.imageClueImage1 {
+  margin-left:-5%;
+  margin-top:-5%;
+  width:220%;
+  height: 220%;
+  animation: imageClueImage-change-anim 0.7s 1;
+}
+
+.imageClueImage2 {
+  margin-left:-115%;
+  margin-top:-5%;
+  width:220%;
+  height: 220%;
+  animation: imageClueImage-change-anim 0.7s 1;
+}
+
+.imageClueImage3 {
+  margin-left:-5%;
+  margin-top:-65%;
+  width:220%;
+  height: 220%;
+  animation: imageClueImage-change-anim 0.7s 1;
+}
+
+.imageClueImage4 {
+  margin-left:-115%;
+  margin-top:-65%;
+  width:220%;
+  height: 220%;
+  animation: imageClueImage-change-anim 0.7s 1;
+
+}
+
+
+@keyframes imageClueImage-change-anim {
+
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.imageClueImage-dots {
+  padding: 20px;
+  pointer-events: all;
+  
+}
+.imageClueImage-dot {
+  background-color: #eee;
+  border-radius: 100%;
+  opacity: 50%;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: opacity 300ms;
+}
+.imageClueImage-dot.active {
+  background-color: #ffffff;
+  opacity: 100%;
+  transition: opacity 300ms;
+}
+
+
 
 .imageClue-tagline {
   font-family: 'Montserrat', sans-serif;
   text-align: right;
   font-size: clamp(2px, 1vw, 22px);
-  ;
+  
   font-weight: 300;
   font-style: italic;
   color: #bdbdbd;
   padding-right: 10px;
   padding-top: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -893,7 +981,8 @@ KEYBOARD
 }
 
 .shareButton-validation {
-  padding-top:10px;
+  /*position:absolute;*/
+  padding-bottom:3px;
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
