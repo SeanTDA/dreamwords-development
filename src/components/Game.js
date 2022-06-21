@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { AppContext } from "../App";
 
 
+import Footer from "./Footer.js";
 import Streak from "./game_components/Streak.js";
 import ImageClue from "./game_components/ImageClue.js";
 import Hangman from "./game_components/Hangman.js";
@@ -10,6 +11,7 @@ import Lives from "./game_components/Lives.js";
 import Keyboard from "./game_components/Keyboard.js";
 import Rating from "./game_components/Rating.js";
 import ShareButton from "./game_components/ShareButton.js";
+import StreakBar from "./game_components/StreakBar.js";
 
 
 
@@ -35,14 +37,14 @@ function Game() {
 
 
             <div className="centerElements">
-                <Streak />
+                <StreakBar />
                 <ImageClue />
                 <Hangman />
                 {
                     isGameOver ?
-                        <div> <Lives /><Rating /><ShareButton /> </div> :
+                        <div> <Rating /><ShareButton /> </div> :
                         isGameRunning ?
-                        <Lives /> : <> </>
+                        <div/> : <> </>
                 }
 
             </div>
@@ -54,6 +56,8 @@ function Game() {
                     <Keyboard /> :
                     <div />
             }
+
+            <Footer/>
 
 
 

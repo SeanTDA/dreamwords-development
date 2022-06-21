@@ -1,6 +1,14 @@
 import React from 'react';
 
+
+
 function Footer () {
+
+    return (
+        <div className = "footer">
+            Copyright 2022 - T&DA. Powered by MidJourney
+        </div>
+    )
     /*return (
     <div className = "footer"> 
         

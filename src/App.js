@@ -23,9 +23,6 @@ import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 export const AppContext = createContext();
 
 
-const perfectFrameTime = 1000;
-let deltaTime = 0;
-let lastTimestamp = 0;
 
 
 
@@ -70,7 +67,7 @@ function App() {
   const VERSION_CODE = "1.0.8";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
-  const KEY_DELAY_MS = 200;
+  const KEY_DELAY_MS = 150;
 
 
   // EVENTS
