@@ -32,7 +32,6 @@ function ImageClue () {
 
     const selectDot1 = () => {
         setIsDreamDisplayAutoMode(false);
-        console.log("DISABLEDDDDDDDDDDDDD");
         setSelectedDreamDisplayIndex(0);
     }
     const selectDot2 = () => {
@@ -71,7 +70,7 @@ function ImageClue () {
           if (isDreamDisplayAutoMode) {
             cycleForward();
           }
-        }, 1000);
+        }, 1500);
         return _ => clearInterval(interval);
       });
 
@@ -81,8 +80,6 @@ function ImageClue () {
     let imgClueClassName = "imageClueImage";
 
     imgClueClassName += (selectedDreamDisplayIndex+1);
-
-
 
 
     return (
