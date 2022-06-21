@@ -23,7 +23,9 @@ import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 export const AppContext = createContext();
 
 
-
+const perfectFrameTime = 1000;
+let deltaTime = 0;
+let lastTimestamp = 0;
 
 
 
@@ -46,6 +48,7 @@ function App() {
   const [superStreakHighScore, setSuperStreakHighScore] = useState(-1);
   const [acceptSelectLetter, setAcceptSelectLetter] = useState(true);
   const [selectedDreamDisplayIndex, setSelectedDreamDisplayIndex] = useState(0);
+  const [isDreamDisplayAutoMode, setIsDreamDisplayAutoMode] = useState(true);
   const [gameTitle, setGameTitle] = useState("");
   const [gameURL, setGameURL] = useState("");
   const [versionCode, setVersionCode] = useState("");
@@ -102,6 +105,8 @@ function App() {
     }
 
   }
+
+
 
 
   // HELPER
@@ -174,9 +179,6 @@ function App() {
 
 
   useEffect(() => {
-
-
-
 
 
 
@@ -485,6 +487,7 @@ function App() {
         superStreakHighScore, setSuperStreakHighScore,
         acceptSelectLetter, setAcceptSelectLetter,
         selectedDreamDisplayIndex, setSelectedDreamDisplayIndex,
+        isDreamDisplayAutoMode, setIsDreamDisplayAutoMode,
         gameTitle, setGameTitle,
         gameURL, setGameURL,
         versionCode, setVersionCode,

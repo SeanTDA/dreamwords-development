@@ -544,7 +544,8 @@ a.helpMenu-link-twitter {
   margin-top:-5%;
   width:220%;
   height: 220%;
-  animation: imageClueImage-change-anim 0.7s 1;
+
+ /* transition:margin-left 300ms, margin-top 300ms;*/
 }
 
 .imageClueImage2 {
@@ -552,7 +553,6 @@ a.helpMenu-link-twitter {
   margin-top:-5%;
   width:220%;
   height: 220%;
-  animation: imageClueImage-change-anim 0.7s 1;
 }
 
 .imageClueImage3 {
@@ -560,7 +560,6 @@ a.helpMenu-link-twitter {
   margin-top:-65%;
   width:220%;
   height: 220%;
-  animation: imageClueImage-change-anim 0.7s 1;
 }
 
 .imageClueImage4 {
@@ -568,26 +567,13 @@ a.helpMenu-link-twitter {
   margin-top:-65%;
   width:220%;
   height: 220%;
-  animation: imageClueImage-change-anim 0.7s 1;
 
 }
 
 
-@keyframes imageClueImage-change-anim {
-
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 .imageClueImage-dots {
-  padding: 20px;
+  padding-top: 10px;
   pointer-events: all;
   
 }
@@ -595,8 +581,8 @@ a.helpMenu-link-twitter {
   background-color: #eee;
   border-radius: 100%;
   opacity: 50%;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
@@ -989,7 +975,7 @@ KEYBOARD
   opacity:0%;
 
   
-  transition: opacity 800ms;
+  transition: opacity 300ms;
 }
 
 .shareButton-validation-appear {
