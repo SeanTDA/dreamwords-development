@@ -4,7 +4,7 @@ import { AppContext } from "../../../App.js";
 function KeyboardKey({ keyVal, keyState }) {
 
     const appContext = useContext(AppContext);
-    const { onSelectLetter, acceptSelectLetter, helpMenuShown, gameState } = appContext;
+    const { onSelectLetter, acceptSelectLetter, gameState } = appContext;
 
 
 

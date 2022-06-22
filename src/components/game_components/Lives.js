@@ -9,11 +9,9 @@ function Lives() {
     const appContext = useContext(AppContext);
     const { wrongLetters, gameState, livesCompletedPulse, setLivesCompletedPulse } = appContext;
 
-
     let life1ClassName = "lives-life";
     let life2ClassName = "lives-life";
     let life3ClassName = "lives-life";
-
 
     const hearts = 3 - wrongLetters.length;
 
@@ -43,7 +41,7 @@ function Lives() {
 
         }
 
-    }, [gameState]);
+    }, [gameState, hearts, livesCompletedPulse, setLivesCompletedPulse]);
 
 
     if (livesCompletedPulse[0] === 1)

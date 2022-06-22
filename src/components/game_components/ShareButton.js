@@ -24,7 +24,7 @@ function ShareButton () {
         for (let i = 0; i < 3; i++)
             copyData += hearts > i ? "❤️" : "🖤";
         copyData += "\n";
-        copyData += "🔥x"+streak + " " + "⚡x"+superStreak;
+        copyData += `🔥x${streak} ⚡x${superStreak}`
         copyData += "\n";
         copyData += gameURL;
 

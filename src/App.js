@@ -8,17 +8,13 @@ import { analytics } from "./firebase";
 import {logEvent} from "firebase/analytics";
 
 
-
-
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
-import Footer from "./components/Footer.js";
 import HelpMenu from "./components/ui_components/HelpMenu.js";
 
 import { getHydranoidSpungus, getSprondlemonusTrobian } from './levelData';
 
 import { checkGameLost, checkGameWon } from './gameOver';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 export const AppContext = createContext();
 
@@ -54,9 +50,6 @@ function App() {
   const [shareButtonClicked, setShareButtonClicked] = useState(false);
   const [helpMenuShown, setHelpMenuShown] = useState(-1);
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
-
-
-  
 
 
   // CONSTANTS
@@ -117,7 +110,7 @@ function App() {
   }
 
   function newDay () {
-    // and the previous level hasnt been completed yet
+    // and the previous level hasn't been completed yet
     const saveDataPreviousCompletedLevel = storageLoad("SAVE_COMPLETED_LEVEL");
     if (saveDataPreviousCompletedLevel != null && parseInt(saveDataPreviousCompletedLevel) === 0) {
 
@@ -506,5 +499,4 @@ function App() {
     </div>);
 }
 
-//<Footer />
 export default App;

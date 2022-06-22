@@ -2,11 +2,14 @@
 /* GLOBALS */
 
 
-
+html, body, #root {
+  height: 100%;
+}
 
 
 body {
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
+  background-color: black;
   margin: 0;
   padding: 0;
   /* Prevent scrollbar appearing on page transition */
@@ -14,10 +17,13 @@ body {
   user-select: none;
 
 
-  min-height: 400px;
-  margin-bottom: 100px;
+  /* min-height: 400px; */
+  /* margin-bottom: 100px; */
 
   animation-delay: 0ms;
+
+  height: 100%;
+
 
 
  /* night mode variables */
@@ -46,7 +52,8 @@ body {
   background-color: var(--var-color-background);
   color: white;
   height: 100%;
-
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -58,6 +65,11 @@ body {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  
 }
 
 
@@ -107,6 +119,7 @@ body {
   position:absolute;
 }
 
+
 .header-right {
   position:absolute;
   opacity: 100%;
@@ -150,6 +163,8 @@ body {
   transition: opacity 500ms;
   pointer-events: all;
 }
+
+
 
 .header-helpMenuButton:hover {
   opacity:100%;
@@ -254,7 +269,18 @@ body {
 }
 
 
+.image-clue {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.words {
+  display: inline-flex;
+  gap: 20px;
+  justify-content: center;
+}
 
 
 .helpMenu-carousel-container {
@@ -328,8 +354,10 @@ a.helpMenu-link-twitter {
 
 
 
-
-
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: white
+ }
 
 
 
@@ -717,10 +745,7 @@ HANGMAN
 */
 
 .hangman {
-  width: 75%;
   max-width: 500px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -735,11 +760,15 @@ HANGMAN
   border-width: 2px;
   border-style: solid;*/
 
-  padding-top: 10px;
   padding-bottom: 10px;
 
 
   transition: background-color 300ms, border-color 300ms;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   
 
 
@@ -817,6 +846,9 @@ GAME
 */
 
 .game {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
 }
 
@@ -1036,4 +1068,36 @@ KEYBOARD
 
   transition: opacity 50ms;
 
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .helpMenu-closeButton,
+  .header-helpMenuButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header-center {
+    font-size: 25px;
+  }
+
+  .header {
+    padding-bottom: 40px;
+  }
+
+  .keyboardKey {
+    height: 48px;
+  }
+
+  .imageClueImage-dots {
+    padding-top: 0px;
+  }
+
+  .imageClueImage-dot {
+    width: 7px;
+    height: 7px;
+    margin: 0px 3px
+  }
 }

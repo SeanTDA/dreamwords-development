@@ -5,11 +5,10 @@ import { AppContext } from "../../App";
 function SuperStreak() {
 
     const appContext = useContext(AppContext);
-    const { superStreak, superStreakHighScore } = appContext;
+    const { superStreak } = appContext;
 
 
     let displaySuperStreak = superStreak;
-    let displaySuperStreakHighScore = superStreakHighScore;
 
 
     if (displaySuperStreak <= 0) displaySuperStreak = 0;
