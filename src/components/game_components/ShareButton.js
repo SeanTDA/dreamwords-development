@@ -5,7 +5,7 @@ import { AppContext } from "../../App";
 import { analytics } from "../../firebase";
 import {logEvent} from "firebase/analytics";
 
-
+import src from '../../images/share-icon.svg';
 
 function ShareButton () {
 
@@ -13,7 +13,6 @@ function ShareButton () {
     const { gameTitle, levelIndex, wrongLetters, superStreak, streak, gameURL, shareButtonClicked, setShareButtonClicked } = appContext;
 
     const hearts = 3 - wrongLetters.length;
-
 
 
     function getCopyData () {
@@ -56,7 +55,7 @@ function ShareButton () {
             <div className="shareButton-outerContainer">
             <div className="shareButton-container" onClick={onShareButtonClicked}>
 
-                <img className="shareButton-icon" src="images/share-icon.svg" alt="Share"/>
+                <img className="shareButton-icon" src={src} alt="Share"/>
 
                 <span className="shareButton-text"> share</span>
                  
