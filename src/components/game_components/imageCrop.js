@@ -39,8 +39,6 @@ const ImageCrop = ({ index, imageUrl }) => {
       height={IMAGE_HEIGHT}
       style={{
         width: '100%',
-        backgroundColor: 'purple',
-        borderRadius: 20
       }}
     />
   );
