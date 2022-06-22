@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
+import Slider from "react-slick";
 import {AppContext} from "../../App"; 
 import ImageCrop from './imageCrop';
 import useWindowSize from '../../hooks/useWindowSize';
-import Slider from "react-slick";
 
 function ImageClue () {
 
@@ -10,12 +10,13 @@ function ImageClue () {
     const appContext = useContext(AppContext);
     const {levelData} = appContext;
     
-    const isMobile = width < 390
+    // TODO @Sean - not sure if you want the slider to appear on mobile and Desktop. This can be used to customize the behavior
+    const isMobile = width < 640;
 
     return (
         <div className='image-clue'>
             {isMobile ?
-                <Slider autoplay={true} dots={true} arrows={false}>
+                <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={4200}>
                     <ImageCrop index={0} imageUrl={levelData.imageURL} />
                     <ImageCrop index={1} imageUrl={levelData.imageURL} />
                     <ImageCrop index={2} imageUrl={levelData.imageURL} />
