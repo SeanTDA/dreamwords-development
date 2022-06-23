@@ -10,20 +10,14 @@ function ImageClue () {
     const appContext = useContext(AppContext);
     const {levelData} = appContext;
     
-    // TODO @Sean - not sure if you want the slider to appear on mobile and Desktop. This can be used to customize the behavior
-    const isMobile = width < 640;
-
     return (
         <div className='image-clue'>
-            {isMobile ?
-                <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={4200}>
-                    <ImageCrop index={0} imageUrl={levelData.imageURL} />
-                    <ImageCrop index={1} imageUrl={levelData.imageURL} />
-                    <ImageCrop index={2} imageUrl={levelData.imageURL} />
-                    <ImageCrop index={3} imageUrl={levelData.imageURL} />
-                </Slider>
-            :   <img src={levelData.imageURL} alt="Generated clue" />}
-
+            <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={4200}>
+                <ImageCrop index={0} imageUrl={levelData.imageURL} />
+                <ImageCrop index={1} imageUrl={levelData.imageURL} />
+                <ImageCrop index={2} imageUrl={levelData.imageURL} />
+                <ImageCrop index={3} imageUrl={levelData.imageURL} />
+            </Slider>
         </div>
     );
 }
