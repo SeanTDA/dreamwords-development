@@ -40,28 +40,10 @@ function Hangman() {
 
             <div className={classNameLine}>
                     {renderLetters()}
-                    {
-                        //correctLetters.map((correctLetter) => { return <HangmanLetter letter={correctLetter} /> })
-                    }
             </div>
         </div>);
 
 
-
-    /*
-
-    const correctWords = goalPhrase.split(" ");
-
-
-    return (
-        <div className="hangman">
-
-            <div className="hangman-line">
-                {
-                    correctWords.map((word) => { return <HangmanWord word={word} /> })
-                }
-            </div>
-        </div>);*/
 }
 
 export default Hangman;

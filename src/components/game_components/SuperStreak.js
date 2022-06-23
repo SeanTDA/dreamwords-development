@@ -33,18 +33,9 @@ function SuperStreak() {
 
     return (
                 <div className={superStreakClassName}>
-                    <span>⚡ 
+                    <span>🏆 
                         <span> </span> 
-                        <span className={superStreakClassName01}>s</span>
-                        <span className={superStreakClassName02}>.</span>
-                        <span className={superStreakClassName03}>s</span>
-                        <span className={superStreakClassName04}>t</span>
-                        <span className={superStreakClassName05}>r</span>
-                        <span className={superStreakClassName06}>e</span>
-                        <span className={superStreakClassName07}>a</span>
-                        <span className={superStreakClassName08}>k</span> 
-                        <span> </span> 
-                        <span className={superStreakClassName09}>:</span> 
+                        <span className={superStreakClassName08}>:</span> 
                         <span> </span> 
                         <span className={superStreakClassName10}>{displaySuperStreak}</span> 
                     </span>

@@ -11,14 +11,7 @@ function Streak({ streakType }) {
     //if (streak <= 0) return;
     let displayStreak = streak;
 
-
-
     if (displayStreak <= 0) displayStreak = 0;
-
-
-
-
-
     const streakClassName = displayStreak > 0 ? "aliveStreak" : "aliveStreak aliveStreakDull";
 
 

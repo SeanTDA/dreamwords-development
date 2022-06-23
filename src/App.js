@@ -60,7 +60,7 @@ function App() {
   const VERSION_CODE = "1.0.8";
 
   const INTERVAL = 1; // 0 = day, 1 = minute
-  const KEY_DELAY_MS = 150;
+  const KEY_DELAY_MS = 0;
 
 
   // EVENTS

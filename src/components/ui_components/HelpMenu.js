@@ -61,19 +61,19 @@ function HelpMenu() {
                     
                     <div className="helpMenu-carousel-container">
                         <div className="helpMenu-carousel-contents">
-                            <div class = "helpMenu-carousel-image-outer">
+                            <div className = "helpMenu-carousel-image-outer">
                                 <img className="helpMenu-carousel-image" src="images/example_01.png" alt="Example 01"/>
                                 apple candle
                             </div>
-                            <div class = "helpMenu-carousel-image-outer">
+                            <div className = "helpMenu-carousel-image-outer">
                                 <img className="helpMenu-carousel-image" src="images/example_02.png" alt="Example 02"/>
                                 mossy soldier statue
                             </div>
-                            <div class = "helpMenu-carousel-image-outer">
+                            <div className = "helpMenu-carousel-image-outer">
                                 <img className="helpMenu-carousel-image" src="images/example_03.png" alt="Example 03"/>
                                 demonic guitar
                             </div>
-                            <div class = "helpMenu-carousel-image-outer">
+                            <div className = "helpMenu-carousel-image-outer">
                                 <img className="helpMenu-carousel-image" src="images/example_04.png" alt="Example 04"/>
                                 futuristic scifi paris
                             </div>

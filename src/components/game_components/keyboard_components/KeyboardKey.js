@@ -34,12 +34,6 @@ function KeyboardKey({ keyVal, keyState }) {
     if (!acceptSelectLetter && !isSelected)
         subclass = " keyboardKey-waiting-for-input";
 
-
-        
-    //if (helpMenuShown === 1)
-    //    subclass += " keyboardKey-disabled";
-
-
     className += subclass;
 
     if (gameState === "RUNNING" || gameState === "GAME_LOST" || gameState === "GAME_WON") {

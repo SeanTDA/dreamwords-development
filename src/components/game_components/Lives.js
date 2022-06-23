@@ -18,7 +18,10 @@ function Lives() {
 
     useEffect(() => {
         const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
+
         if (isGameOver) {
+
+            console.log("PULSE   " + isGameOver);
 
             if (hearts > 0)
             setTimeout(() => {
@@ -41,7 +44,7 @@ function Lives() {
 
         }
 
-    }, [gameState, hearts, livesCompletedPulse, setLivesCompletedPulse]);
+    }, [gameState]);
 
 
     if (livesCompletedPulse[0] === 1)
@@ -69,6 +72,5 @@ function Lives() {
     </div>);
 }
 
-//   <Life state="EMPTY"/>
 
 export default Lives;
