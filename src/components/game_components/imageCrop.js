@@ -12,8 +12,8 @@ import { useEffect, useRef } from "react";
 const ImageCrop = ({ index, imageUrl }) => {
 
   const canvasRef = useRef();
-  const IMAGE_WIDTH = 896;
-  const IMAGE_HEIGHT = 512;
+  const IMAGE_WIDTH = 1792;
+  const IMAGE_HEIGHT = 1024;
 
   useEffect(() => {
 
