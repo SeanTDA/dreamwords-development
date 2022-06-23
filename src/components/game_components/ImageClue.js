@@ -2,11 +2,9 @@ import React, {useContext} from 'react';
 import Slider from "react-slick";
 import {AppContext} from "../../App"; 
 import ImageCrop from './imageCrop';
-import useWindowSize from '../../hooks/useWindowSize';
 
 function ImageClue () {
 
-    const { width } = useWindowSize();
     const appContext = useContext(AppContext);
     const {levelData} = appContext;
     
