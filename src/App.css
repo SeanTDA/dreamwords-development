@@ -775,7 +775,7 @@ HANGMAN
 
 
   transition: background-color 300ms, border-color 300ms;
-  line-height: 15px;
+  line-height: 10px;
 
   display: inline-flex;
   flex-wrap: wrap;
@@ -795,7 +795,7 @@ HANGMAN
 
 
 .hangmanLetter {
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 4px;
   word-spacing: 10px;
   color: #FFFFFF;
@@ -870,7 +870,7 @@ KEYBOARD
 
 .keyboard {
   transition: background-color 500ms, opacity 1s;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom:10px;
 }
 

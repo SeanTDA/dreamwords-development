@@ -56,8 +56,8 @@ function App() {
   const GAME_TITLE = "Daydreams";
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
-  const BUILD_MODE = "TEST123"; // BUILD / PROD
-  const VERSION_CODE = "1.0.8";
+  const BUILD_MODE = "BUILD"; // BUILD / PROD
+  const VERSION_CODE = "1.0.9";
 
   const INTERVAL = 1; // 0 = day, 1 = minute, 2 = hour
   const KEY_DELAY_MS = 0;
@@ -129,15 +129,6 @@ function App() {
   }
 
 
-
-
-  console.log(">>>>>>>>>>> todo: once you win / lose, add end screen");
-  console.log(">>>>>>>>>>> todo: add [?] help guide with example carousel"); // should explain streak / superstreak
-  console.log(">>>>>>>>>>> todo: better lives UI");
-  console.log(">>>>>>>>>>> todo: get images onto AWS");
-  console.log(">>>>>>>>>>> todo: add button to load demo showoff mode");
-
-  
 
 
 
