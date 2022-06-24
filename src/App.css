@@ -334,7 +334,7 @@ a.helpMenu-link-twitter {
 
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   background: #000000; 
@@ -356,8 +356,28 @@ a.helpMenu-link-twitter {
  }
 
 
+.helpMenu-closeButton-container {
+  position:absolute;
+  left: 85%;
+  top:12%;
+
+  transform: translate(-100%, 0);
+
+
+ }
 
 .helpMenu-closeButton {
+
+  position:relative;
+  right: 10px;
+  
+  width: 200px;
+
+
+
+  display: grid;
+  place-items: center;
+
   cursor: pointer;
   
   background-color: #000000;
@@ -375,8 +395,6 @@ a.helpMenu-link-twitter {
   
   width: 40px;
   height: 40px;
-  display: grid;
-  place-items: center;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -861,7 +879,7 @@ KEYBOARD
   /*background-color: #0a0a0a;*/
   transition: background-color 500ms, opacity 1s;
   padding-top: 10px;
-  padding-bottom:2px;
+  padding-bottom:10px;
 }
 
 /*
