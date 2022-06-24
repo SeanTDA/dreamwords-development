@@ -42,7 +42,7 @@ body {
 
  --var-color-share-background:  #4c8247;
 
- --var-font-body:Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+ --var-font-body: Zen Kaku Gothic Antique, sans-serif; 
 
 
 }
@@ -370,7 +370,7 @@ a.helpMenu-link-twitter {
 
   position:relative;
   right: 10px;
-  
+
   width: 200px;
 
 

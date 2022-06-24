@@ -108,7 +108,17 @@ function HelpMenu() {
 
 
                 </div>
+
+
+                <div className = "helpMenu-closeButton-container">
+                <div className = "helpMenu-closeButton" onClick={onButtonClicked}> 
+                                X
                 </div>
+            </div>
+            
+                </div>
+
+
 
             
                 :
@@ -116,11 +126,7 @@ function HelpMenu() {
 
             }
             
-            <div className = "helpMenu-closeButton-container">
-                <div className = "helpMenu-closeButton" onClick={onButtonClicked}> 
-                                X
-                </div>
-            </div>
+
             
             </div>
 
