@@ -20,7 +20,7 @@ function HelpButton() {
     return (
         
         <div className = "header-helpMenuButton" onClick={onButtonClicked}>
-                ?
+                <img src="images/help.svg" alt="Help"/>
         </div>
 
 

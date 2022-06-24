@@ -59,7 +59,7 @@ function App() {
   const BUILD_MODE = "TEST123"; // BUILD / PROD
   const VERSION_CODE = "1.0.8";
 
-  const INTERVAL = 2; // 0 = day, 1 = minute, 2 = hour
+  const INTERVAL = 1; // 0 = day, 1 = minute, 2 = hour
   const KEY_DELAY_MS = 0;
 
 
@@ -137,17 +137,7 @@ function App() {
   console.log(">>>>>>>>>>> todo: get images onto AWS");
   console.log(">>>>>>>>>>> todo: add button to load demo showoff mode");
 
-  console.log(">>>>>>>>>>> todo: test to see if the daily system works:  [daily image], [building streak / super streak], [skipping a day]");
-  console.log(">>>>>>>>>>> todo: better streak icons UI");
-  console.log(">>>>>>>>>>> todo: add proper footer stuff");
-  console.log(">>>>>>>>>>> todo: do a test deploy");
-  console.log(">>>>>>>>>>> todo: test mobile share button copy (android / ios)");
   
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure ergonomic keyboard/scaling on mobile");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- when users rotate their phone landscape, they should be able to zoom into the whole image");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- fix letters moving on new line");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- all images should preload e.g. share button icon pops in");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure its all web compliant/security checks");
 
 
 

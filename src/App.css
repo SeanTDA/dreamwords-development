@@ -83,14 +83,15 @@ body {
 
 .header {
   
-  padding-bottom: 50px;
   background-color: var(--var-color-header-background);
 
   display: block;
 
-  border-bottom-color: rgb(255, 255, 255);
-  border-bottom-width: 2px;
+  border-bottom-color: #414040;
+  border-bottom-width: 1px;
   border-bottom-style: solid;
+
+  padding-bottom: 30px;
 
 }
 
@@ -146,20 +147,17 @@ body {
 
 .header-helpMenuButton {
   cursor: pointer;
+
+  position: absolute;
+  top: -5px;
   
   color:#ffffff;
   
-  border-radius: 60px;
-  border-color: rgb(255, 255, 255);
-  border-width: 2px;
-  border-style: solid;
 
   margin-left: 10px;
   
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
+  width: 30px;
+  height: 30px;
 
   
   font-size: 25px;
@@ -609,7 +607,7 @@ LIFE BAR
   vertical-align: middle;
 
   position: relative;
-  bottom: 8px;
+  bottom: 12px;
   letter-spacing: 5px;
   white-space: nowrap;
 
@@ -1010,7 +1008,7 @@ KEYBOARD
 
 .shareButton-outerContainer {
   padding-left: 50%;
-  padding-bottom:10px;
+  padding-bottom:30px;
 
 }
 
@@ -1082,15 +1080,6 @@ KEYBOARD
 
 
 @media only screen and (max-width: 600px) {
-  .helpMenu-closeButton,
-  .header-helpMenuButton {
-    width: 30px;
-    height: 30px;
-  }
-
-  .header {
-    padding-bottom: 40px;
-  }
 
   .keyboardKey {
     height: 48px;

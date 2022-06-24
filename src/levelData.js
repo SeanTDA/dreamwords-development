@@ -33,13 +33,20 @@ export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
     blorbloxSolarin = new Date(scolung, sbribblest, scrindolg, 15);
   const solarDiff = todayDay.getTime() - blorbloxSolarin.getTime();
   let sonuxPositron = 0;
-  if (invalodus === 0)
-    sonuxPositron = Math.floor(((solarDiff / 1000) / 60) / (60 * 24));
-  if (invalodus === 1)
+  if (invalodus === 0) {
+    sonuxPositron = Math.floor(((solarDiff / 1000) / 60) / (60 * 24)); 
+  }
+  if (invalodus === 1) {
     sonuxPositron = Math.floor((solarDiff / 1000) / 60) % 10;
-  if (invalodus === 2)
+    sonuxPositron = Math.abs(sonuxPositron);
+  }
+  if (invalodus === 2){
     sonuxPositron = Math.floor(((solarDiff / 1000) / 60) / 60) % 10;
+    sonuxPositron = Math.abs(sonuxPositron);
+  }
+
   if (sonuxPositron < 0) sonuxPositron = 0;
+
   return sonuxPositron;
 }
 
