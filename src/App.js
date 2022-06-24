@@ -56,10 +56,10 @@ function App() {
   const GAME_TITLE = "Daydreams";
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
-  const BUILD_MODE = "BUILD"; // BUILD / PROD
+  const BUILD_MODE = "TEST123"; // BUILD / PROD
   const VERSION_CODE = "1.0.8";
 
-  const INTERVAL = 1; // 0 = day, 1 = minute
+  const INTERVAL = 1; // 0 = day, 1 = minute, 2 = hour
   const KEY_DELAY_MS = 0;
 
 
@@ -137,17 +137,7 @@ function App() {
   console.log(">>>>>>>>>>> todo: get images onto AWS");
   console.log(">>>>>>>>>>> todo: add button to load demo showoff mode");
 
-  console.log(">>>>>>>>>>> todo: test to see if the daily system works:  [daily image], [building streak / super streak], [skipping a day]");
-  console.log(">>>>>>>>>>> todo: better streak icons UI");
-  console.log(">>>>>>>>>>> todo: add proper footer stuff");
-  console.log(">>>>>>>>>>> todo: do a test deploy");
-  console.log(">>>>>>>>>>> todo: test mobile share button copy (android / ios)");
   
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure ergonomic keyboard/scaling on mobile");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- when users rotate their phone landscape, they should be able to zoom into the whole image");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- fix letters moving on new line");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- all images should preload e.g. share button icon pops in");
-  console.log(">>>>>>>>>>> todo: [EXTERNAL] --- ensure its all web compliant/security checks");
 
 
 
@@ -164,6 +154,8 @@ function App() {
     todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate()); // day refresh
   if (INTERVAL === 1)
     todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate(), todayTimestamp.getHours(), todayTimestamp.getMinutes());   // minutes refresh
+  if (INTERVAL === 2)
+    todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate(), todayTimestamp.getHours());   // hours refresh
 
 
 
@@ -203,6 +195,8 @@ function App() {
           previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate()); // day previous
         if (INTERVAL === 1)
           previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate(), previousPageOpenDate.getHours(), previousPageOpenDate.getMinutes()); // minute previous
+        if (INTERVAL === 2)
+          previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate(), previousPageOpenDate.getHours()); // hour previous
 
 
         let oneDayAfterPreviousPageOpenDay = new Date();
@@ -211,6 +205,8 @@ function App() {
           oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate() + 1);
         if (INTERVAL === 1)
           oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate(), previousPageOpenDay.getHours(), previousPageOpenDay.getMinutes() + 1);
+        if (INTERVAL === 2)
+          oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate(), previousPageOpenDay.getHours() +1);
 
 
         let newDayArrived = previousPageOpenDay < todayDay;

@@ -40,7 +40,7 @@ const ImageCrop = ({ index, imageUrl, imageSubtitle }) => {
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
       style={{
-        width: '100%',
+        width: '99%',
       }}
     />
     <div className = "image-clue-subtitle"> <b> {imageSubtitle} </b> </div>
