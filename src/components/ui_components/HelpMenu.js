@@ -81,10 +81,6 @@ function HelpMenu() {
 
 
                     Credits:<br/>
-                    Executive Producer<br/>
-                    Tyrone Estephan<br/>
-                    tyrone@t-da.io<br/>
-                    <br/>
                     Game Design & Programming<br/>
                     Sean Simon<br/>
                     @those6faces<br/>
@@ -95,6 +91,11 @@ function HelpMenu() {
                     <br/>
                     Web Development<br/>
                     Andrew Morton<br/>
+                    <br/>
+                    Executive Producer<br/>
+                    Tyrone Estephan<br/>
+                    tyrone@t-da.io<br/>
+                    <br/>
                     
 
                     
@@ -115,7 +116,7 @@ function HelpMenu() {
                                 X
                 </div>
             </div>
-            
+
                 </div>
 
 
