@@ -27,20 +27,20 @@ function Lives() {
             setTimeout(() => {
                 console.log("lives = " + livesCompletedPulse);
                 setLivesCompletedPulse([1, 0, 0]);
-            }, 500);
+            }, 1000);
 
 
             if (hearts > 1)
             setTimeout(() => {
                 console.log("lives = " + livesCompletedPulse);
                 setLivesCompletedPulse([1, 1, 0 ]);
-            }, 800);
+            }, 1300);
 
             if (hearts > 2)
             setTimeout(() => {
                 console.log("lives = " + livesCompletedPulse);
                 setLivesCompletedPulse([1, 1,1]);
-            }, 1100);
+            }, 1500);
 
         }
 

@@ -21,19 +21,24 @@ export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
 
   let blorbloxSolarin = 0;
-  const sbribblest = 5;  // m
-  const scrindolg = 13;  // d
+  const sbribblest = 5;  // m (1st=0)
+  const scrindolg = 24;  // d
   const scolung = 1011 * 2; // y
+
   if (invalodus === 0)
     blorbloxSolarin = new Date(scolung, sbribblest, scrindolg);
   if (invalodus === 1)
     blorbloxSolarin = new Date(scolung, sbribblest, scrindolg, 12 + 10, 36);
+  if (invalodus === 2)
+    blorbloxSolarin = new Date(scolung, sbribblest, scrindolg, 15);
   const solarDiff = todayDay.getTime() - blorbloxSolarin.getTime();
   let sonuxPositron = 0;
   if (invalodus === 0)
     sonuxPositron = Math.floor(((solarDiff / 1000) / 60) / (60 * 24));
   if (invalodus === 1)
     sonuxPositron = Math.floor((solarDiff / 1000) / 60) % 10;
+  if (invalodus === 2)
+    sonuxPositron = Math.floor(((solarDiff / 1000) / 60) / 60) % 10;
   if (sonuxPositron < 0) sonuxPositron = 0;
   return sonuxPositron;
 }
@@ -85,8 +90,8 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron) => {
 
   console.log("meta: " + stromboli + " img: " + sblabby);
 
-  const metadataFilename = "https://raw.githubusercontent.com/SeanTDA/dreamwords-placeholder/main/files/metadata_" + stromboli + ".json";
-  const imageFilename = "https://raw.githubusercontent.com/SeanTDA/dreamwords-placeholder/main/files/image_" + sblabby + ".png";
+  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/metadata_" + stromboli + ".json";
+  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/image_" + sblabby + ".png";
 
   const retrievedMetadata = await (await fetch(metadataFilename)).json();
   const retrievedImage = imageFilename;

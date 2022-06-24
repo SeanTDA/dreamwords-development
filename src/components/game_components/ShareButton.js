@@ -23,7 +23,7 @@ function ShareButton () {
         for (let i = 0; i < 3; i++)
             copyData += hearts > i ? "❤️" : "🖤";
         copyData += "\n";
-        copyData += `🔥x${streak} ⚡x${superStreak}`
+        copyData += `🔥x${streak} 🏆x${superStreak}`
         copyData += "\n";
         copyData += gameURL;
 
@@ -57,7 +57,7 @@ function ShareButton () {
 
                 <img className="shareButton-icon" src={src} alt="Share"/>
 
-                <span className="shareButton-text"> share</span>
+                <span className="shareButton-text"> SHARE</span>
                  
             </div>
             </div>

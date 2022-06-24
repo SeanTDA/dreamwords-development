@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import {AppContext} from "../../App"; 
 import ImageCrop from './imageCrop';
 
+
 function ImageClue () {
 
     const appContext = useContext(AppContext);
@@ -16,6 +17,8 @@ function ImageClue () {
                 <ImageCrop index={2} imageUrl={levelData.imageURL} />
                 <ImageCrop index={3} imageUrl={levelData.imageURL} />
             </Slider>
+
+
         </div>
     );
 }
