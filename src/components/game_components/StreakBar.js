@@ -1,19 +1,11 @@
 
-import React, { useContext } from 'react';
-import { AppContext } from "../../App";
-
+import React from 'react';
 
 import Streak from "./Streak.js";
 import SuperStreak from "./SuperStreak.js";
 import Lives from "./Lives.js";
 
 function StreakBar() {
-
-
-
-
-
-
 
     return (
         <div>

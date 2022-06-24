@@ -9,18 +9,19 @@ function Lives() {
     const appContext = useContext(AppContext);
     const { wrongLetters, gameState, livesCompletedPulse, setLivesCompletedPulse } = appContext;
 
-
     let life1ClassName = "lives-life";
     let life2ClassName = "lives-life";
     let life3ClassName = "lives-life";
-
 
     const hearts = 3 - wrongLetters.length;
 
 
     useEffect(() => {
         const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
+
         if (isGameOver) {
+
+            console.log("PULSE   " + isGameOver);
 
             if (hearts > 0)
             setTimeout(() => {
@@ -71,6 +72,5 @@ function Lives() {
     </div>);
 }
 
-//   <Life state="EMPTY"/>
 
 export default Lives;

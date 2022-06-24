@@ -4,7 +4,7 @@ import { AppContext } from "../../../App.js";
 function KeyboardKey({ keyVal, keyState }) {
 
     const appContext = useContext(AppContext);
-    const { onSelectLetter, acceptSelectLetter, helpMenuShown, gameState } = appContext;
+    const { onSelectLetter, acceptSelectLetter, gameState } = appContext;
 
 
 
@@ -33,12 +33,6 @@ function KeyboardKey({ keyVal, keyState }) {
 
     if (!acceptSelectLetter && !isSelected)
         subclass = " keyboardKey-waiting-for-input";
-
-
-        
-    //if (helpMenuShown === 1)
-    //    subclass += " keyboardKey-disabled";
-
 
     className += subclass;
 

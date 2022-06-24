@@ -36,7 +36,7 @@ function Rating () {
                 showSuperStreak ?
 
                 <div>
-                    ⚡ +1
+                    🏆 +1
                 </div> :<div/>
             }
 

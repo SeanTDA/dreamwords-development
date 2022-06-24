@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, useEffect } from 'react';
+import React, { useContext, useMemo, useCallback, useEffect } from 'react';
 
 import KeyboardKey from './keyboard_components/KeyboardKey';
 
@@ -11,24 +11,26 @@ function Keyboard() {
     const { onSelectLetter, levelData, gameState, pressedLetters, isLastLetterCorrect } = appContext;
 
 
-    const typeLetter = (key) => {
+    const typeLetter = useCallback((key) => {
         onSelectLetter(key);
-    }
+    }, [onSelectLetter])
 
-    const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
-    const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
-    const keys3 = ["Z", "X", "C", "V", "B", "N", "M"];
+    const keys1 = useMemo(() => ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"], []);
+    const keys2 = useMemo(() => ["A", "S", "D", "F", "G", "H", "J", "K", "L"], []);
+    const keys3 = useMemo(() => ["Z", "X", "C", "V", "B", "N", "M"], []);
 
 
     const handleKeyboard = useCallback((event) => {
+        console.log('keyboard',event.key.toLowerCase())
         keys1.forEach((key) => { if (event.key.toLowerCase() === key.toLowerCase()) { typeLetter(key); } });
         keys2.forEach((key) => { if (event.key.toLowerCase() === key.toLowerCase()) { typeLetter(key); } });
         keys3.forEach((key) => { if (event.key.toLowerCase() === key.toLowerCase()) { typeLetter(key); } });
-    });
+    }, [keys1, keys2, keys3, typeLetter]);
 
 
 
     useEffect(() => {
+        console.log('userEffects')
         document.addEventListener("keydown", handleKeyboard);
         return () => {
             document.removeEventListener("keydown", handleKeyboard)

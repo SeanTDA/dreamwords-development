@@ -2,11 +2,14 @@
 /* GLOBALS */
 
 
-
+html, body, #root {
+  height: 100%;
+}
 
 
 body {
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
+  background-color: black;
   margin: 0;
   padding: 0;
   /* Prevent scrollbar appearing on page transition */
@@ -14,16 +17,19 @@ body {
   user-select: none;
 
 
-  min-height: 400px;
-  margin-bottom: 100px;
+  /* min-height: 400px; */
+  /* margin-bottom: 100px; */
 
   animation-delay: 0ms;
+
+  height: 100%;
+
 
 
  /* night mode variables */
 
- --var-color-background:  #121212;
- --var-color-header-background:  #000000;
+ --var-color-background:  #201E1F;
+ --var-color-header-background:  #201E1F;
 
  --var-color-correct-green-01:  #538d4e;
  --var-color-correct-green-02:  #72ff90;
@@ -36,6 +42,7 @@ body {
 
  --var-color-share-background:  #4c8247;
 
+ --var-font-body:Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
 
 
 }
@@ -46,7 +53,11 @@ body {
   background-color: var(--var-color-background);
   color: white;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 
+
+  font-family: var(--var-font-body);
 }
 
 
@@ -58,6 +69,11 @@ body {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  
 }
 
 
@@ -76,6 +92,7 @@ body {
 
 }
 
+
 .header-container {
   display: inline-block;
   width: 100%;
@@ -88,24 +105,15 @@ body {
   text-align: center;
   left: 50%;
   transform: translate(-50%, 0);
-
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  
-  --var-shadow-color: #474747;
-  text-shadow: -1px 1px var(--var-shadow-color), 
-  -2px 2px var(--var-shadow-color),
-  -3px 3px var(--var-shadow-color),
-  -4px 4px var(--var-shadow-color),
-  -5px 5px var(--var-shadow-color);
   
 }
+
 
 .header-left {
   opacity: 100%;
   position:absolute;
 }
+
 
 .header-right {
   position:absolute;
@@ -115,6 +123,14 @@ body {
 }
 
 
+.header-logo-container {
+  width: 200px;
+}
+
+
+.header-logo {
+  width: 100%;
+}
 
 
 
@@ -142,14 +158,16 @@ body {
   height: 40px;
   display: grid;
   place-items: center;
+
+  
   font-size: 25px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
 
   opacity:50%;
   transition: opacity 500ms;
   pointer-events: all;
 }
+
+
 
 .header-helpMenuButton:hover {
   opacity:100%;
@@ -213,7 +231,6 @@ body {
   white-space: nowrap;
 
   
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
@@ -240,13 +257,12 @@ body {
 .helpMenu-guide {
   padding-top:10px;
   font-size: 20px;
-  text-align: left;
+  text-align: center;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 30px;
 
   
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
@@ -254,42 +270,48 @@ body {
 }
 
 
+.image-clue {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom:30px;
+}
 
+.image-clue-subtitle {
+  text-align: center;
+}
+
+.words {
+  display: inline-flex;
+  gap: 20px;
+  justify-content: center;
+}
 
 
 .helpMenu-carousel-container {
+  
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-direction: column;
+
+  /*
   width: 100%;
   height: 75%;
 
-	background-color: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0);*/
 
   /*border-radius: 60px;*/
-  border-color: rgb(255, 255, 255);
+/*  border-color: rgb(255, 255, 255);
   border-width: 2px;
   border-style: solid;
 
   overflow-y: hidden;
   overflow-x: scroll;
-  padding-bottom: 10px;
+  padding-bottom: 10px;*/
 }
 
-
-.helpMenu-carousel-contents {
-  display: flex;
-}
-
-.helpMenu-carousel-image-outer {
-  flex: 33.33%;
-  padding: 5px;
-  text-align: center;
-
-}
-
-.helpMenu-carousel-image {
-  max-width: 300px;
-}
-
-/* helpMenu-carousel-image-01 */
 
 
 a.helpMenu-link-tda {
@@ -328,8 +350,10 @@ a.helpMenu-link-twitter {
 
 
 
-
-
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: white
+ }
 
 
 
@@ -717,10 +741,7 @@ HANGMAN
 */
 
 .hangman {
-  width: 75%;
   max-width: 500px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -735,11 +756,16 @@ HANGMAN
   border-width: 2px;
   border-style: solid;*/
 
-  padding-top: 10px;
   padding-bottom: 10px;
 
 
   transition: background-color 300ms, border-color 300ms;
+  line-height: 15px;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   
 
 
@@ -757,8 +783,7 @@ HANGMAN
   font-size: 25px;
   letter-spacing: 2px;
   word-spacing: 10px;
-  color: #bbbbbb;
-  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
   font-weight: 700;
   position: relative;
   transition: color 1s;
@@ -817,6 +842,9 @@ GAME
 */
 
 .game {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
 }
 
@@ -830,19 +858,20 @@ KEYBOARD
   bottom: 0;
   width: 100%;
   height: 210px;*/
-  background-color: #0a0a0a;
+  /*background-color: #0a0a0a;*/
   transition: background-color 500ms, opacity 1s;
-  padding-top: 2px;
+  padding-top: 10px;
   padding-bottom:2px;
 }
 
+/*
 .keyboard-correct {
   background-color: var(--var-color-correct-green-03);
 }
 
 .keyboard-mistake {
   background-color: var(--var-color-mistake-red-03);
-}
+}*/
 
 .keyboard-gameOver {
   opacity: 0;
@@ -1036,4 +1065,39 @@ KEYBOARD
 
   transition: opacity 50ms;
 
+}
+
+.slick-list {
+  border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .helpMenu-closeButton,
+  .header-helpMenuButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header-center {
+    font-size: 25px;
+  }
+
+  .header {
+    padding-bottom: 40px;
+  }
+
+  .keyboardKey {
+    height: 48px;
+  }
+
+  .imageClueImage-dots {
+    padding-top: 0px;
+  }
+
+  .imageClueImage-dot {
+    width: 7px;
+    height: 7px;
+    margin: 0px 3px
+  }
 }
