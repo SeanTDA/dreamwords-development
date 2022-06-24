@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
  * @returns 
  */
 
-const ImageCrop = ({ index, imageUrl }) => {
+const ImageCrop = ({ index, imageUrl, imageSubtitle }) => {
 
   const canvasRef = useRef();
   const IMAGE_WIDTH = 1792;
@@ -22,9 +22,10 @@ const ImageCrop = ({ index, imageUrl }) => {
       const x = (index % 2) * IMAGE_WIDTH / 2;
       const y = index > 1 ? IMAGE_HEIGHT / 2 : 0
       const ctx = canvasRef.current.getContext('2d');
+      const padding = 5;
       ctx.drawImage(image,
-        x, y,   // image start x,y
-        IMAGE_WIDTH / 2 , IMAGE_HEIGHT /2, // image width and height
+        x+padding, y+padding,   // image start x,y
+        (IMAGE_WIDTH / 2) - (padding*2) , (IMAGE_HEIGHT /2) - (padding*2), // image width and height
         0, 0,     // start of canvas
         IMAGE_WIDTH, IMAGE_HEIGHT); // canvas width height
     }
@@ -33,6 +34,7 @@ const ImageCrop = ({ index, imageUrl }) => {
   }, [imageUrl, index])
 
   return (
+    <div>
     <canvas 
       ref={canvasRef}
       width={IMAGE_WIDTH}
@@ -41,6 +43,9 @@ const ImageCrop = ({ index, imageUrl }) => {
         width: '100%',
       }}
     />
+    <div className = "image-clue-subtitle"> {imageSubtitle} </div>
+
+    </div>
   );
 }
 

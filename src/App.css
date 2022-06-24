@@ -88,6 +88,7 @@ body {
 
 }
 
+
 .header-container {
   display: inline-block;
   width: 100%;
@@ -104,15 +105,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 30px;
+
   
-  --var-shadow-color: #474747;
-  text-shadow: -1px 1px var(--var-shadow-color), 
-  -2px 2px var(--var-shadow-color),
-  -3px 3px var(--var-shadow-color),
-  -4px 4px var(--var-shadow-color),
-  -5px 5px var(--var-shadow-color);
+  
   
 }
+
 
 .header-left {
   opacity: 100%;
@@ -128,6 +126,14 @@ body {
 }
 
 
+.header-logo-container {
+  width: 200px;
+}
+
+
+.header-logo {
+  width: 100%;
+}
 
 
 
@@ -276,6 +282,10 @@ body {
   flex-direction: column;
 }
 
+.image-clue-subtitle {
+  text-align: center;
+}
+
 .words {
   display: inline-flex;
   gap: 20px;
@@ -284,38 +294,28 @@ body {
 
 
 .helpMenu-carousel-container {
+  
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-direction: column;
+
+  /*
   width: 100%;
   height: 75%;
 
-	background-color: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0);*/
 
   /*border-radius: 60px;*/
-  border-color: rgb(255, 255, 255);
+/*  border-color: rgb(255, 255, 255);
   border-width: 2px;
   border-style: solid;
 
   overflow-y: hidden;
   overflow-x: scroll;
-  padding-bottom: 10px;
+  padding-bottom: 10px;*/
 }
 
-
-.helpMenu-carousel-contents {
-  display: flex;
-}
-
-.helpMenu-carousel-image-outer {
-  flex: 33.33%;
-  padding: 5px;
-  text-align: center;
-
-}
-
-.helpMenu-carousel-image {
-  max-width: 300px;
-}
-
-/* helpMenu-carousel-image-01 */
 
 
 a.helpMenu-link-tda {

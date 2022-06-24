@@ -3,12 +3,14 @@
 import React, { useContext } from 'react';
 import { AppContext } from "../../App.js";
 
+import Slider from "react-slick";
+import ImageCrop from '../game_components/imageCrop';
 
 
 function HelpMenu() {
 
     const appContext = useContext(AppContext);
-    const { setHelpMenuShown, helpMenuShown, versionCode } = appContext;
+    const { setHelpMenuShown, helpMenuShown, versionCode, levelData } = appContext;
 
 
     function onButtonClicked () {
@@ -24,6 +26,7 @@ function HelpMenu() {
         faderClassName += " helpMenu-fader-active";
     }
     
+    console.log("!! " + levelData.imageURL);
 
     return (
         <div>
@@ -59,30 +62,24 @@ function HelpMenu() {
                     <b>New Daydreams will appear every day!</b><br/><br/>
 
                     
-                    <div className="helpMenu-carousel-container">
-                        <div className="helpMenu-carousel-contents">
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_01.png" alt="Example 01"/>
-                                apple candle
-                            </div>
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_02.png" alt="Example 02"/>
-                                mossy soldier statue
-                            </div>
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_03.png" alt="Example 03"/>
-                                demonic guitar
-                            </div>
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_04.png" alt="Example 04"/>
-                                futuristic scifi paris
-                            </div>
 
-                        </div>
+                    <div className="helpMenu-carousel-container">
+
+                        <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={4200}>
+                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="apple candle" />
+                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="mossy soldier statue" />
+                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="demonic guitar" />
+                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="futuristic scifi paris" />
+                        </Slider>
 
                     </div>
 
 
+
+
+
+
+ 
                     <br/><br/>
 
 
@@ -130,6 +127,30 @@ function HelpMenu() {
     );
 }
 
+/*
+
+
+                        <div className="helpMenu-carousel-contents">
+                            <div className = "helpMenu-carousel-image-outer">
+                                <img className="helpMenu-carousel-image" src="images/example_01.png" alt="Example 01"/>
+                                apple candle
+                            </div>
+                            <div className = "helpMenu-carousel-image-outer">
+                                <img className="helpMenu-carousel-image" src="images/example_02.png" alt="Example 02"/>
+                                mossy soldier statue
+                            </div>
+                            <div className = "helpMenu-carousel-image-outer">
+                                <img className="helpMenu-carousel-image" src="images/example_03.png" alt="Example 03"/>
+                                demonic guitar
+                            </div>
+                            <div className = "helpMenu-carousel-image-outer">
+                                <img className="helpMenu-carousel-image" src="images/example_04.png" alt="Example 04"/>
+                                futuristic scifi paris
+                            </div>
+                        </div>
+                    </div>
+
+                    */
 
 
 /*

@@ -14,6 +14,9 @@ function Header() {
 
     return (
         <div className="header">
+            
+
+
             <div className="header-container">
 
                 <div className="header-left">
@@ -21,7 +24,13 @@ function Header() {
                 </div>
 
                 <div className="header-center">
-                {gameTitle}
+
+                    <div className="header-logo-container">
+                        <div className="header-logo">
+                            <img src="images/logo.svg" alt="Daydreams"/>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>);
