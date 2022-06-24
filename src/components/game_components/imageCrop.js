@@ -43,7 +43,7 @@ const ImageCrop = ({ index, imageUrl, imageSubtitle }) => {
         width: '100%',
       }}
     />
-    <div className = "image-clue-subtitle"> {imageSubtitle} </div>
+    <div className = "image-clue-subtitle"> <b> {imageSubtitle} </b> </div>
 
     </div>
   );

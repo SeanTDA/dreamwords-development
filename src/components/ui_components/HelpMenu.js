@@ -37,9 +37,7 @@ function HelpMenu() {
 
             <div>
 
-                <div className = "helpMenu-closeButton" onClick={onButtonClicked}> 
-                X
-                </div>
+
 
                 <div className="helpMenu-container">
                 <div className = "helpMenu-contents">
@@ -49,7 +47,9 @@ function HelpMenu() {
                         </div>
 
                         <div className="helpMenu-right">
-
+                            <div className = "helpMenu-closeButton" onClick={onButtonClicked}> 
+                            X
+                            </div>
                         </div>
                     </div>
                     <div className = "helpMenu-guide"> 
@@ -57,7 +57,7 @@ function HelpMenu() {
 
                     Guess each letter from the set of <b>Daydreams.</b><br/><br/>
                     
-                    Boost your 🔥 daily streak by winning each day. <br/>Rack up a ⚡ super streak by surviving with all ❤️❤️❤️ hearts intact.<br/><br/>
+                    Boost your 🔥 daily streak by winning each day. <br/><br/>Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact.<br/><br/>
 
                     <b>New Daydreams will appear every day!</b><br/><br/>
 
@@ -66,10 +66,10 @@ function HelpMenu() {
                     <div className="helpMenu-carousel-container">
 
                         <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={4200}>
-                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="apple candle" />
-                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="mossy soldier statue" />
-                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="demonic guitar" />
-                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="futuristic scifi paris" />
+                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="APPLE CANDLE" />
+                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="MOSSY SOLDIER STATUE" />
+                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="DEMONIC GUITAR" />
+                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="FUTURISTIC SCIFI PARIS" />
                         </Slider>
 
                     </div>
