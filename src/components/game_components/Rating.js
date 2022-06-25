@@ -35,7 +35,7 @@ function Rating () {
             {
                 showSuperStreak ?
 
-                <div>
+                <div className = "superStreakHighScore-08">
                     🏆 +1
                 </div> :<div/>
             }

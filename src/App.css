@@ -928,7 +928,7 @@ KEYBOARD
 
 
 .keyboardKey-enabled:hover {
-  filter:brightness(120%);
+  filter:brightness(150%);
 }
 
 .keyboardKey-enabled:active {
@@ -1004,9 +1004,12 @@ KEYBOARD
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 2px;
-  padding-top:10px;
+  padding-top: 5px;
+  line-height: 35px;
   color: var(--var-color-correct-green-02);
 }
+
+
 
 
 /*
