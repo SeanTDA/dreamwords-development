@@ -31,14 +31,21 @@ function ShareButton () {
     }
 
 
-    function onShareButtonClicked () {
-        navigator.clipboard.writeText(getCopyData());
-        setShareButtonClicked(true);
 
-        
-        setTimeout(() => {
-            setShareButtonClicked(false);
-        }, 500);
+    function onShareButtonClicked () {
+
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            navigator.share({text: getCopyData()});
+        } else {
+            navigator.clipboard.writeText(getCopyData());
+            setShareButtonClicked(true);
+            setTimeout(() => {
+                setShareButtonClicked(false);
+            }, 500);
+        }
+
 
         logEvent(analytics, "t04_shareButton", "clicked");
     }
