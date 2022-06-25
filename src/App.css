@@ -492,7 +492,7 @@ a.helpMenu-link-twitter {
 .aliveStreak {
   top: 0px;
   text-align: left;
-  color: #a99256;
+  color: var(--var-color-correct-green-02);
   display: inline;
   vertical-align: middle;
 }
@@ -594,6 +594,9 @@ a.helpMenu-link-twitter {
     color: #ff9a81;
   }
 }
+
+
+
 
 
 
@@ -928,7 +931,7 @@ KEYBOARD
 
 
 .keyboardKey-enabled:hover {
-  filter:brightness(120%);
+  filter:brightness(150%);
 }
 
 .keyboardKey-enabled:active {
@@ -1004,9 +1007,32 @@ KEYBOARD
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 2px;
-  padding-top:10px;
+  padding-top: 5px;
+  line-height: 35px;
   color: var(--var-color-correct-green-02);
 }
+
+
+
+.rating-superStreak {
+  animation: rating-superStreak-anim-colorChange 500ms infinite;
+}
+
+
+
+@keyframes rating-superStreak-anim-colorChange  {
+
+  0% {
+    color: var(--var-color-correct-green-02);
+  }
+  50% {
+    color: #ffffff;
+  }
+  100% {
+    color: var(--var-color-correct-green-02);
+  }
+}
+
 
 
 /*
@@ -1066,7 +1092,7 @@ KEYBOARD
 
 .shareButton-validation {
   /*position:absolute;*/
-  padding-bottom:3px;
+  padding-bottom:5px;
   font-size: 15px;
   font-weight: 500;
   opacity:0%;
@@ -1102,5 +1128,16 @@ KEYBOARD
     height: 7px;
     margin: 0px 3px
   }
+
+  
+
+
 }
 
+
+@media only screen and (min-width: 600px) {
+
+  .shareButton-validation {
+    font-size: 30px;
+  }
+}

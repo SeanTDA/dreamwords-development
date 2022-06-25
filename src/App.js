@@ -76,11 +76,12 @@ function App() {
     if (pressedLetters.includes(keyVal)) return; // ignore key inputs if letter has been pressed
 
     if (!acceptSelectLetter) return;
-    setAcceptSelectLetter(false);
 
+    /*
+    setAcceptSelectLetter(false);
     setTimeout(() => {
       setAcceptSelectLetter(true);
-    }, KEY_DELAY_MS);
+    }, KEY_DELAY_MS);*/
 
     // adds it to the pressed keys
     setPressedLetters((prev) => [...prev, keyVal]);
