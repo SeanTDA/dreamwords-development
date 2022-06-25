@@ -37,7 +37,7 @@ function ShareButton () {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         if (isMobile) {
-            navigator.share({text: getCopyData()});
+            navigator.share({title:"Daydreams", text: getCopyData(), url: gameURL});
         } else {
             navigator.clipboard.writeText(getCopyData());
             setShareButtonClicked(true);
