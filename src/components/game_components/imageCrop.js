@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
  * @returns 
  */
 
-const ImageCrop = ({ index, imageUrl, imageSubtitle }) => {
+const ImageCrop = ({ index, imageUrl, imageSubtitle, zoom = 5 }) => {
 
   const canvasRef = useRef();
   const IMAGE_WIDTH = 1792;
@@ -22,10 +22,9 @@ const ImageCrop = ({ index, imageUrl, imageSubtitle }) => {
       const x = (index % 2) * IMAGE_WIDTH / 2;
       const y = index > 1 ? IMAGE_HEIGHT / 2 : 0
       const ctx = canvasRef.current.getContext('2d');
-      const padding = 5;
       ctx.drawImage(image,
-        x+padding, y+padding,   // image start x,y
-        (IMAGE_WIDTH / 2) - (padding*2) , (IMAGE_HEIGHT /2) - (padding*2), // image width and height
+        x+zoom, y+zoom,   // image start x,y
+        (IMAGE_WIDTH / 2) - (zoom*2) , (IMAGE_HEIGHT /2) - (zoom*2), // image width and height
         0, 0,     // start of canvas
         IMAGE_WIDTH, IMAGE_HEIGHT); // canvas width height
     }

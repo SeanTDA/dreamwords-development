@@ -62,7 +62,7 @@ function HelpMenu() {
 
                     <div className="helpMenu-carousel-container">
 
-                        <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={4200}>
+                        <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3200}>
                             <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="APPLE CANDLE" />
                             <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="MOSSY SOLDIER STATUE" />
                             <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="DEMONIC GUITAR" />
