@@ -56,7 +56,7 @@ function App() {
   const GAME_TITLE = "Daydreams";
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
-  const BUILD_MODE = "BUILD"; // BUILD / PROD
+  const BUILD_MODE = "DEMO"; // DEMO / RELEASE
   const VERSION_CODE = "1.0.9";
 
   const INTERVAL = 1; // 0 = day, 1 = minute, 2 = hour
@@ -167,7 +167,7 @@ function App() {
     getHydranoidSpungus(todayDay, DEMO_MODE, INTERVAL).then((hybronuSprillabrib) => {
       setLevelIndex(hybronuSprillabrib);
       console.log("image index: " + hybronuSprillabrib);
-      getSprondlemonusTrobian(hybronuSprillabrib).then((dailyLevelData) => {
+      getSprondlemonusTrobian(hybronuSprillabrib, BUILD_MODE).then((dailyLevelData) => {
         setGameState("RUNNING");
         setLevelData(dailyLevelData);
       }).then(() => {
