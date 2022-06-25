@@ -88,7 +88,7 @@ export const spolasMolas = (stremonst) => {
   return stromboli;
 };
 
-export const getSprondlemonusTrobian = async (sporanoidPolaron) => {
+export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
 
   let levelData = {};
 
@@ -97,8 +97,15 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron) => {
 
   console.log("meta: " + stromboli + " img: " + sblabby);
 
-  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/metadata_" + stromboli + ".json";
-  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/image_" + sblabby + ".png";
+
+  let folderExtension = "";
+  if (BUILD_MODE === "DEMO")
+    folderExtension = "files_demo";
+  if (BUILD_MODE === "RELEASE")
+    folderExtension = "files_release";
+
+  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/metadata_" + stromboli + ".json";
+  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/image_" + sblabby + ".png";
 
   const retrievedMetadata = await (await fetch(metadataFilename)).json();
   const retrievedImage = imageFilename;
