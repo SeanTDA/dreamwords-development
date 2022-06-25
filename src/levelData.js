@@ -96,9 +96,8 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron) => {
   const sblabby = spolasMolas(sporanoidPolaron);
 
   console.log("meta: " + stromboli + " img: " + sblabby);
-
-  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/metadata_" + stromboli + ".json";
-  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/image_" + sblabby + ".png";
+  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/files_demo/metadata_" + stromboli + ".json";
+  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/files_demo/image_" + sblabby + ".png";
 
   const retrievedMetadata = await (await fetch(metadataFilename)).json();
   const retrievedImage = imageFilename;
