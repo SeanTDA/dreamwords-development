@@ -37,6 +37,11 @@ function ShareButton () {
 
         if (isMobile) {
             navigator.share({title:"Daydreams", text: getCopyData()});
+            navigator.clipboard.writeText(getCopyData());
+            setShareButtonClicked(true);
+            setTimeout(() => {
+                setShareButtonClicked(false);
+            }, 500);
         } else {
             navigator.clipboard.writeText(getCopyData());
             setShareButtonClicked(true);

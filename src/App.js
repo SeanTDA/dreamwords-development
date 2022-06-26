@@ -56,10 +56,10 @@ function App() {
   const GAME_TITLE = "Daydreams";
   const GAME_URL = "http://daydreams.ai";
   const DEMO_MODE = false;
-  const BUILD_MODE = "BUILD"; // BUILD / RELEASE
-  const VERSION_CODE = "1.0.9";
+  const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
+  const VERSION_CODE = "1.0.0";
 
-  const INTERVAL = 1; // 0 = day, 1 = minute, 2 = hour
+  const INTERVAL = 0; // 0 = day, 1 = minute, 2 = hour
   const KEY_DELAY_MS = 0;
 
 
