@@ -6,23 +6,10 @@ function Footer () {
 
     return (
         <div className = "footer">
-            Copyright 2022 - T&DA. Powered by MidJourney
+            Copyright 2022 - <span className="footer-hyperlink"><a className="footer-hyperlink" href="https://www.t-da.io/" target="_blank" rel="noopener noreferrer">T&DA.</a></span> Powered by MidJourney
         </div>
     )
-    /*return (
-    <div className = "footer"> 
-        
-        
-
-        <div className = "footer-discord" >
-        <img src="images/discord-icon.svg" alt="Discord"/>
-        </div>
-
-        
-    </div>
-    
-    
-    );*/
 }
 
 export default Footer;
+

@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
  * @returns 
  */
 
-const ImageCrop = ({ index, imageUrl, imageSubtitle, zoom = 5 }) => {
+const ImageCrop = ({ index, imageUrl, imageSubtitle, zoom = 5, imageClassName}) => {
 
   const canvasRef = useRef();
   const IMAGE_WIDTH = 1792;
@@ -34,14 +34,16 @@ const ImageCrop = ({ index, imageUrl, imageSubtitle, zoom = 5 }) => {
 
   return (
     <div>
-    <canvas 
-      ref={canvasRef}
-      width={IMAGE_WIDTH}
-      height={IMAGE_HEIGHT}
-      style={{
-        width: '99%',
-      }}
-    />
+      <div className = {imageClassName}>
+        <canvas 
+          ref={canvasRef}
+          width={IMAGE_WIDTH}
+          height={IMAGE_HEIGHT}
+          style={{
+            width: '99%',
+          }}
+        />
+      </div>
     <div className = "image-clue-subtitle"> <b> {imageSubtitle} </b> </div>
 
     </div>
