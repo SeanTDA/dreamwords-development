@@ -6,11 +6,14 @@ import { AppContext } from "../../App.js";
 import Slider from "react-slick";
 import ImageCrop from '../game_components/imageCrop';
 
+import useCollapse from 'react-collapsed';
+
 
 function HelpMenu() {
 
     const appContext = useContext(AppContext);
-    const { setHelpMenuShown, helpMenuShown, versionCode, levelData } = appContext;
+    const { setHelpMenuShown, helpMenuShown, versionCode, levelData, levelIndex } = appContext;
+    const {getCollapseProps, getToggleProps, isExpanded} = useCollapse();
 
 
     function onButtonClicked () {
@@ -27,6 +30,14 @@ function HelpMenu() {
     }
     
     console.log("!! " + levelData.imageURL);
+
+
+
+
+
+
+
+
 
     return (
         <div>
@@ -63,45 +74,58 @@ function HelpMenu() {
                     <div className="helpMenu-carousel-container">
 
                         <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3200}>
-                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="APPLE CANDLE" />
-                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="MOSSY SOLDIER STATUE" />
-                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="DEMONIC GUITAR" />
-                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="FUTURISTIC SCIFI PARIS" />
+                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="APPLE CANDLE" imageClassName = "helpMenu-carousel-image" />
+                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="MOSSY SOLDIER STATUE" imageClassName = "helpMenu-carousel-image"/>
+                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="DEMONIC GUITAR" imageClassName = "helpMenu-carousel-image"/>
+                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="FUTURISTIC SCIFI PARIS" imageClassName = "helpMenu-carousel-image"/>
                         </Slider>
+
+                    </div>
+
+                    <br/><br/>
+
+                    <div className = "helpMenu-credits">
+                        <div className = "helpMenu-credits-header" {...getToggleProps()}>
+                            <b>{isExpanded ? "- CREDITS" : "+ CREDITS"}</b>
+                        </div>
+
+                        <div {...getCollapseProps()}>
+                            <div className="helpMenu-credits-body">
+
+
+                            <br/>
+                            <b>Game Design & Programming</b><br/>
+                            Sean Simon<br/>
+                            <a id="twitter" className="helpMenu-hyperlink" href="https://twitter.com/Those6Faces" target="_blank" rel="noopener noreferrer"><b>@thosesixfaces</b></a><br/>
+                            <br/>
+                            <b>Game Design</b><br/>
+                            Raymond Leung<br/>
+                            <a id="twitter" className="helpMenu-hyperlink" href="https://twitter.com/raymondleung" target="_blank" rel="noopener noreferrer"><b>@raymondleung</b></a><br/>
+                            <br/>
+                            <b>Executive Producer</b><br/>
+                            Tyrone Estephan<br/>
+                            <a id="email" className="helpMenu-hyperlink" href="mailto:tyrone@t-da.io" target="_blank" rel="noopener noreferrer"><b>tyrone@t-da.io</b></a><br/>
+                            <br/>
+                            <b>Web Development</b><br/>
+                            Andrew Morton<br/>
+                            <br/>
+
+
+
+                            </div>
+                        </div>
+
 
                     </div>
 
 
 
 
-
-
- 
-                    <br/><br/>
-
-
-                    Credits:<br/>
-                    Game Design & Programming<br/>
-                    Sean Simon<br/>
-                    @those6faces<br/>
-                    <br/>
-                    Game Design<br/>
-                    Raymond Leung<br/>
-                    @raymondleung<br/>
-                    <br/>
-                    Web Development<br/>
-                    Andrew Morton<br/>
-                    <br/>
-                    Executive Producer<br/>
-                    Tyrone Estephan<br/>
-                    tyrone@t-da.io<br/>
-                    <br/>
-                    
-
                     
 
                     <br/><br/>
-                    {versionCode}
+
+                    Day {levelIndex+1}&nbsp;&nbsp;&nbsp;v{versionCode}
 
                     </div>
 
@@ -111,11 +135,12 @@ function HelpMenu() {
                 </div>
 
 
-                <div className = "helpMenu-closeButton-container">
-                <div className = "helpMenu-closeButton" onClick={onButtonClicked}> 
-                                X
+                
+                <div className="helpMenu-closeButton-container">
+                    <div className = "helpMenu-closeButton" onClick={onButtonClicked}> 
+                        <img src="images/close.svg" alt="Close"/>
+                    </div>
                 </div>
-            </div>
 
                 </div>
 
@@ -138,30 +163,13 @@ function HelpMenu() {
     );
 }
 
-/*
 
 
-                        <div className="helpMenu-carousel-contents">
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_01.png" alt="Example 01"/>
-                                apple candle
-                            </div>
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_02.png" alt="Example 02"/>
-                                mossy soldier statue
-                            </div>
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_03.png" alt="Example 03"/>
-                                demonic guitar
-                            </div>
-                            <div className = "helpMenu-carousel-image-outer">
-                                <img className="helpMenu-carousel-image" src="images/example_04.png" alt="Example 04"/>
-                                futuristic scifi paris
-                            </div>
-                        </div>
-                    </div>
+                    /*<div class="helpMenu-collapsible">Open Collapsible</div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>*/
 
-                    */
 
 
 /*
