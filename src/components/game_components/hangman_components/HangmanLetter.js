@@ -35,9 +35,6 @@ function HangmanLetter({ letter }) {
 
     if (isLetterRevealed || isLetterSpecial || isGameOver)
         letterToShow = letter.toUpperCase();
-    
-    //if (isLetterRevealed && !isGameOver)  // hard mode
-    //    letterToShow = "?";
 
 
     return (

@@ -12,7 +12,7 @@ import useCollapse from 'react-collapsed';
 function HelpMenu() {
 
     const appContext = useContext(AppContext);
-    const { setHelpMenuShown, helpMenuShown, versionCode, levelData, levelIndex } = appContext;
+    const { setHelpMenuShown, helpMenuShown, versionCode, levelIndex } = appContext;
     const {getCollapseProps, getToggleProps, isExpanded} = useCollapse();
 
 
@@ -28,16 +28,6 @@ function HelpMenu() {
     if (isHelpMenuShown) {
         faderClassName += " helpMenu-fader-active";
     }
-    
-    console.log("!! " + levelData.imageURL);
-
-
-
-
-
-
-
-
 
     return (
         <div>
@@ -47,8 +37,6 @@ function HelpMenu() {
             {isHelpMenuShown ? 
 
             <div>
-
-
 
                 <div className="helpMenu-container">
                 <div className = "helpMenu-contents">
@@ -82,7 +70,8 @@ function HelpMenu() {
 
                     </div>
 
-                    <br/><br/>
+                    <br/>
+                    <br/>
 
                     <div className = "helpMenu-credits">
                         <div className = "helpMenu-credits-header" {...getToggleProps()}>
@@ -117,16 +106,9 @@ function HelpMenu() {
 
 
                     </div>
-
-
-
-
-                    
-
-                    <br/><br/>
-
+                    <br/>
+                    <br/>
                     Day {levelIndex+1}&nbsp;&nbsp;&nbsp;v{versionCode}
-
                     </div>
 
                     </div> 
@@ -142,46 +124,13 @@ function HelpMenu() {
                     </div>
                 </div>
 
-                </div>
-
-
-
-            
-                :
-                <div/>
-
+                </div>:<div/>
             }
-            
-
-            
             </div>
-
-
-
         </div>
-
     );
 }
 
-
-
-                    /*<div class="helpMenu-collapsible">Open Collapsible</div>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>*/
-
-
-
-/*
-
-
-                    <i>
-                    Created by <a className="helpMenu-link-tda" href="https://www.t-da.io/" target="_blank" rel="noopener noreferrer"><b>T&DA</b></a> <br/><br/>
-                    Sean - <a className="helpMenu-link-twitter" href="https://twitter.com/Those6Faces" target="_blank" rel="noopener noreferrer">@thosesixfaces</a><br/>Programming & Art<br/><br/>
-                    Ray - <a className="helpMenu-link-twitter" href="https://mobile.twitter.com/raymondleung" target="_blank" rel="noopener noreferrer">@raymondleung</a><br/>Design Touchups<br/>
-                    </i>
-
-*/
 
 export default HelpMenu;
 

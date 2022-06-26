@@ -77,12 +77,6 @@ function App() {
 
     if (!acceptSelectLetter) return;
 
-    /*
-    setAcceptSelectLetter(false);
-    setTimeout(() => {
-      setAcceptSelectLetter(true);
-    }, KEY_DELAY_MS);*/
-
     // adds it to the pressed keys
     setPressedLetters((prev) => [...prev, keyVal]);
 
@@ -209,19 +203,11 @@ function App() {
           newDayArrived = true;
 
 
-        console.log("Comparing days: " + previousPageOpenDay + "  " + todayDay);
-
-
-
-
 
         // If new day arrived, 
         if (newDayArrived) {
           newDay();
-          console.log("!!!! New day arrived");
         }
-
-
 
         // if more than one day has passed since you last opened (skipped a day)
         if (moreThanOneNewDayArrived) {
@@ -322,8 +308,6 @@ function App() {
       }
 
 
-
-
       // single fire on completion
       if (completedLevel === 0) {
 
@@ -346,16 +330,9 @@ function App() {
 
 
 
-
-
-
-
-
-
         
         // ---- record history
         const currentHistory = history;
-
 
         let newHistory = {...currentHistory};
         
@@ -375,25 +352,16 @@ function App() {
 
 
         // Log analytic
-        const eventToLog =  {"t04_level":levelIndex, "t04_heartsRemaining": 3-wrongLetters.length, "t04_pressedLetters": pressedLetters};
-        logEvent(analytics, "t04_levelComplete", eventToLog);
+        const eventToLog =  {"level":levelIndex, "heartsRemaining": 3-wrongLetters.length, "pressedLetters": pressedLetters};
+        logEvent(analytics, "v01_levelComplete", eventToLog);
 
       }
-
-
 
       // switches single fire latch (requires loading a new day to switch is back)
       setCompletedLevel(1);
     }
 
-
-
-
-
   }, [gameState]);
-
-
-
 
 
 
@@ -444,15 +412,10 @@ function App() {
 
 
 
-
-
   return (
     <div className="App">
-
-
       <AppContext.Provider value={{
         onSelectLetter,
-
         levelData, setLevelData,
         gameState, setGameState,
         pressedLetters, setPressedLetters,
@@ -478,9 +441,6 @@ function App() {
 
         <Header />
         <Game />
-
-
-
         <HelpMenu />
       </AppContext.Provider>
 

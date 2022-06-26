@@ -12,11 +12,7 @@ function Hangman() {
     const { gameState, levelData } = appContext;
 
 
-    let goalPhrase = levelData.goalPhrase; // replace with proper
-    // correctPhrase = "sean is an awesome guy that enjoys staying up late making games"; // replace with proper
-    // correctPhrase = "hello 123 my name is COOL SEAN";
-    // correctPhrase = "my";
-    //correctPhrase = "afdhafjkdhgjhfadkjlg akjlgmcklafdvnjkaf afknlghkla";
+    let goalPhrase = levelData.goalPhrase;
 
     const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
 

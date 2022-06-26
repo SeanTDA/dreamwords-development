@@ -5,7 +5,7 @@ import { AppContext } from "../../App";
 function Rating () {
 
     const appContext = useContext(AppContext);
-    const { streak, superStreak, wrongLetters } = appContext;
+    const { streak, superStreak } = appContext;
 
     let displayStreak = streak;
     let displaySuperStreak = superStreak;
@@ -13,17 +13,9 @@ function Rating () {
     const showStreak = displayStreak > 0;
     const showSuperStreak = displaySuperStreak > 0; 
 
-    const hearts = 3 - wrongLetters.length;
-
-
-    console.log("gettttttttttttttttt WWRONG LETTERS ========= " + wrongLetters + "  " + hearts + " " + wrongLetters.length);
-
-
     return (
     
         <div className = "rating"> 
-
-
             {
                 showStreak ?
 

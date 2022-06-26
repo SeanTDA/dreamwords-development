@@ -46,7 +46,7 @@ function ShareButton () {
         }
 
 
-        logEvent(analytics, "t04_shareButton", "clicked");
+        logEvent(analytics, "shareButton", "clicked");
     }
 
 
@@ -57,15 +57,14 @@ function ShareButton () {
 
     return (<div>
 
-<div className={shareButtonClassName}> Copied to Clipboard </div>
+        <div className={shareButtonClassName}> Copied to Clipboard </div>
             <div className="shareButton-outerContainer">
-            <div className="shareButton-container" onClick={onShareButtonClicked}>
+                <div className="shareButton-container" onClick={onShareButtonClicked}>
 
-                <img className="shareButton-icon" src="images/share-icon.svg" alt="Share"/>
-
-                <span className="shareButton-text"> SHARE</span>
-                 
-            </div>
+                    <img className="shareButton-icon" src="images/share-icon.svg" alt="Share"/>
+                    <span className="shareButton-text"> SHARE</span>
+                    
+                </div>
             </div>
 
 
