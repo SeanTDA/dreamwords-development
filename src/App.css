@@ -276,12 +276,16 @@ body {
 
 }
 
+.helpMenu-credit {
+
+  margin-left: 25%;
+  width: 50%;
+}
+
 .helpMenu-credits-header {
 
   cursor: pointer;
 
-  margin-left: 25%;
-  width: 50%;
   text-align: left;
   font-size: 20px;
   white-space: nowrap;
@@ -295,8 +299,6 @@ body {
 
 
 .helpMenu-credits-body {
-
-  margin-left: 25%;
   text-align: left;
 }
 
