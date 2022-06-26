@@ -278,6 +278,8 @@ body {
 
 .helpMenu-credits-header {
 
+  cursor: pointer;
+
   margin-left: 25%;
   width: 50%;
   text-align: left;
