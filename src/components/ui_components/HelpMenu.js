@@ -74,10 +74,10 @@ function HelpMenu() {
                     <div className="helpMenu-carousel-container">
 
                         <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3200}>
-                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="APPLE CANDLE" imageClassName = "helpMenu-carousel-image" />
-                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="MOSSY SOLDIER STATUE" imageClassName = "helpMenu-carousel-image"/>
-                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="DEMONIC GUITAR" imageClassName = "helpMenu-carousel-image"/>
-                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="FUTURISTIC SCIFI PARIS" imageClassName = "helpMenu-carousel-image"/>
+                            <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle ="APPL_ CANDL_" imageClassName = "helpMenu-carousel-image" />
+                            <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle ="_OSSY SOL_IER ST_TUE" imageClassName = "helpMenu-carousel-image"/>
+                            <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle ="DEMON_C GU_TAR" imageClassName = "helpMenu-carousel-image"/>
+                            <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle ="FU_URIS_IC SCIFI P_RIS" imageClassName = "helpMenu-carousel-image"/>
                         </Slider>
 
                     </div>
