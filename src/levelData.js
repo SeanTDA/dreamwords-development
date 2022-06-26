@@ -22,7 +22,7 @@ export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
   let blorbloxSolarin = 0;
   const sbribblest = 5;  // m (1st=0)
-  const scrindolg = 24;  // d
+  const scrindolg = 28;  // d
   const scolung = 1011 * 2; // y
 
   if (invalodus === 0)

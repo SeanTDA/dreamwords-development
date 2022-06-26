@@ -38,8 +38,6 @@ function Game() {
 
             </div>
 
-
-
             {
                 !isGameOver ?
                     <Keyboard /> :

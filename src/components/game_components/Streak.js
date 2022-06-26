@@ -7,8 +7,6 @@ function Streak({ streakType }) {
     const appContext = useContext(AppContext);
     const { streak } = appContext;
 
-
-    //if (streak <= 0) return;
     let displayStreak = streak;
 
     if (displayStreak <= 0) displayStreak = 0;
@@ -17,9 +15,9 @@ function Streak({ streakType }) {
 
 
     return (
-                <div className={streakClassName}>
-                    🔥 : {displayStreak}
-                </div>
+        <div className={streakClassName}>
+            🔥 : {displayStreak}
+        </div>
     );
 }
 
