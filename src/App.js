@@ -54,7 +54,7 @@ function App() {
 
   // CONSTANTS
   const GAME_TITLE = "Daydreams";
-  const GAME_URL = "http://daydreams.ai";
+  const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
   const VERSION_CODE = "1.0.0";
