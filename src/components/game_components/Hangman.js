@@ -11,6 +11,12 @@ function Hangman() {
     const appContext = useContext(AppContext);
     const { gameState, levelData } = appContext;
 
+    
+    let hiddenWords = [];
+    if (levelData.hiddenWords != undefined) {
+        hiddenWords = (levelData.hiddenWords).split("-");
+    }
+
 
     let goalPhrase = levelData.goalPhrase;
 
@@ -23,9 +29,11 @@ function Hangman() {
         const words = goalPhrase.split(" ");
         return words.map((word) => {
             const correctLetters = word.split("");
+            const isHidden = hiddenWords.includes(word);
+
             return (
                 <div className="word">
-                    {correctLetters.map((correctLetter) => { return <HangmanLetter letter={correctLetter} /> })}
+                    {correctLetters.map((correctLetter) => { return <HangmanLetter letter={correctLetter} isHidden = {isHidden} /> })}
                 </div>
             )
         })

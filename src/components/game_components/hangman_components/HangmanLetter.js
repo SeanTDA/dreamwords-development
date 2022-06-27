@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 
 import { AppContext } from "../../../App";
 
-function HangmanLetter({ letter }) {
+function HangmanLetter({ letter, isHidden }) {
 
 
     const appContext = useContext(AppContext);
-    const {gameState, pressedLetters } = appContext;
+    const {gameState, pressedLetters, levelData } = appContext;
+
+
 
 
     const isLetterRevealed = pressedLetters.includes(letter.toLowerCase());
@@ -35,6 +37,11 @@ function HangmanLetter({ letter }) {
 
     if (isLetterRevealed || isLetterSpecial || isGameOver)
         letterToShow = letter.toUpperCase();
+
+    if (!isGameOver && isHidden) {
+        letterToShow = "?";
+        className = "hangmanLetter";
+    }
 
     /*if (!isGameOver)
         if (pressedLetters.length > 0) 

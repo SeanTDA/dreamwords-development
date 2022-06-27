@@ -28,7 +28,8 @@ function App() {
 
   const [gameState, setGameState] = useState("LOADING");
   const [levelData, setLevelData] = useState({
-    goalPhrase: "..."
+    goalPhrase: "...",
+    hiddenWords: "apple-guitar"
   });
   const [pressedLetters, setPressedLetters] = useState([]);
   const [correctLetters, setCorrectLetters] = useState([]);
@@ -58,7 +59,7 @@ function App() {
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
   const VERSION_CODE = "1.0.0";
 
-  const INTERVAL = 0; // 0 = day, 1 = minute, 2 = hour
+  const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;
 
 
