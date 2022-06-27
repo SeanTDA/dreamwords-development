@@ -59,13 +59,13 @@ body {
 
 
 .App-hurt-1 {
-  animation: shake-1 0.2s;
+  animation: shake-1 0.4s;
 }
 .App-hurt-2 {
-  animation: shake-2 0.2s;
+  animation: shake-2 0.4s;
 }
 .App-hurt-3 {
-  animation: shake-3 2 0.2s; 
+  animation: shake-3 2 0.3s; 
 }
 
 
