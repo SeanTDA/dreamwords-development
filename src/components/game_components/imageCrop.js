@@ -41,7 +41,7 @@ const ImageCrop = ({ index, imageUrl, imageSubtitle, zoom = 5, imageClassName, b
           height={IMAGE_HEIGHT}
           style={{
             width: '99%',
-            "border-radius": borderRadius+'px'
+            "borderRadius": borderRadius+'px'
           }}
         />
       </div>

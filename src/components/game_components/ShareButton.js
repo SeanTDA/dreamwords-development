@@ -45,7 +45,7 @@ function ShareButton () {
 
             setTimeout(() => {
                 navigator.share({title:"Daydreams", text: getCopyData()});
-            }, 500);
+            }, 400);
 
         } else {
             navigator.clipboard.writeText(getCopyData());

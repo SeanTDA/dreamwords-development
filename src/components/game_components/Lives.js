@@ -20,25 +20,19 @@ function Lives() {
         const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
 
         if (isGameOver) {
-
-            console.log("PULSE   " + isGameOver);
-
             if (hearts > 0)
             setTimeout(() => {
-                console.log("lives = " + livesCompletedPulse);
                 setLivesCompletedPulse([1, 0, 0]);
             }, 1000);
 
 
             if (hearts > 1)
             setTimeout(() => {
-                console.log("lives = " + livesCompletedPulse);
                 setLivesCompletedPulse([1, 1, 0 ]);
             }, 1300);
 
             if (hearts > 2)
             setTimeout(() => {
-                console.log("lives = " + livesCompletedPulse);
                 setLivesCompletedPulse([1, 1,1]);
             }, 1500);
 

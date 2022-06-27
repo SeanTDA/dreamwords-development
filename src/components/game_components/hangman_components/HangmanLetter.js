@@ -36,6 +36,12 @@ function HangmanLetter({ letter }) {
     if (isLetterRevealed || isLetterSpecial || isGameOver)
         letterToShow = letter.toUpperCase();
 
+    /*if (!isGameOver)
+        if (pressedLetters.length > 0) 
+            if ([pressedLetters[pressedLetters.length-1], pressedLetters[pressedLetters.length-2]].includes(letter))
+                letterToShow = "/";*/
+        
+
 
     return (
         <span className={className}>

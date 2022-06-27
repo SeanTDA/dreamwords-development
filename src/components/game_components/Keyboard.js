@@ -21,7 +21,6 @@ function Keyboard() {
 
 
     const handleKeyboard = useCallback((event) => {
-        console.log('keyboard',event.key.toLowerCase())
         keys1.forEach((key) => { if (event.key.toLowerCase() === key.toLowerCase()) { typeLetter(key); } });
         keys2.forEach((key) => { if (event.key.toLowerCase() === key.toLowerCase()) { typeLetter(key); } });
         keys3.forEach((key) => { if (event.key.toLowerCase() === key.toLowerCase()) { typeLetter(key); } });
@@ -30,7 +29,6 @@ function Keyboard() {
 
 
     useEffect(() => {
-        console.log('userEffects')
         document.addEventListener("keydown", handleKeyboard);
         return () => {
             document.removeEventListener("keydown", handleKeyboard)
