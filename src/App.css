@@ -899,6 +899,11 @@ HANGMAN
   color:  var(--var-color-mistake-red-02); 
 }
 
+.hangmanLetter-secret-correct {
+  color:  var(--var-color-correct-green-02);
+  transition: color 300ms;
+}
+
 .hangmanLetter-gameOver-correct {
   color:  var(--var-color-correct-green-02);
 }

@@ -41,6 +41,9 @@ function HangmanLetter({ letter, isHidden }) {
     if (!isGameOver && isHidden) {
         letterToShow = "?";
         className = "hangmanLetter";
+        if (isLetterRevealed)
+            className += " hangmanLetter-secret-correct";
+        
     }
 
     /*if (!isGameOver)
