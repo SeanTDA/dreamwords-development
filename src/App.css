@@ -1176,21 +1176,21 @@ HELPER
 
 @keyframes shake-1 {
   0% { transform:  rotate(0deg); }
-  33% { transform:  rotate(-0.5deg); }
-  66% { transform:  rotate(1deg); }
+  33% { transform:  rotate(-0.25deg); }
+  66% { transform:  rotate(0.5deg); }
   100% { transform:  rotate(0deg); }
 }
 
 @keyframes shake-2 {
   0% { transform:  rotate(0deg); }
-  33% { transform:  rotate(-1deg); }
-  66% { transform:  rotate(2deg); }
+  33% { transform:  rotate(-0.5deg); }
+  66% { transform:  rotate(1deg); }
   100% { transform:  rotate(0deg); }
 }
 
 @keyframes shake-3 {
   0% { transform:  rotate(0deg); }
-  33% { transform:  rotate(-1deg); }
-  66% { transform:  rotate(2deg); }
+  33% { transform:  rotate(-0.5deg); }
+  66% { transform:  rotate(1deg); }
   100% { transform:  rotate(0deg); }
 }
