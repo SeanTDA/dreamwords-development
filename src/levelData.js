@@ -90,18 +90,13 @@ export const spolasMolas = (stremonst) => {
 
 export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
 
+
+
+
   let levelData = {};
-
-  console.log("remove this on final release");
-  // TEMP : TESTING
-  //sporanoidPolaron = 130;
-  //BUILD_MODE = "RELEASE";
-  
-
+ 
   const stromboli = stribbleBlonkston(sporanoidPolaron);
   const sblabby = spolasMolas(sporanoidPolaron);
-
-  console.log("meta: " + stromboli + " img: " + sblabby);
 
 
   let folderExtension = "";
@@ -110,27 +105,16 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
   if (BUILD_MODE === "RELEASE")
     folderExtension = "files_release";
 
-    
-
   const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/metadata_" + stromboli + ".json";
   const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/image_" + sblabby + ".png";
 
   const retrievedMetadata = await (await fetch(metadataFilename)).json();
   const retrievedImage = imageFilename;
 
-  console.log("Retrieving: " + metadataFilename);
-  console.log("Retrieving: " + imageFilename);
-
-
-
-
-
-
   levelData.goalPhrase = retrievedMetadata.solution;
   levelData.imageURL = retrievedImage;
-
-
-  //levelData.goalPhrase = "eroded psychedelic jelly";
+  if (retrievedMetadata.hiddenWords != undefined)
+    levelData.hiddenWords = retrievedMetadata.hiddenWords;
 
 
   return levelData;

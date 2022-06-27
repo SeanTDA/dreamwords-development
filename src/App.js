@@ -28,7 +28,8 @@ function App() {
 
   const [gameState, setGameState] = useState("LOADING");
   const [levelData, setLevelData] = useState({
-    goalPhrase: "..."
+    goalPhrase: "...",
+    hiddenWords: "apple-guitar"
   });
   const [pressedLetters, setPressedLetters] = useState([]);
   const [correctLetters, setCorrectLetters] = useState([]);
@@ -55,10 +56,10 @@ function App() {
   const GAME_TITLE = "Daydreams";
   const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
-  const BUILD_MODE = "BUILD"; // BUILD / RELEASE
+  const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
   const VERSION_CODE = "1.0.0";
 
-  const INTERVAL = 1; // 0 = day, 1 = minute, 2 = hour
+  const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;
 
 
@@ -160,7 +161,6 @@ function App() {
     // Load Level
     getHydranoidSpungus(todayDay, DEMO_MODE, INTERVAL).then((hybronuSprillabrib) => {
       setLevelIndex(hybronuSprillabrib);
-      console.log("image index: " + hybronuSprillabrib);
       getSprondlemonusTrobian(hybronuSprillabrib, BUILD_MODE).then((dailyLevelData) => {
         setGameState("RUNNING");
         setLevelData(dailyLevelData);
@@ -239,7 +239,6 @@ function App() {
         if (saveDataWrongLetters !== null && saveDataWrongLetters !== undefined)
           setWrongLetters(JSON.parse(saveDataWrongLetters));
 
-        console.log("setting WWRONG LETTERS to " + saveDataWrongLetters);
 
         const saveDataStreak = storageLoad("SAVE_STREAK");
         if (saveDataStreak !== null && saveDataStreak !== undefined)
@@ -382,7 +381,6 @@ function App() {
     if (streak === -1) return;
     if (DEMO_MODE) return;
     storageSave("SAVE_STREAK", streak);
-    console.log("Streak is now: " + streak);
   }, [streak]);
 
   useEffect(() => {
@@ -406,7 +404,6 @@ function App() {
   useEffect(() => {
     if (Object.keys(history).length === 0) return;
     storageSave("SAVE_HISTORY", JSON.stringify(history));
-    console.log("History is saved as " + JSON.stringify(history));
   }, [history]);
 
 

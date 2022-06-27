@@ -45,6 +45,7 @@ function HelpMenu() {
                             <br />
                             <br /> Boost your 🔥 daily streak by winning each day. <br />
                             <br />Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact. <br />
+                            <br />Secret words (<b>?</b>) are hidden until the end. <br />
                             <br />
                             <b>New Daydreams will appear every day!</b>
                             <br />
