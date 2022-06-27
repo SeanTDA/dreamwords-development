@@ -40,7 +40,7 @@ function HangmanLetter({ letter, isHidden }) {
 
     if (!isGameOver && isHidden) {
         letterToShow = "?";
-        className = "hangmanLetter";
+       // className = "hangmanLetter";
     }
 
     /*if (!isGameOver)
