@@ -29,7 +29,7 @@ function App() {
   const [gameState, setGameState] = useState("LOADING");
   const [levelData, setLevelData] = useState({
     goalPhrase: "...",
-    hiddenWords: "apple-guitar"
+    hiddenWords: ""
   });
   const [pressedLetters, setPressedLetters] = useState([]);
   const [correctLetters, setCorrectLetters] = useState([]);
