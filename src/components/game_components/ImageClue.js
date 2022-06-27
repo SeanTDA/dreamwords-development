@@ -10,7 +10,7 @@ function ImageClue () {
     const {levelData, pressedLetters, wrongLetters } = appContext;
     
     return (
-        <div className={wrongLetters.length === 0 ? "image-clue" :   (wrongLetters.length === 1 ? "image-clue image-clue-hurt-1" : (wrongLetters.length === 2 ? "image-clue image-clue-hurt-2" : "image-clue image-clue-hurt-3" )  )}     >
+        <div className="image-clue">
             <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3800}>
                 { pressedLetters.length >= 0 ? <ImageCrop index={0} imageUrl={levelData.imageURL} zoom={5} /> : null}
                 { pressedLetters.length >= 0 ? <ImageCrop index={1} imageUrl={levelData.imageURL} zoom={5} /> : null}
