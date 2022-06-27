@@ -311,10 +311,10 @@ body {
 
 
 .image-clue-hurt-1 {
-  animation: shake-1 0.2s;
+  animation: shake-1 2 0.2s;
 }
 .image-clue-hurt-2 {
-  animation: shake-2 0.2s;
+  animation: shake-2 2 0.2s;
 }
 .image-clue-hurt-3 {
   animation: shake-3 2 0.2s; 
@@ -1178,15 +1178,15 @@ HELPER
 
 @keyframes shake-1 {
   0% { transform:  rotate(0deg); }
-  25% { transform:  translate(-7px, 0px); }
-  75% { transform:  translate(7px, 0px); }
+  25% { transform:  translate(-10px, 0px); }
+  75% { transform:  translate(10px, 0px); }
   100% { transform:  rotate(0deg); }
 }
 
 @keyframes shake-2 {
   0% { transform:  rotate(0deg); }
-  25% { transform:  translate(-10px, 0px); }
-  75% { transform:  translate(10px, 0px); }
+  25% { transform:  translate(-11px, 0px); }
+  75% { transform:  translate(11px, 0px); }
   100% { transform:  rotate(0deg); }
 }
 
