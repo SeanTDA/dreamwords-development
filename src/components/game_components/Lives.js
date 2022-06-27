@@ -59,6 +59,8 @@ function Lives() {
 
     return (<div className="lives">
 
+        <div className={wrongLetters.length === 0 ? "" :   (wrongLetters.length === 1 ? "lives-hurt-1" : (wrongLetters.length === 2 ? "lives-hurt-2" : "lives-hurt-3" )  )}     >
+
         <span className={life1ClassName}>
             <Life state={wrongLetters.length >= 3 ? "EMPTY" : "FULL"} />
         </span>
@@ -68,7 +70,7 @@ function Lives() {
         <span className={life3ClassName}>
             <Life state={wrongLetters.length >= 1 ? "EMPTY" : "FULL"} />
         </span>
-
+        </div>
     </div>);
 }
 
