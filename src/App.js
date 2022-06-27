@@ -28,8 +28,7 @@ function App() {
 
   const [gameState, setGameState] = useState("LOADING");
   const [levelData, setLevelData] = useState({
-    goalPhrase: "...",
-    imageURL: "images/loading-image.png"
+    goalPhrase: "..."
   });
   const [pressedLetters, setPressedLetters] = useState([]);
   const [correctLetters, setCorrectLetters] = useState([]);

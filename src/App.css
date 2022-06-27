@@ -216,10 +216,6 @@ body {
   margin: auto;
 
   background-color: #201e1f;
-
-  border-color: rgb(255, 255, 255);
-  border-width: 2px;
-  border-style: solid;
   
   font-family: 'Zen Kaku Gothic Antique', sans-serif; 
 }
@@ -280,7 +276,7 @@ body {
   
   font-weight: 400;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 22px;
   padding-bottom:30px;
 
 }
