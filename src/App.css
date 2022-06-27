@@ -194,6 +194,15 @@ body {
   pointer-events: all;
 }
 
+.helpMenu-container-outer {
+  animation: helpMenu-container-outer-appear 2;
+}
+
+@keyframes helpMenu-container-outer-appear {
+  0% { transform:  translate(0px, -100px); }
+  100% { transform:  translate(0px, 0px); }
+}
+
 
 .helpMenu-container {
   position: absolute;
@@ -208,7 +217,11 @@ body {
   background-color: #201e1f;
   
   font-family: 'Zen Kaku Gothic Antique', sans-serif; 
+
 }
+
+
+
 
 
 
@@ -311,13 +324,13 @@ body {
 
 
 .image-clue-hurt-1 {
-  animation: shake-1 2 0.2s;
+  animation: shake-1 3 0.15s;
 }
 .image-clue-hurt-2 {
-  animation: shake-2 2 0.2s;
+  animation: shake-2 3 0.15s;
 }
 .image-clue-hurt-3 {
-  animation: shake-3 2 0.2s; 
+  animation: shake-3 3 0.15s; 
 }
 
 .image-clue-subtitle {
@@ -1177,22 +1190,22 @@ HELPER
 */
 
 @keyframes shake-1 {
-  0% { transform:  rotate(0deg); }
+  0% { transform:  translate(0px, 0px); }
   25% { transform:  translate(-10px, 0px); }
   75% { transform:  translate(10px, 0px); }
-  100% { transform:  rotate(0deg); }
+  100% { transform:  translate(0px, 0px); }
 }
 
 @keyframes shake-2 {
-  0% { transform:  rotate(0deg); }
+  0% { transform:  translate(0px, 0px); }
   25% { transform:  translate(-11px, 0px); }
   75% { transform:  translate(11px, 0px); }
-  100% { transform:  rotate(0deg); }
+  100% { transform:  translate(0px, 0px); }
 }
 
 @keyframes shake-3 {
-  0% { transform:  rotate(0deg); }
+  0% { transform:  translate(0px, 0px); }
   25% { transform:  translate(-12px, 0px); }
   75% { transform:  translate(12px, 0px); }
-  100% { transform:  rotate(0deg); }
+  100% { transform:  translate(0px, 0px); }
 }
