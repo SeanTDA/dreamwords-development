@@ -58,16 +58,6 @@ body {
 }
 
 
-.App-hurt-1 {
-  animation: shake-1 0.4s;
-}
-.App-hurt-2 {
-  animation: shake-2 0.4s;
-}
-.App-hurt-3 {
-  animation: shake-3 2 0.3s; 
-}
-
 
 .centerElements {
 
@@ -316,6 +306,18 @@ body {
   justify-content: center;
   flex-direction: column;
   padding-bottom:30px;
+}
+
+
+
+.image-clue-hurt-1 {
+  animation: shake-1 0.2s;
+}
+.image-clue-hurt-2 {
+  animation: shake-2 0.2s;
+}
+.image-clue-hurt-3 {
+  animation: shake-3 2 0.2s; 
 }
 
 .image-clue-subtitle {
@@ -1176,21 +1178,21 @@ HELPER
 
 @keyframes shake-1 {
   0% { transform:  rotate(0deg); }
-  33% { transform:  rotate(-0.25deg); }
-  66% { transform:  rotate(0.5deg); }
+  25% { transform:  translate(-7px, 0px); }
+  75% { transform:  translate(7px, 0px); }
   100% { transform:  rotate(0deg); }
 }
 
 @keyframes shake-2 {
   0% { transform:  rotate(0deg); }
-  33% { transform:  rotate(-0.5deg); }
-  66% { transform:  rotate(1deg); }
+  25% { transform:  translate(-10px, 0px); }
+  75% { transform:  translate(10px, 0px); }
   100% { transform:  rotate(0deg); }
 }
 
 @keyframes shake-3 {
   0% { transform:  rotate(0deg); }
-  33% { transform:  rotate(-0.5deg); }
-  66% { transform:  rotate(1deg); }
+  25% { transform:  translate(-12px, 0px); }
+  75% { transform:  translate(12px, 0px); }
   100% { transform:  rotate(0deg); }
 }

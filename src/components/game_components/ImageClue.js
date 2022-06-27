@@ -7,10 +7,10 @@ import ImageCrop from './imageCrop';
 function ImageClue () {
 
     const appContext = useContext(AppContext);
-    const {levelData, pressedLetters } = appContext;
+    const {levelData, pressedLetters, wrongLetters } = appContext;
     
     return (
-        <div className='image-clue'>
+        <div className={wrongLetters.length === 0 ? "image-clue" :   (wrongLetters.length === 1 ? "image-clue image-clue-hurt-1" : (wrongLetters.length === 2 ? "image-clue image-clue-hurt-2" : "image-clue image-clue-hurt-3" )  )}     >
             <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3800}>
                 { pressedLetters.length >= 0 ? <ImageCrop index={0} imageUrl={levelData.imageURL} zoom={5} /> : null}
                 { pressedLetters.length >= 0 ? <ImageCrop index={1} imageUrl={levelData.imageURL} zoom={5} /> : null}
