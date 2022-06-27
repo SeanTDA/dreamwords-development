@@ -411,9 +411,10 @@ function App() {
   }, [history]);
 
 
+  
 
   return (
-    <div className="App">
+    <div className={wrongLetters.length === 0 ? "App" :   (wrongLetters.length === 1 ? "App App-hurt-1" : (wrongLetters.length === 2 ? "App App-hurt-2" : "App App-hurt-3" )  )     }>
       <AppContext.Provider value={{
         onSelectLetter,
         levelData, setLevelData,

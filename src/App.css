@@ -8,7 +8,6 @@ html, body, #root {
 
 
 body {
-  background-color: black;
   margin: 0;
   padding: 0;
   overflow-y: hidden;
@@ -41,7 +40,9 @@ body {
 
  --var-font-size-lives: 35px;
 
+ background-color: var( --var-color-background);
 }
+
 
 
 .App {
@@ -57,6 +58,16 @@ body {
 }
 
 
+.App-hurt-1 {
+  animation: shake-1 0.2s;
+}
+.App-hurt-2 {
+  animation: shake-2 0.2s;
+}
+.App-hurt-3 {
+  animation: shake-3 0.2s;
+}
+
 
 .centerElements {
 
@@ -71,6 +82,9 @@ body {
 
   
 }
+
+
+
 
 
 /* HEADER */
@@ -197,8 +211,8 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 
-  width: 75%;
-  height: 75%;
+  width: 100%;
+  height: 100%;
   margin: auto;
 
   background-color: #201e1f;
@@ -206,6 +220,8 @@ body {
   border-color: rgb(255, 255, 255);
   border-width: 2px;
   border-style: solid;
+  
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; 
 }
 
 
@@ -216,12 +232,13 @@ body {
   overflow: auto;
   max-height: 100%;
   width: 100%;
+  letter-spacing: 0.5px;
 }
 
 .helpMenu-header {
   width: 100%;
-  height: 40px;
-  padding-top:10px;
+  height: 35px;
+  padding-top:15px;
   white-space: nowrap;
 
   
@@ -254,14 +271,12 @@ body {
 }
 
 .helpMenu-guide {
-  padding-top:10px;
   font-size: 20px;
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 30px;
+  margin-top: 10px;
 
-  font-family: 'Zen Kaku Gothic Antique', sans-serif; 
   
   font-weight: 400;
   font-size: 15px;
@@ -366,17 +381,17 @@ a.helpMenu-link-twitter {
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 ::-webkit-scrollbar-track {
   background: #00000000; 
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgba(136, 136, 136, 0);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgba(85, 85, 85, 0); 
 }
 
 
@@ -390,13 +405,13 @@ a.helpMenu-link-twitter {
 
 .helpMenu-closeButton-container {
   position:absolute;
-  left: 87.5%;
-  top:12.5%;
+  left: 100%;
+  top:0%;
 
   transform: translate(-100%, 0);
-
-
  }
+
+
 
 .helpMenu-closeButton {
 
@@ -421,7 +436,11 @@ a.helpMenu-link-twitter {
   opacity:50%;
   transition: opacity 500ms;
   pointer-events: all;
+  transform: scale(1.25);
 }
+
+
+
 
 .helpMenu-closeButton:hover {
   opacity:100%;
@@ -1154,3 +1173,28 @@ KEYBOARD
   }
 }
 
+
+/*
+HELPER
+*/
+
+@keyframes shake-1 {
+  0% { transform:  rotate(0deg); }
+  33% { transform:  rotate(-0.5deg); }
+  66% { transform:  rotate(1deg); }
+  100% { transform:  rotate(0deg); }
+}
+
+@keyframes shake-2 {
+  0% { transform:  rotate(0deg); }
+  33% { transform:  rotate(-1deg); }
+  66% { transform:  rotate(2deg); }
+  100% { transform:  rotate(0deg); }
+}
+
+@keyframes shake-3 {
+  0% { transform:  rotate(0deg); }
+  33% { transform:  rotate(-2deg); }
+  66% { transform:  rotate(3deg); }
+  100% { transform:  rotate(0deg); }
+}

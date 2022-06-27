@@ -92,9 +92,10 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
 
   let levelData = {};
 
+  console.log("remove this on final release");
   // TEMP : TESTING
- // sporanoidPolaron = 131;
- // BUILD_MODE = "RELEASE";
+  //sporanoidPolaron = 130;
+  //BUILD_MODE = "RELEASE";
   
 
   const stromboli = stribbleBlonkston(sporanoidPolaron);
