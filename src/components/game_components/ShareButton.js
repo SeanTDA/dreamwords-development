@@ -36,12 +36,17 @@ function ShareButton () {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         if (isMobile) {
-            navigator.share({title:"Daydreams", text: getCopyData()});
+            
             navigator.clipboard.writeText(getCopyData());
             setShareButtonClicked(true);
             setTimeout(() => {
                 setShareButtonClicked(false);
             }, 500);
+
+            setTimeout(() => {
+                navigator.share({title:"Daydreams", text: getCopyData()});
+            }, 500);
+
         } else {
             navigator.clipboard.writeText(getCopyData());
             setShareButtonClicked(true);
