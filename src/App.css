@@ -1133,10 +1133,11 @@ KEYBOARD
 
 .shareButton-validation {
   /*position:absolute;*/
-  padding-bottom:5px;
+  padding-bottom:10px;
   font-size: 15px;
   font-weight: 500;
   opacity:0%;
+  letter-spacing: 3px;
 
   
   transition: opacity 300ms;
