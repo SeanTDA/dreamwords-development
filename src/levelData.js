@@ -91,7 +91,7 @@ export const spolasMolas = (stremonst) => {
 export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
   let levelData = {};
 
-  sporanoidPolaron = 1;
+  sporanoidPolaron = 2;
 
   const stromboli = stribbleBlonkston(sporanoidPolaron);
   const sblabby = spolasMolas(sporanoidPolaron);
