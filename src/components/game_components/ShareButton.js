@@ -45,7 +45,7 @@ function ShareButton () {
 
             setTimeout(() => {
                 navigator.share({title:"Daydreams", text: getCopyData()});
-            }, 400);
+            }, 300);
 
         } else {
             navigator.clipboard.writeText(getCopyData());
@@ -67,7 +67,7 @@ function ShareButton () {
 
     return (<div>
 
-        <div className={shareButtonClassName}> Copied to Clipboard </div>
+        <div className={shareButtonClassName}> 📋 COPIED </div>
             <div className="shareButton-outerContainer">
                 <div className="shareButton-container" onClick={onShareButtonClicked}>
 
