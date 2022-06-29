@@ -43,6 +43,7 @@ function HangmanLetter({ letter, isHidden }) {
         className = "hangmanLetter";
         if (isLetterRevealed)
             className += " hangmanLetter-secret-correct";
+            //     letterToShow = "";
         
     }
 
