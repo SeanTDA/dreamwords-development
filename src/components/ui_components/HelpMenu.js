@@ -45,7 +45,7 @@ function HelpMenu() {
                             <br />
                             <br /> Boost your 🔥 daily streak by winning each day. <br />
                             <br />Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact. <br />
-                            <br />Secret words (<b>?</b>) are hidden until the end. <br />
+                            <br />Secret letters <b>(?)</b> are hidden until the word is revealed. <br />
                             <br />
                             <b>New Daydreams will appear every day!</b>
                             <br />
@@ -59,12 +59,6 @@ function HelpMenu() {
                             </Slider>
                             </div>
                             <br />
-                            <br />
-                            <br />Join the Discord Community<br />
-
-                            <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
-                                <img src="images/discord-icon.svg" alt="Discord"/>
-                            </a>
 
 
 
@@ -105,6 +99,11 @@ function HelpMenu() {
                                 </div>
                             </div>
                             </div>
+                            <br />
+                            <br />Join the Discord Community<br />
+                            <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
+                                <img src="images/discord-icon.svg" alt="Discord"/>
+                            </a>
                             <br />
                             <br /> Day {levelIndex+1}&nbsp;&nbsp;&nbsp;v{versionCode}
                         </div>
