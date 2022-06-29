@@ -32,6 +32,15 @@ function Header() {
                     </div>
 
                 </div>
+
+                <div className="header-right">
+                    <a href="https://www.instagram.com/daydreams.ai" target="_blank" rel="noopener noreferrer" className = "header-instagramButton" >
+                        <img src="images/instagram-icon.svg" alt="Instagram"/>
+                    </a>
+                </div>
+                
+
+
             </div>
         </div>);
 }

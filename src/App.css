@@ -135,6 +135,33 @@ body {
 }
 
 
+.header-instagramButton {
+  cursor: pointer;
+  color:#ffffff;
+  width: 30px;
+  height: 30px;
+  opacity:50%;
+  transition: opacity 500ms;
+  pointer-events: all;
+
+  filter: brightness(0) invert(1);
+  position:absolute;
+  left: 100%;
+  top:-5px;
+  transform: translate(-100%, 0) scale(1);
+  
+  padding-right:10px;
+}
+
+
+.header-instagramButton:hover {
+  opacity:100%;
+}
+
+
+
+
+
 
 
 
@@ -145,21 +172,13 @@ body {
 
 .header-helpMenuButton {
   cursor: pointer;
-
   position: absolute;
   top: -5px;
-  
   color:#ffffff;
-  
-
   margin-left: 10px;
-  
   width: 30px;
   height: 30px;
-
-  
   font-size: 25px;
-
   opacity:50%;
   transition: opacity 500ms;
   pointer-events: all;
@@ -283,6 +302,29 @@ body {
   padding-bottom:30px;
 
 }
+
+.helpMenu-discordButton {
+  cursor: pointer;
+  color:#ffffff;
+  width: 50px;
+  height: 50px;
+  opacity:50%;
+  transition: opacity 500ms;
+  pointer-events: all;
+  display: block;
+  margin-left:50%;
+  padding-top: 15px;
+
+  filter: brightness(0) invert(1);
+  transform: translate(-50%, 0) scale(1.2);
+  
+}
+
+
+.helpMenu-discordButton:hover {
+  opacity:100%;
+}
+
 
 .helpMenu-credit {
 
@@ -530,7 +572,7 @@ a.footer-hyperlink:hover {
 .aliveStreak {
   top: 0px;
   text-align: left;
-  color: var(--var-color-correct-green-02);
+  color: white; /* var(--var-color-correct-green-02);*/
   display: inline;
   vertical-align: middle;
 }

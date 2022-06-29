@@ -60,6 +60,17 @@ function HelpMenu() {
                             </div>
                             <br />
                             <br />
+                            <br />Join the Discord Community<br />
+
+                            <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
+                                <img src="images/discord-icon.svg" alt="Discord"/>
+                            </a>
+
+
+
+
+
+
                             <div className="helpMenu-credits">
                             <div className="helpMenu-credits-header" {...getToggleProps()}>
                                 <b>{isExpanded ? "- CREDITS" : "+ CREDITS"}</b>
