@@ -9,22 +9,32 @@ import {logEvent} from "firebase/analytics";
 function ShareButton () {
 
     const appContext = useContext(AppContext);
-    const { gameTitle, levelIndex, wrongLetters, superStreak, streak, gameURL, shareButtonClicked, setShareButtonClicked } = appContext;
+    const { gameTitle, levelIndex, wrongLetters, superStreak, streak, gameURL, shareButtonClicked, setShareButtonClicked, completedWordOrder } = appContext;
 
     const hearts = 3 - wrongLetters.length;
+
+    function wordOrderValueToEmoji (wordOrderValue) {
+        return ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"][wordOrderValue-1];
+    }
+
+    function wordOrderToEmojis (wordOrder) {
+        let emojis = "";
+        for (var i = 0; i < wordOrder.length; i++)
+            emojis += wordOrderValueToEmoji(wordOrder[i]);
+        return emojis;
+    } 
 
 
     function getCopyData () {
         let copyData = "";
-        copyData += gameTitle + " ";
+        copyData += "Daydreams.ai ";
         copyData += "#" + (levelIndex+1);
         copyData += "\n";
         for (let i = 0; i < 3; i++)
             copyData += hearts > i ? "❤️" : "🖤";
         copyData += "\n";
         copyData += `🔥x${streak} 🏆x${superStreak}`
-        copyData += "\n";
-        copyData += gameURL;
+
 
         return copyData;
     }
