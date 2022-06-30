@@ -35,6 +35,7 @@ function App() {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [isLastLetterCorrect, setIsLastLetterCorrect] = useState(-1);
+  const [completedWordOrder, setCompletedWordOrder] = useState([]);
   const [completedLevel, setCompletedLevel] = useState(-1);
   const [streak, setStreak] = useState(-1);
   const [superStreak, setSuperStreak] = useState(-1);
@@ -57,7 +58,7 @@ function App() {
   const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
-  const VERSION_CODE = "1.0.1";
+  const VERSION_CODE = "1.0.2";
 
   const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;
@@ -88,7 +89,6 @@ function App() {
       setWrongLetters((prev) => [...prev, keyVal]);
       setIsLastLetterCorrect(0);
     }
-
   }
 
 
@@ -120,10 +120,9 @@ function App() {
     storageSave("SAVE_PRESSED_LETTERS", "[]");
     storageSave("SAVE_CORRECT_LETTERS", "[]");
     storageSave("SAVE_WRONG_LETTERS", "[]");
+    storageSave("SAVE_COMPLETED_WORD_ORDER", "[]");
     storageSave("SAVE_COMPLETED_LEVEL", 0);
   }
-
-
 
 
 
@@ -239,6 +238,9 @@ function App() {
         if (saveDataWrongLetters !== null && saveDataWrongLetters !== undefined)
           setWrongLetters(JSON.parse(saveDataWrongLetters));
 
+        const saveDataCompletedWordOrder = storageLoad("SAVE_COMPLETED_WORD_ORDER");
+        if (saveDataCompletedWordOrder !== null)
+          setCompletedWordOrder(JSON.parse(saveDataCompletedWordOrder));
 
         const saveDataStreak = storageLoad("SAVE_STREAK");
         if (saveDataStreak !== null && saveDataStreak !== undefined)
@@ -258,20 +260,14 @@ function App() {
 
 
 
-        // Check to see if game is already won
-        if (checkGameLost(wrongLetters)) {
-          setGameState("GAME_LOST");
-        } else if (checkGameWon(correctLetters, levelData.goalPhrase)) {
-          setGameState("GAME_WON");
-        }
-
-
         // Display the help menu for first time players
         const isFirstTime = storageLoad("SAVE_FIRST_TIME");
         if (isFirstTime === null || parseInt(isFirstTime) === 0) {
           storageSave("SAVE_FIRST_TIME", 1);
           setHelpMenuShown(1);
         }
+
+
 
       });
 
@@ -286,6 +282,7 @@ function App() {
 
   // Letters Updated
   useEffect(() => {
+    // Check if game over
     if (checkGameLost(wrongLetters)) {
       setGameState("GAME_LOST");
     } else if (checkGameWon(correctLetters, levelData.goalPhrase)) {
@@ -295,20 +292,92 @@ function App() {
 
 
 
+  // Level Data Updated
+  useEffect(() => {
+
+
+    if (levelData.goalPhrase === "...") return;
+
+    // Initialises Completed Word Order
+    if (completedWordOrder.length === 0) {
+      let initialCompletedWordOrder = [];
+      const words = levelData.goalPhrase.split(" ");
+      for (var wordIndex = 0; wordIndex < words.length; wordIndex++) {
+        initialCompletedWordOrder.push(0);
+      }
+      setCompletedWordOrder(initialCompletedWordOrder);
+    }
+
+  }, [levelData]);
+
+
+
+
+  // Correct Letters Updated
+  useEffect(() => {
+
+    if (correctLetters.length === 0) return;
+
+
+    // --- Updated Word Completed Order
+    const words = levelData.goalPhrase.split(" ");
+    const wordsCompleted = [];
+    const previousCompletedWordOrder = completedWordOrder;
+
+    // gets current words completed
+    for (var wordIndex = 0; wordIndex < words.length; wordIndex++) {
+      const word = words[wordIndex];
+      let isThisWordCompleted = true;
+      for (var letterIndex = 0; letterIndex < word.length; letterIndex++) {
+        const letter = word[letterIndex];
+        if (!correctLetters.includes(letter)) {
+          isThisWordCompleted = false;
+        }
+      }
+      wordsCompleted.push(isThisWordCompleted);
+    }
+    // Get the highest order
+    let highestOrder = 0;
+    for (var previousCompletedWordOrderIndex = 0; previousCompletedWordOrderIndex < completedWordOrder.length; previousCompletedWordOrderIndex++) {
+      const previousCompletedWordOrderValue = completedWordOrder[previousCompletedWordOrderIndex];
+      if (previousCompletedWordOrderValue > highestOrder)
+        highestOrder = previousCompletedWordOrderValue;
+    }
+    // goes through and updates new completedWordOrder
+    const newCompletedWordOrder = [];
+    for (var previousCompletedWordOrderIndex = 0; previousCompletedWordOrderIndex < completedWordOrder.length; previousCompletedWordOrderIndex++) {
+      const previousCompletedWordOrderValue = completedWordOrder[previousCompletedWordOrderIndex]; // number saying the order
+      const currentCompletedWord = wordsCompleted[previousCompletedWordOrderIndex]; // boolean whether the word has now been completed
+      if (previousCompletedWordOrderValue === 0) {
+        if (!currentCompletedWord) {
+          newCompletedWordOrder.push(0);
+        } else {
+          newCompletedWordOrder.push(highestOrder + 1);
+        }
+      } else {
+        newCompletedWordOrder.push(previousCompletedWordOrderValue); // if previous word order value is already set, keep using it
+      }
+    }
+    setCompletedWordOrder(newCompletedWordOrder);
+
+
+  }, [correctLetters]);
+
+
+
   // Game Completion Updates
   useEffect(() => {
 
+    if (gameState === "LOADING") return;
+
     const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
     if (isGameOver) {
-
       if (gameState === "GAME_WON") {
         setGameState("GAME_WON");
       }
 
-
       // single fire on completion
       if (completedLevel === 0) {
-
 
         // win / lose
         if (gameState === "GAME_WON") {
@@ -400,6 +469,10 @@ function App() {
     storageSave("SAVE_COMPLETED_LEVEL", completedLevel);
   }, [completedLevel]);
 
+  useEffect(() => {
+    if (completedWordOrder.length === 0) return;
+    storageSave("SAVE_COMPLETED_WORD_ORDER", JSON.stringify(completedWordOrder));
+  }, [completedWordOrder]);
 
   useEffect(() => {
     if (Object.keys(history).length === 0) return;
@@ -419,6 +492,7 @@ function App() {
         correctLetters, setCorrectLetters,
         wrongLetters, setWrongLetters,
         isLastLetterCorrect, setIsLastLetterCorrect,
+        completedWordOrder, setCompletedWordOrder,
         completedLevel, setCompletedLevel,
         streak, setStreak,
         superStreak, setSuperStreak,
