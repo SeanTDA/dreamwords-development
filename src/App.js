@@ -29,7 +29,8 @@ function App() {
   const [gameState, setGameState] = useState("LOADING");
   const [levelData, setLevelData] = useState({
     goalPhrase: "...",
-    hiddenWords: ""
+    hiddenWords: "",
+    imageCount: "1 2 3 4"
   });
   const [pressedLetters, setPressedLetters] = useState([]);
   const [correctLetters, setCorrectLetters] = useState([]);
@@ -58,7 +59,7 @@ function App() {
   const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
-  const VERSION_CODE = "1.0.3";
+  const VERSION_CODE = "1.0.4";
 
   const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;

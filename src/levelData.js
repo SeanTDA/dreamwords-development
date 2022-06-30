@@ -95,7 +95,6 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
   const sblabby = spolasMolas(sporanoidPolaron);
 
 
-
   let folderExtension = "";
   if (BUILD_MODE === "BUILD")
     folderExtension = "files_demo";
@@ -113,7 +112,10 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
   levelData.imageURL = retrievedImage;
   if (retrievedMetadata.hiddenWords !== undefined)
     levelData.hiddenWords = retrievedMetadata.hiddenWords;
+  if (retrievedMetadata.imageCount !== undefined)
+    levelData.imageCount = retrievedMetadata.imageCount;
 
+  console.log(levelData.goalPhrase);
 
   return levelData;
 }
