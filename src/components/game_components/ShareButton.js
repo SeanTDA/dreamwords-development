@@ -9,7 +9,7 @@ import {logEvent} from "firebase/analytics";
 function ShareButton () {
 
     const appContext = useContext(AppContext);
-    const { gameTitle, levelIndex, wrongLetters, superStreak, streak, gameURL, shareButtonClicked, setShareButtonClicked, completedWordOrder } = appContext;
+    const { levelIndex, wrongLetters, superStreak, streak, shareButtonClicked, setShareButtonClicked } = appContext;
 
     const hearts = 3 - wrongLetters.length;
 

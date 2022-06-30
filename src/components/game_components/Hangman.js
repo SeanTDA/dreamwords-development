@@ -92,7 +92,7 @@ function Hangman() {
 
 
     let hiddenWords = [];
-    if (levelData.hiddenWords != undefined) {
+    if (levelData.hiddenWords !== undefined) {
         hiddenWords = (levelData.hiddenWords).split("-");
     }
 
