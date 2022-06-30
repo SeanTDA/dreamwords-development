@@ -111,7 +111,7 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
 
   levelData.goalPhrase = retrievedMetadata.solution;
   levelData.imageURL = retrievedImage;
-  if (retrievedMetadata.hiddenWords != undefined)
+  if (retrievedMetadata.hiddenWords !== undefined)
     levelData.hiddenWords = retrievedMetadata.hiddenWords;
 
 
