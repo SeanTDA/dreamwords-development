@@ -29,6 +29,8 @@ function HelpMenu() {
         faderClassName += " helpMenu-fader-active";
     }
 
+    const exampleImageURL = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/files_release/examples_opt.jpg";
+
     return (
         <div>
             <div className={faderClassName}> {isHelpMenuShown ? <div>
@@ -52,10 +54,10 @@ function HelpMenu() {
                             <br />
                             <div className="helpMenu-carousel-container">
                             <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3200}>
-                                <ImageCrop index={0} imageUrl={"images/examples.png"} imageSubtitle="APPL_ CANDL_" imageClassName="helpMenu-carousel-image" borderRadius="20" />
-                                <ImageCrop index={1} imageUrl={"images/examples.png"} imageSubtitle="_OSSY SOL_IER ST_TUE" imageClassName="helpMenu-carousel-image" borderRadius="20" />
-                                <ImageCrop index={2} imageUrl={"images/examples.png"} imageSubtitle="DEMON_C GU_TAR" imageClassName="helpMenu-carousel-image" borderRadius="20" />
-                                <ImageCrop index={3} imageUrl={"images/examples.png"} imageSubtitle="FU_URIS_IC SCIFI P_RIS" imageClassName="helpMenu-carousel-image" borderRadius="20" />
+                                <ImageCrop index={0} imageUrl={exampleImageURL} imageSubtitle="APPL_ CANDL_" imageClassName="helpMenu-carousel-image" borderRadius="20" />
+                                <ImageCrop index={1} imageUrl={exampleImageURL} imageSubtitle="_OSSY SOL_IER ST_TUE" imageClassName="helpMenu-carousel-image" borderRadius="20" />
+                                <ImageCrop index={2} imageUrl={exampleImageURL} imageSubtitle="DEMON_C GU_TAR" imageClassName="helpMenu-carousel-image" borderRadius="20" />
+                                <ImageCrop index={3} imageUrl={exampleImageURL} imageSubtitle="FU_URIS_IC SCIFI P_RIS" imageClassName="helpMenu-carousel-image" borderRadius="20" />
                             </Slider>
                             </div>
                             <br />
