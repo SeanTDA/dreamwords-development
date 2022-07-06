@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState }  from 'react';
-import { AppContext } from "../../App";
+import React, { useEffect, useState }  from 'react';
 
 
 function Countdown () {
@@ -24,7 +23,6 @@ function Countdown () {
 
             if (dateDiff > 0) {
 
-                var days = Math.floor(dateDiff / _day);
                 var hours = Math.floor((dateDiff % _day) / _hour);
                 var minutes = Math.floor((dateDiff % _hour) / _minute);
                 var seconds = Math.floor((dateDiff % _minute) / _second);
