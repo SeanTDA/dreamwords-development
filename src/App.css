@@ -313,8 +313,8 @@ body {
 .helpMenu-discordButton {
   cursor: pointer;
   color:#ffffff;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   opacity:50%;
   transition: opacity 500ms;
   pointer-events: all;
@@ -700,6 +700,7 @@ LIFE BAR
   bottom: 12px;
   letter-spacing: 5px;
   white-space: nowrap;
+
 
 }
 
@@ -1112,7 +1113,7 @@ KEYBOARD
 
 
 .rating-superStreak {
-  animation: superStreak-anim-colorChange 1000ms infinite;
+ /* animation: superStreak-anim-colorChange 1000ms infinite;*/
 }
 
 
@@ -1205,6 +1206,11 @@ KEYBOARD
   justify-content: center;
   align-items: center; 
   padding-right: 20px;
+}
+
+
+.shareButton-container:hover {
+  filter: brightness(120%);
 }
 
 
