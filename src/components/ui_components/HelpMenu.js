@@ -12,7 +12,7 @@ import useCollapse from 'react-collapsed';
 function HelpMenu() {
 
     const appContext = useContext(AppContext);
-    const { setHelpMenuShown, helpMenuShown, versionCode, levelIndex } = appContext;
+    const { setHelpMenuShown, helpMenuShown, versionCode, levelIndex, history } = appContext;
     const {getCollapseProps, getToggleProps, isExpanded} = useCollapse();
 
 

@@ -9,7 +9,7 @@ import {logEvent} from "firebase/analytics";
 function ShareButton () {
 
     const appContext = useContext(AppContext);
-    const { levelIndex, wrongLetters, superStreak, streak, shareButtonClicked, setShareButtonClicked } = appContext;
+    const { levelIndex, wrongLetters, superStreak, streak, shareButtonClicked, setShareButtonClicked         } = appContext;
 
     const hearts = 3 - wrongLetters.length;
 
@@ -77,7 +77,7 @@ function ShareButton () {
 
     return (<div>
 
-        <div className={shareButtonClassName}> 📋 COPIED </div>
+        <div className="shareButton-validation-container"><div className={shareButtonClassName}> 📋 COPIED </div> </div>
             <div className="shareButton-outerContainer">
                 <div className="shareButton-container" onClick={onShareButtonClicked}>
 

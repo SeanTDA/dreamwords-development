@@ -24,18 +24,25 @@ body {
  --var-color-background:  #201E1F;
  --var-color-header-background:  #201E1F;
 
+ --var-color-light-grey: #bdbdbd;
+
  --var-color-correct-green-01:  #538d4e;
  --var-color-correct-green-02:  #72ff90;
  --var-color-correct-green-03:  #062400;
+ --var-color-correct-green-01-pattern-01:  #6cb865;
 
  --var-color-mistake-red-01:  #9e0000;
  --var-color-mistake-red-02:  #ff7b7b;
  --var-color-mistake-red-03:  #310000;
+ --var-color-mistake-red-01-pattern-01:#bb1a1a;
  
+ --var-color-keyboard-key-enabled:   #4a4a4a;
+ --var-color-keyboard-key-enabled-pattern-01:   #646464;
 
  --var-color-share-background:  #4c8247;
 
  --var-font-body: Roboto, sans-serif; 
+ 
 
 
  --var-font-size-lives: 35px;
@@ -498,7 +505,7 @@ a.helpMenu-link-twitter {
   background-color: var(--var-color-background);
   font-weight: 500;
   font-size: 12px;
-  color: #bdbdbd;
+  color: var(--var-color-light-grey);
   padding-bottom:10px;
   padding-top:2px;
   
@@ -975,6 +982,8 @@ KEYBOARD
   transition: background-color 500ms, opacity 1s;
   padding-top: 10px;
   padding-bottom:10px;
+
+  
 }
 
 .keyboard-gameOver {
@@ -989,6 +998,8 @@ KEYBOARD
   display: flex;
   justify-content: center;
   margin: 5px;
+
+  
 }
 
 .keyboardKey {
@@ -1002,16 +1013,19 @@ KEYBOARD
   font-size: 20px;
   font-weight: 700;
   transition: opacity 200ms;
-}
+
+} 
+
 
 
 .keyboardKey-enabled {
   color: white;
-  background-color: #4a4a4a;
+  background-color: var(--var-color-keyboard-key-enabled);
   transition: transform 50ms;/*, opacity 800ms;*/
   cursor: pointer;
-}
 
+  
+}
 
 .keyboardKey-enabled:hover {
   filter:brightness(150%);
@@ -1098,7 +1112,7 @@ KEYBOARD
 
 
 .rating-superStreak {
-  animation: rating-superStreak-anim-colorChange 500ms infinite;
+  animation: superStreak-anim-colorChange 1000ms infinite;
 }
 
 
@@ -1115,6 +1129,33 @@ KEYBOARD
     color: var(--var-color-correct-green-02);
   }
 }
+
+
+/*
+ COUNTDOWN
+*/
+
+
+.countdown {
+  
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding-top: 15px;
+  line-height: 27px;
+  color: var(--var-color-light-grey);
+
+  padding-bottom: 50px;
+}
+
+
+
+.countdownCounter {
+  
+  font-weight: 700;
+  font-size: 30px;
+}
+
 
 
 
@@ -1173,11 +1214,24 @@ KEYBOARD
   width:auto;
 }
 
+
+.shareButton-validation-container {
+  position: relative;
+  padding-left: 50%;
+
+}
+
 .shareButton-validation {
-  /*position:absolute;*/
-  padding-bottom:10px;
-  font-size: 15px;
-  font-weight: 500;
+  position: absolute;
+  transform: translate(-50%, -35px);
+
+
+  text-align: center;
+
+
+
+  font-size: 16px;
+  font-weight: 700;
   opacity:0%;
   letter-spacing: 3px;
 
@@ -1222,7 +1276,7 @@ KEYBOARD
 @media only screen and (min-width: 600px) {
 
   .shareButton-validation {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -1259,3 +1313,42 @@ HELPER
   75% { transform:  translate(10px, 0px); }
   100% { transform:  translate(0px, 0px); }
 }
+
+
+/*
+UNLOCKABLES
+*/
+
+
+
+.unlockable-stripe-keyboardCap-enabled {
+  background: repeating-linear-gradient(
+  45deg,
+  var(--var-color-keyboard-key-enabled),
+  var(--var-color-keyboard-key-enabled) 10px,
+  var(--var-color-keyboard-key-enabled-pattern-01) 10px,
+  var(--var-color-keyboard-key-enabled-pattern-01) 20px
+  );
+}
+
+.unlockable-stripe-keyboardCap-correct {
+  background: repeating-linear-gradient(
+  45deg,
+  var(--var-color-correct-green-01),
+  var(--var-color-correct-green-01) 10px,
+  var(--var-color-correct-green-01-pattern-01) 10px,
+  var(--var-color-correct-green-01-pattern-01) 20px
+  );
+}
+
+.unlockable-stripe-keyboardCap-mistake {
+  background: repeating-linear-gradient(
+  -45deg,
+  var(--var-color-mistake-red-01),
+  var(--var-color-mistake-red-01) 10px,
+  var(--var-color-mistake-red-01-pattern-01) 10px,
+  var(--var-color-mistake-red-01-pattern-01) 20px
+  );
+}
+
+

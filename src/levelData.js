@@ -103,7 +103,6 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
 
   const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/metadata_" + stromboli + ".json";
   const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/image_" + sblabby + ".png";
-  console.log(metadataFilename);
 
   const retrievedMetadata = await (await fetch(metadataFilename)).json();
   const retrievedImage = imageFilename;
@@ -115,7 +114,6 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
   if (retrievedMetadata.imageCount !== undefined)
     levelData.imageCount = retrievedMetadata.imageCount;
 
-  console.log(levelData.goalPhrase);
 
   return levelData;
 }

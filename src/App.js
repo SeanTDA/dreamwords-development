@@ -1,4 +1,5 @@
 
+    //onSelectSkin("KEYBOARD", "STRIPE");
 import './App.css';
 import React, { createContext, useEffect, useState } from "react";
 
@@ -17,6 +18,7 @@ import { getHydranoidSpungus, getSprondlemonusTrobian } from './levelData';
 import { checkGameLost, checkGameWon } from './gameOver';
 
 export const AppContext = createContext();
+
 
 
 
@@ -52,13 +54,17 @@ function App() {
   const [shareButtonClicked, setShareButtonClicked] = useState(false);
   const [helpMenuShown, setHelpMenuShown] = useState(-1);
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
+  const [selectedSkin, setSelectedSkin] = useState({
+    keyboardCap: "NONE"
+  });
+
 
 
   // CONSTANTS
   const GAME_TITLE = "Daydreams";
   const GAME_URL = "https://daydreams.ai";
-  const DEMO_MODE = false;
-  const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
+  const DEMO_MODE = true;
+  const BUILD_MODE = "BUILD"; // BUILD / RELEASE
   const VERSION_CODE = "1.0.4";
 
   const INTERVAL = 0; // 0d1m2h
@@ -93,6 +99,15 @@ function App() {
   }
 
 
+  const onSelectSkin = (skinType, newSkin) => {
+
+    let newSelectedSkin = selectedSkin;
+    if (skinType === "KEYBOARD")
+      newSelectedSkin.keyboardCap = newSkin;
+
+    setSelectedSkin(newSelectedSkin);
+    storageSave("SAVE_SELECTED_SKIN", JSON.stringify(selectedSkin));
+  }
 
 
   // HELPER
@@ -147,6 +162,7 @@ function App() {
 
 
   useEffect(() => {
+
 
 
 
@@ -259,6 +275,11 @@ function App() {
         if (saveDataHistory !== null && saveDataHistory !== undefined)
           setHistory(JSON.parse(saveDataHistory));
 
+        const saveDataSelectedSkin = storageLoad("SAVE_SELECTED_SKIN");
+        if (saveDataSelectedSkin !== null && saveDataSelectedSkin !== undefined)
+          setSelectedSkin(JSON.parse(saveDataSelectedSkin));
+
+
 
 
         // Display the help menu for first time players
@@ -295,8 +316,6 @@ function App() {
 
   // Level Data Updated
   useEffect(() => {
-
-
     if (levelData.goalPhrase === "...") return;
 
     // Initialises Completed Word Order
@@ -310,7 +329,6 @@ function App() {
     }
 
   }, [levelData]);
-
 
 
 
@@ -360,8 +378,6 @@ function App() {
       }
     }
     setCompletedWordOrder(newCompletedWordOrder);
-
-
   }, [correctLetters]);
 
 
@@ -395,9 +411,6 @@ function App() {
             setStreak(0);
             setSuperStreak(0);
         }
-
-
-
         
         // ---- record history
         const currentHistory = history;
@@ -430,6 +443,28 @@ function App() {
     }
 
   }, [gameState]);
+
+
+
+  // History Updated
+  useEffect(() => {
+   if (Object.keys(history).length === 0) return;
+
+
+
+    // update progress based on history
+
+
+
+  }, [history]);
+
+
+
+
+
+
+
+
 
 
 
@@ -508,7 +543,9 @@ function App() {
         livesCompletedPulse, setLivesCompletedPulse,
         shareButtonClicked, setShareButtonClicked,
         helpMenuShown, setHelpMenuShown,
-        history, setHistory
+        history, setHistory,
+        selectedSkin, setSelectedSkin,
+        onSelectSkin
       }}>
 
         <Header />
