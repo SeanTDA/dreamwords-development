@@ -4,11 +4,13 @@ import KeyboardKey from './keyboard_components/KeyboardKey';
 
 import { AppContext } from "../../App";
 
+
+
 function Keyboard() {
 
 
     const appContext = useContext(AppContext);
-    const { onSelectLetter, levelData, gameState, pressedLetters, isLastLetterCorrect } = appContext;
+    const { onSelectLetter, levelData, gameState, pressedLetters, isLastLetterCorrect  } = appContext;
 
 
     const typeLetter = useCallback((key) => {
@@ -51,7 +53,7 @@ function Keyboard() {
 
 
 
-
+    // Unlockable
 
     return (
         <div className={mainKeyboardClassName} onKeyDown={handleKeyboard}>

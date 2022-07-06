@@ -12,7 +12,7 @@ function HelpButton() {
 
     
     function onButtonClicked () {
-        setHelpMenuShown(1);
+        setHelpMenuShown(1);        
     }
 
     return (

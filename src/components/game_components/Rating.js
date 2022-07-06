@@ -16,23 +16,23 @@ function Rating () {
     return (
     
         <div className = "rating"> 
+        <span>
             {
                 showStreak ?
 
-                <div>
+                <span>
                     🔥 +1
-                </div> : <div/>
+                </span> : <span/>
             }
-
+            &nbsp;&nbsp;
             {
                 showSuperStreak ?
 
-                <div className = "rating-superStreak">
+                <span className = "rating-superStreak">
                     🏆 +1
-                </div> :<div/>
+                </span> :<span/>
             }
-
-
+        </span>
         
         <br/>
         

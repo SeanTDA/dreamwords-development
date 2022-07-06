@@ -8,6 +8,7 @@ import ImageClue from "./game_components/ImageClue.js";
 import Hangman from "./game_components/Hangman.js";
 import Keyboard from "./game_components/Keyboard.js";
 import Rating from "./game_components/Rating.js";
+import Countdown from "./game_components/Countdown.js";
 import ShareButton from "./game_components/ShareButton.js";
 import StreakBar from "./game_components/StreakBar.js";
 
@@ -21,6 +22,9 @@ function Game() {
     const isGameRunning = gameState === "RUNNING";
     const isGameOver = gameState === "GAME_WON" || gameState === "GAME_LOST";
 
+
+
+
     return (
         <div className="game">
 
@@ -31,7 +35,7 @@ function Game() {
                 <Hangman />
                 {
                     isGameOver ?
-                        <div> <Rating /><ShareButton /> </div> :
+                        <div> <Rating /><Countdown/><ShareButton /> </div> :
                         isGameRunning ?
                         <div/> : <> </>
                 }

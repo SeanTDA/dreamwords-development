@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { AppContext } from "../../../App.js";
 
+import {getSkinKeyboardCapClassName} from "../../../skins.js";
+
+
 function KeyboardKey({ keyVal, keyState }) {
 
     const appContext = useContext(AppContext);
-    const { onSelectLetter, acceptSelectLetter, gameState } = appContext;
+    const { onSelectLetter, acceptSelectLetter, gameState, selectedSkin} = appContext;
 
 
 
@@ -12,18 +15,22 @@ function KeyboardKey({ keyVal, keyState }) {
         onSelectLetter(keyVal);
     }
 
+
+
+
     let className = "keyboardKey";
 
     let subclass = "keyboardKey-disabled";
+    const skinClassName = getSkinKeyboardCapClassName(selectedSkin.keyboardCap);
 
     if (keyState === "MISTAKE")
-        subclass = " keyboardKey-mistake";
+        subclass = skinClassName+"-mistake";
 
     if (keyState === "CORRECT")
-        subclass = " keyboardKey-correct";
+        subclass = skinClassName+"-correct";
 
     if (keyState === "ENABLED")
-        subclass = " keyboardKey-enabled";
+        subclass = "keyboardKey-enabled " + skinClassName+"-enabled";
 
 
     const isSelected = keyState === "MISTAKE" || keyState === "CORRECT";
@@ -32,9 +39,23 @@ function KeyboardKey({ keyVal, keyState }) {
         subclass += " keyboardKey-selected";
 
     if (!acceptSelectLetter && !isSelected)
-        subclass = " keyboardKey-waiting-for-input";
+        subclass = "keyboardKey-waiting-for-input";
 
-    className += subclass;
+
+
+
+    // SKIN
+
+    //className += " " + getSkinKeyboardCapClassName(selectedSkin.keyboardCap); // skin 
+
+    
+
+
+    className += " " + subclass;
+
+
+
+    
 
     if (gameState === "RUNNING" || gameState === "GAME_LOST" || gameState === "GAME_WON") {
 
