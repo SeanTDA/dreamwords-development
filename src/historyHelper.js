@@ -12,7 +12,7 @@ export const getHighestStreakWithLives = (history, livesThreshold = 3) => {
     for (var i = 0; i < history.daysPlayed.length; i++) {
         currentDay = history.daysPlayed[i];
         var dayResults = history.results[currentDay];
-        if (previousDay != currentDay-1) {
+        if (previousDay !== currentDay-1) {
            // console.log("Lost Streak, skipped a day");
             currentRunningStreak = 0;
             previousDay = currentDay;
