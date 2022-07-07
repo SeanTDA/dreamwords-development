@@ -15,8 +15,6 @@ function ShareButton () {
 
     const hearts = 3 - wrongLetters.length;
 
-    const highestStreak = getHighestStreak(history);
-    const highestSuperStreak = getHighestSuperStreak(history);
 
 
 
@@ -33,6 +31,10 @@ function ShareButton () {
 
 
     function getCopyData () {
+        
+        const highestStreak = getHighestStreak(history);
+        const highestSuperStreak = getHighestSuperStreak(history);
+
         let copyData = "";
         copyData += "Daydreams.ai ";
         copyData += "#" + (levelIndex+1);
