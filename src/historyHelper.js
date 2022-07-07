@@ -4,6 +4,9 @@
 
 
 export const getHighestStreakWithLives = (history, livesThreshold = 3) => {
+    if (history.daysPlayed.length === 0)
+        return 0;
+
     var highestStreak = 0;
     var currentDay = history.daysPlayed[0];
     var previousDay = currentDay - 1;
