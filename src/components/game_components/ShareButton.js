@@ -32,8 +32,12 @@ function ShareButton () {
 
     function getCopyData () {
         
-        const highestStreak = getHighestStreak(history);
-        const highestSuperStreak = getHighestSuperStreak(history);
+        var highestStreak = getHighestStreak(history);
+        var highestSuperStreak = getHighestSuperStreak(history);
+
+
+        if (streak > highestStreak) highestStreak = streak;
+        if (superStreak > highestSuperStreak) highestSuperStreak = superStreak;
 
         let copyData = "";
         copyData += "Daydreams.ai ";

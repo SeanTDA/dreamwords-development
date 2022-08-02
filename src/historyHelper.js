@@ -41,12 +41,12 @@ export const getHighestStreakWithLives = (history, livesThreshold = 3) => {
 
 export const getHighestStreak = (history) => {
     var highestStreak = getHighestStreakWithLives(history, 3);
-    console.log("Highest streak: " + highestStreak);
+    //console.log("Highest streak: " + highestStreak);
     return highestStreak;
 }
 
 export const getHighestSuperStreak = (history) => {
     var highestSuperStreak = getHighestStreakWithLives(history, 1);
-    console.log("Highest SUPER streak: " + highestSuperStreak);
+   // console.log("Highest SUPER streak: " + highestSuperStreak);
     return highestSuperStreak;
 }
