@@ -47,6 +47,10 @@ function Countdown () {
             <span className="countdownCounter">
                 {timeUntilNextDaydream}
             </span>
+            <br/>
+            <span className="countdown-announcement">
+            Something new is launching on Monday..
+            </span>
 
         </div>
          );

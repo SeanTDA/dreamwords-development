@@ -1143,12 +1143,18 @@ KEYBOARD
   font-size: 16px;
   letter-spacing: 2px;
   padding-top: 15px;
-  line-height: 27px;
+  /* line-height: 27px; */ /* announcement */
+  /* line-height: 27px; */ /* regular */
   color: var(--var-color-light-grey);
 
-  padding-bottom: 40px;
+  padding-bottom: 20px; /* announcement */
+  /*padding-bottom: 40px;*/ /* regular */
 }
 
+.countdown-announcement {
+  opacity: 50%;
+  font-size: 15px;
+}
 
 
 .countdownCounter {
