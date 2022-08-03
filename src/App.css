@@ -193,12 +193,14 @@ body {
   vertical-align: middle;
   opacity:50%;
 
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
 
-  border-radius: 100%;
-  border: solid 1px #000 ;
+  /*border: solid 1px #000 ;*/
   overflow:hidden;
 
-  animation:  rainbow-anim-colorChange 10000ms infinite, rainbow-anim-colorChange-outline 10000ms infinite;
+  animation:  rainbow-anim-colorChange 10000ms infinite/*, rainbow-anim-colorChange-outline 10000ms infinite*/;
   outline-width: 3px;
   outline-style: solid;
   
@@ -215,6 +217,7 @@ body {
 
 .header-medalsButton-symbol {
   padding-bottom:2px;
+  border-radius: 100%;
 
 }
 
