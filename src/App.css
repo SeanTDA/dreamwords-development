@@ -183,7 +183,8 @@ body {
   color:#ffffff;
   width: 25px;
   height: 30px;
-  border-radius: 5px;
+  border-radius: 10px;
+
   opacity:50%;
   transition: opacity 500ms;
   pointer-events: all;
