@@ -198,6 +198,7 @@ body {
 
 
   border-radius: 5px;
+  overflow:hidden;
 
   animation:  rainbow-anim-colorChange 10000ms infinite, rainbow-anim-colorChange-outline 10000ms infinite;
   outline-width: 3px;
