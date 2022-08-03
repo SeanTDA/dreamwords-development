@@ -45,8 +45,8 @@ function HelpMenu() {
                         </div>
                         <div className="helpMenu-guide"> Guess each letter from the set of <b>Daydreams.</b>
                             <br />
-                            <br /> Boost your 🔥 daily streak by winning each day. <br />
-                            <br />Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact. <br />
+                            <br /> Boost your 🔥 daily streak by winning each day.
+                            <br />Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact.
                             <br />Secret letters <b>(?)</b> are hidden until the word is revealed. <br />
                             <br />
                             <b>New Daydreams will appear every day!</b>
@@ -102,10 +102,17 @@ function HelpMenu() {
                             </div>
                             </div>
                             <br />
-                            <br />Join the Discord Community<br />
-                            <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
-                                <img src="images/discord-icon.svg" alt="Discord"/>
-                            </a>
+                            Join the Discord Community
+                            <br />
+                            <span className="helpMenu-socials">
+                                <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
+                                    <img src="images/discord-icon.svg" alt="Discord"/>
+                                </a>
+                                <a href="https://www.instagram.com/daydreams.ai" target="_blank" rel="noopener noreferrer" className = "instagramButton" >
+                                    <img src="images/instagram-icon.svg" alt="Instagram"/>
+                                </a>
+                            </span>
+
                             <br />
                             <br /> Day {levelIndex+1}&nbsp;&nbsp;&nbsp;v{versionCode}
                         </div>
@@ -115,8 +122,8 @@ function HelpMenu() {
 
 
                 
-                <div className="helpMenu-closeButton-container">
-                    <div className="helpMenu-closeButton" onClick={onButtonClicked}>
+                <div className="simple-closeButton-container">
+                    <div className="simple-closeButton" onClick={onButtonClicked}>
                     <img src="images/close.svg" alt="Close" />
                     </div>
                 </div>
@@ -127,6 +134,7 @@ function HelpMenu() {
             </div>
     );
 }
+
 
 
 export default HelpMenu;
