@@ -2,7 +2,6 @@
 
 
 
-
 export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
   if (isDemoMode) {

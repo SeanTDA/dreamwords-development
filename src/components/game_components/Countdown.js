@@ -49,7 +49,6 @@ function Countdown () {
             </span>
             <br/>
             <span className="countdown-announcement">
-            An exciting new feature is launching on Monday..
             </span>
 
         </div>

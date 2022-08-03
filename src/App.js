@@ -12,6 +12,7 @@ import {logEvent} from "firebase/analytics";
 import Header from "./components/Header.js";
 import Game from "./components/Game.js";
 import HelpMenu from "./components/ui_components/HelpMenu.js";
+import Medals from "./components/ui_components/Medals.js";
 
 import { getHydranoidSpungus, getSprondlemonusTrobian } from './levelData';
 
@@ -53,6 +54,10 @@ function App() {
   const [livesCompletedPulse, setLivesCompletedPulse] = useState([-1, -1, -1]);
   const [shareButtonClicked, setShareButtonClicked] = useState(false);
   const [helpMenuShown, setHelpMenuShown] = useState(-1);
+  const [medalsShown, setMedalsShown] = useState(0);
+
+  
+  
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
   const [selectedSkin, setSelectedSkin] = useState({
     keyboardCap: "NONE"
@@ -543,6 +548,7 @@ function App() {
         livesCompletedPulse, setLivesCompletedPulse,
         shareButtonClicked, setShareButtonClicked,
         helpMenuShown, setHelpMenuShown,
+        medalsShown, setMedalsShown,
         history, setHistory,
         selectedSkin, setSelectedSkin,
         onSelectSkin
@@ -551,6 +557,7 @@ function App() {
         <Header />
         <Game />
         <HelpMenu />
+        <Medals />
       </AppContext.Provider>
 
     </div>);
