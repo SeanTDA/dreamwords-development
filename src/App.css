@@ -201,7 +201,7 @@ body {
   overflow:hidden;
   outline-style: none;
 
-  animation:  rainbow-anim-colorChange 10000ms infinite/*, rainbow-anim-colorChange-outline 10000ms infinite*/;
+  animation:  rainbow-anim-colorChange 10000ms infinite, rainbow-anim-colorChange-border 10000ms infinite;
 
   
   transition: opacity 500ms;
@@ -774,24 +774,23 @@ a.footer-hyperlink:hover {
 }
 
 
-@keyframes rainbow-anim-colorChange-outline {
+@keyframes rainbow-anim-colorChange-border {
 
   0% {
-    outline-color: #ff9a81;
+    border-color: #ff9a81;
   }
 
   25% {
-    outline-color: #fffc44;
+    border-color: #fffc44;
   }
 
   50% {
-    outline-color: #92ff7f;
+    border-color: #92ff7f;
   }
 
   75% {
-    outline-color: #7fecff;
+    border-color: #7fecff;
   }
-
 
   100% {
     border-color: #ff9a81;
