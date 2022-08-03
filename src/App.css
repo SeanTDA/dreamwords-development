@@ -179,9 +179,6 @@ body {
 
 
 .header-medalsButton {
-
-
-
   cursor: pointer;
   pointer-events: all;
 
@@ -197,7 +194,8 @@ body {
   opacity:50%;
 
 
-  border-radius: 5px;
+  border-radius: 100%;
+  border: solid 1px #000 ;
   overflow:hidden;
 
   animation:  rainbow-anim-colorChange 10000ms infinite, rainbow-anim-colorChange-outline 10000ms infinite;
@@ -214,6 +212,11 @@ body {
   transition: opacity 50ms;
 }
 
+
+.header-medalsButton-symbol {
+  padding-bottom:2px;
+
+}
 
 .helpMenu-fader {
 	position: fixed;
@@ -763,10 +766,6 @@ a.footer-hyperlink:hover {
   }
 
   100% {
-    color: #d97fff;
-  }
-
-  100% {
     color: #ff9a81;
   }
 }
@@ -790,9 +789,6 @@ a.footer-hyperlink:hover {
     outline-color: #7fecff;
   }
 
-  90% {
-    outline-color: #d97fff;
-  }
 
   100% {
     border-color: #ff9a81;
