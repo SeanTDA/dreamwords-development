@@ -556,7 +556,7 @@ a.helpMenu-link-twitter {
 	top: 0;
 	left: 0;
   pointer-events: none;
-  background-color: #201e1f76;
+  background-color: #201e1f00;
 
   transition: background-color 500ms;
 }
