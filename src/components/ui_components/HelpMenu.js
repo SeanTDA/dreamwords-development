@@ -45,9 +45,8 @@ function HelpMenu() {
                         </div>
                         <div className="helpMenu-guide"> Guess each letter from the set of <b>Daydreams.</b>
                             <br />
-                            <br /> Boost your 🔥 daily streak by winning each day.
+                            <br /> Boost your 🔥 daily streak with daily wins.
                             <br />Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact.
-                            <br />Secret letters <b>(?)</b> are hidden until the word is revealed. <br />
                             <br />
                             <b>New Daydreams will appear every day!</b>
                             <br />
