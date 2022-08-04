@@ -6,7 +6,7 @@ import { AppContext } from "../../App.js";
 function MedalKeycap({keycap, percent}) {
 
     const appContext = useContext(AppContext);
-    const { selectedKeycap, setSelectedKeycap, onSelectKeycap } = appContext;
+    const { selectedKeycap, setSelectedKeycap, onSelectKeycap, setMedalsShown } = appContext;
 
     console.log("selection: " + JSON.stringify(selectedKeycap));
 
@@ -17,6 +17,7 @@ function MedalKeycap({keycap, percent}) {
     function onButtonClicked () {
         console.log("selected: " + keycap + "  ===== FIX not immediate");
         onSelectKeycap(keycap);    // saves it to data
+        setMedalsShown(0);
     }
 
 
