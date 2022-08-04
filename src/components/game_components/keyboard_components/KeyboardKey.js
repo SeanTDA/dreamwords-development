@@ -50,12 +50,12 @@ function KeyboardKey({ keyVal, keyState }) {
 
     
     if (keyState === "ENABLED")
-        appearAnimationDelay =  (({"G":0,
+        appearAnimationDelay =  ((1+({"G":0,
         "F":1,"T":1,"Y":1,"H":1,"V":1,
         "R":2,"D":2,"C":2,"B":2,"J":2,"U":2,
         "E":3,"S":3,"X":3,"I":3,"K":3,"N":3,
         "W":4,"A":4,"Z":4,"O":4,"L":4,"M":4,
-        "Q":5,"P":5}[keyVal]) * 100)+"ms";
+        "Q":5,"P":5}[keyVal])) * 100)+"ms";
 
     //    appearAnimationDelay =  ((["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"].indexOf(keyVal)) * 30)+"ms";
 
