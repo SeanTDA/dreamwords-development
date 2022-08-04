@@ -1,5 +1,5 @@
 
-    //onSelectSkin("KEYBOARD", "STRIPE");
+
 import './App.css';
 import React, { createContext, useEffect, useState } from "react";
 
@@ -59,9 +59,7 @@ function App() {
   
   
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
-  const [selectedSkin, setSelectedSkin] = useState({
-    keyboardCap: "NONE"
-  });
+  const [selectedKeycap, setSelectedKeycap] = useState("NONE");
 
 
 
@@ -104,14 +102,9 @@ function App() {
   }
 
 
-  const onSelectSkin = (skinType, newSkin) => {
-
-    let newSelectedSkin = selectedSkin;
-    if (skinType === "KEYBOARD")
-      newSelectedSkin.keyboardCap = newSkin;
-
-    setSelectedSkin(newSelectedSkin);
-    storageSave("SAVE_SELECTED_SKIN", JSON.stringify(selectedSkin));
+  const onSelectKeycap = (_newKeycap) => {
+    setSelectedKeycap(_newKeycap);
+    storageSave("SAVE_SELECTED_KEYCAP", _newKeycap);
   }
 
 
@@ -280,9 +273,9 @@ function App() {
         if (saveDataHistory !== null && saveDataHistory !== undefined)
           setHistory(JSON.parse(saveDataHistory));
 
-        const saveDataSelectedSkin = storageLoad("SAVE_SELECTED_SKIN");
-        if (saveDataSelectedSkin !== null && saveDataSelectedSkin !== undefined)
-          setSelectedSkin(JSON.parse(saveDataSelectedSkin));
+        const saveDataSelectedKeycap = storageLoad("SAVE_SELECTED_KEYCAP");
+        if (saveDataSelectedKeycap !== null && saveDataSelectedKeycap !== undefined)
+          setSelectedKeycap(saveDataSelectedKeycap);
 
 
 
@@ -550,8 +543,8 @@ function App() {
         helpMenuShown, setHelpMenuShown,
         medalsShown, setMedalsShown,
         history, setHistory,
-        selectedSkin, setSelectedSkin,
-        onSelectSkin
+        selectedKeycap, setSelectedKeycap,
+        onSelectKeycap
       }}>
 
         <Header />

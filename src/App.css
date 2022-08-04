@@ -29,15 +29,15 @@ body {
  --var-color-correct-green-01:  #538d4e;
  --var-color-correct-green-02:  #72ff90;
  --var-color-correct-green-03:  #062400;
- --var-color-correct-green-01-pattern-01:  #6cb865;
+ --var-color-correct-green-01-pattern-01:  #3d6939;
 
  --var-color-mistake-red-01:  #9e0000;
  --var-color-mistake-red-02:  #ff7b7b;
  --var-color-mistake-red-03:  #310000;
- --var-color-mistake-red-01-pattern-01:#bb1a1a;
+ --var-color-mistake-red-01-pattern-01:#7a0d0d;
  
  --var-color-keyboard-key-enabled:   #4a4a4a;
- --var-color-keyboard-key-enabled-pattern-01:   #646464;
+ --var-color-keyboard-key-enabled-pattern-01:   #363636;
 
  --var-color-share-background:  #4c8247;
 
@@ -1447,17 +1447,19 @@ UNLOCKABLES
 
 
 .unlockable-stripe-keyboardCap-enabled {
-  background: repeating-linear-gradient(
+  background: radial-gradient(27px at center, var(--var-color-keyboard-key-enabled), #00000000), 
+  repeating-linear-gradient(
   45deg,
   var(--var-color-keyboard-key-enabled),
   var(--var-color-keyboard-key-enabled) 10px,
   var(--var-color-keyboard-key-enabled-pattern-01) 10px,
   var(--var-color-keyboard-key-enabled-pattern-01) 20px
-  );
+  ) ;
 }
 
 .unlockable-stripe-keyboardCap-correct {
-  background: repeating-linear-gradient(
+  background: radial-gradient(27px at center, var(--var-color-correct-green-01), #00000000), 
+  repeating-linear-gradient(
   45deg,
   var(--var-color-correct-green-01),
   var(--var-color-correct-green-01) 10px,
@@ -1467,7 +1469,8 @@ UNLOCKABLES
 }
 
 .unlockable-stripe-keyboardCap-mistake {
-  background: repeating-linear-gradient(
+  background: radial-gradient(27px at center, var(--var-color-mistake-red-01), #00000000), 
+  repeating-linear-gradient(
   -45deg,
   var(--var-color-mistake-red-01),
   var(--var-color-mistake-red-01) 10px,
