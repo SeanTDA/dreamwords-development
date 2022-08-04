@@ -3,9 +3,12 @@
 
 export const getKeycapClassName = (_keycap) => {
 
-    if (_keycap === "STRIPE") {
+    if (_keycap === "NONE")
+        return "unlockable-none-keyboardCap";
+
+    if (_keycap === "STRIPE")
         return "unlockable-stripe-keyboardCap";
-    }
+    
 
     return "keyboardKey";
 }

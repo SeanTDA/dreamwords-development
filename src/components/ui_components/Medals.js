@@ -60,7 +60,7 @@ function Medals() {
                         <MedalKeycap keycap="NONE" percent={keycapDefaultUnlockProgress}/>
                         <MedalKeycap keycap="STRIPE" percent={keycapStripeUnlockProgress}/>
 
-
+                    FIX EDGES NOT CURVED ON PHONE
 
                     </div>
 
