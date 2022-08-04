@@ -32,6 +32,8 @@ function Medals() {
 
     var keycapDefaultUnlockProgress = getKeycapUnlockProgress("NONE");
     var keycapStripeUnlockProgress = getKeycapUnlockProgress("STRIPE");
+    var keycapDotsUnlockProgress = getKeycapUnlockProgress("DOTS");
+    var keycapEyesUnlockProgress = getKeycapUnlockProgress("EYES");
 
 
 
@@ -59,6 +61,8 @@ function Medals() {
 
                         <MedalKeycap keycap="NONE" percent={keycapDefaultUnlockProgress}/>
                         <MedalKeycap keycap="STRIPE" percent={keycapStripeUnlockProgress}/>
+                        <MedalKeycap keycap="DOTS" percent={keycapDotsUnlockProgress}/>
+                        <MedalKeycap keycap="EYES" percent={keycapEyesUnlockProgress}/>
 
                     FIX EDGES NOT CURVED ON PHONE
 
