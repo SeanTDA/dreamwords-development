@@ -1597,8 +1597,8 @@ UNLOCKABLES
   radial-gradient(180px 180px at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0),
 */
   
-  radial-gradient(45px 45px at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0),
-  radial-gradient(70px 70px at 50% 50%, var(--var-color-correct-green-01) 35%, transparent 0),
+  radial-gradient(40px 40px at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0),
+  radial-gradient(60px 60px at 50% 50%, var(--var-color-correct-green-01) 35%, transparent 0),
   radial-gradient(400% 400% at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0);
   
   
