@@ -3,6 +3,9 @@ import React, { useContext } from 'react';
 import { AppContext } from "../../App.js";
 
 
+import {getKeycapUnlockProgress} from "../../skins.js";
+import MedalKeycap from './MedalKeycap.js';
+
 function Medals() {
 
     const appContext = useContext(AppContext);
@@ -21,6 +24,17 @@ function Medals() {
         faderClassName += " medals-fader-active";
     }
 
+
+
+
+
+
+
+    var keycapDefaultUnlockProgress = getKeycapUnlockProgress("NONE");
+    var keycapStripeUnlockProgress = getKeycapUnlockProgress("STRIPE");
+
+
+
     return (
 
         <div>
@@ -33,7 +47,7 @@ function Medals() {
                 
 
                     <div className="medals-container">
-                        <br/>medals<br/><br/>:)
+
 
 
                         <div className="simple-closeButton-container">
@@ -41,6 +55,11 @@ function Medals() {
                                 <img src="images/close.svg" alt="Close" />
                             </div>
                         </div>
+
+
+                        <MedalKeycap keycap="NONE" percent={keycapDefaultUnlockProgress}/>
+                        <MedalKeycap keycap="STRIPE" percent={keycapStripeUnlockProgress}/>
+
 
 
                     </div>
@@ -63,4 +82,6 @@ function Medals() {
 
         );
 };
+
+
 export default Medals;

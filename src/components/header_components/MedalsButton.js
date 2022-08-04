@@ -10,7 +10,7 @@ function MedalsButton() {
     const appContext = useContext(AppContext);
     const { medalsShown, setMedalsShown } = appContext;
 
-    
+
     function onButtonClicked () {
         setMedalsShown(!medalsShown);        
     }

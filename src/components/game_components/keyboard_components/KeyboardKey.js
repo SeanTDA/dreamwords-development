@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { AppContext } from "../../../App.js";
 
-import {getSkinKeyboardCapClassName} from "../../../skins.js";
+import {getKeycapClassName} from "../../../skins.js";
 
 
 function KeyboardKey({ keyVal, keyState }) {
 
     const appContext = useContext(AppContext);
-    const { onSelectLetter, acceptSelectLetter, gameState, selectedSkin} = appContext;
+    const { onSelectLetter, acceptSelectLetter, gameState, selectedKeycap} = appContext;
 
 
 
@@ -21,7 +21,7 @@ function KeyboardKey({ keyVal, keyState }) {
     let className = "keyboardKey";
 
     let subclass = "keyboardKey-disabled";
-    const skinClassName = getSkinKeyboardCapClassName(selectedSkin.keyboardCap);
+    const skinClassName = getKeycapClassName(selectedKeycap); 
 
     if (keyState === "MISTAKE")
         subclass = skinClassName+"-mistake";
@@ -41,12 +41,6 @@ function KeyboardKey({ keyVal, keyState }) {
     if (!acceptSelectLetter && !isSelected)
         subclass = "keyboardKey-waiting-for-input";
 
-
-
-
-    // SKIN
-
-    //className += " " + getSkinKeyboardCapClassName(selectedSkin.keyboardCap); // skin 
 
     
 
