@@ -64,7 +64,8 @@ function Medals() {
                         <MedalKeycap keycap="DOTS" percent={keycapDotsUnlockProgress}/>
                         <MedalKeycap keycap="EYES" percent={keycapEyesUnlockProgress}/>
 
-                    FIX EDGES NOT CURVED ON PHONE
+                    FIX EDGES NOT CURVED ON PHONE <br/>
+                    ENSURE THE EYES SKIN SHOWS UP WELL ON SAMSUNG FOLD (use % instead)
 
                     </div>
 

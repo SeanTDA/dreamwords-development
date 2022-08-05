@@ -581,8 +581,8 @@ a.helpMenu-link-twitter {
   height: 80%;
   margin: auto;
 
-  outline-style: solid;
-  outline-color:rgb(255, 255, 255);
+  border-style: solid;
+  border-color:rgb(255, 255, 255);
   border-radius: 30px;
 
   background-color: #201e1f;
@@ -1528,29 +1528,28 @@ UNLOCKABLES
 
   background-color: var(--var-color-keyboard-key-enabled-pattern-01);
   background-image: 
-  radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%),
-    radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%);
+  repeating-radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%),
+  repeating-radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
-  background-repeat: repeat;
 }
  
 .unlockable-45218-keyboardCap-correct {
   background-color: var(--var-color-correct-green-01-pattern-01);
-  background-image: radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%),
-    radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%);
+  background-image: 
+  repeating-radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%),
+  repeating-radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
-  background-repeat: repeat;
 }
  
 .unlockable-45218-keyboardCap-mistake {
   background-color: var(--var-color-mistake-red-01);
-  background-image: radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%),
-    radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%);
+  background-image: 
+  repeating-radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%),
+  repeating-radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
-  background-repeat: repeat;
 }
 
 @keyframes unlockable-45218-letters-appear {
