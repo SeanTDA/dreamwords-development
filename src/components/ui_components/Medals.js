@@ -34,6 +34,7 @@ function Medals() {
     var keycapStripeUnlockProgress = getKeycapUnlockProgress("STRIPE");
     var keycapDotsUnlockProgress = getKeycapUnlockProgress("DOTS");
     var keycapEyesUnlockProgress = getKeycapUnlockProgress("EYES");
+    var keycapGradUnlockProgress = getKeycapUnlockProgress("GRAD");
 
 
 
@@ -63,9 +64,8 @@ function Medals() {
                         <MedalKeycap keycap="STRIPE" percent={keycapStripeUnlockProgress}/>
                         <MedalKeycap keycap="DOTS" percent={keycapDotsUnlockProgress}/>
                         <MedalKeycap keycap="EYES" percent={keycapEyesUnlockProgress}/>
+                        <MedalKeycap keycap="GRAD" percent={keycapGradUnlockProgress}/>
 
-                    FIX EDGES NOT CURVED ON PHONE <br/>
-                    ENSURE THE EYES SKIN SHOWS UP WELL ON SAMSUNG FOLD (use % instead)
 
                     </div>
 

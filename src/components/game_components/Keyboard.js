@@ -47,7 +47,6 @@ function Keyboard() {
         mainKeyboardClassName += " keyboard-mistake";
     if (isLastLetterCorrect === 1)
         mainKeyboardClassName += " keyboard-correct";
-
     if (isGameOver)
         mainKeyboardClassName += " keyboard-gameOver";
 
