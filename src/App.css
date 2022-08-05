@@ -1528,8 +1528,8 @@ UNLOCKABLES
 
   background-color: var(--var-color-keyboard-key-enabled-pattern-01);
   background-image: 
-  repeating-radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%),
-  repeating-radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%);
+  radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%),
+  radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
 }
@@ -1537,8 +1537,8 @@ UNLOCKABLES
 .unlockable-45218-keyboardCap-correct {
   background-color: var(--var-color-correct-green-01-pattern-01);
   background-image: 
-  repeating-radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%),
-  repeating-radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%);
+  radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%),
+  radial-gradient(var(--var-color-correct-green-01) 40%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
 }
@@ -1546,8 +1546,8 @@ UNLOCKABLES
 .unlockable-45218-keyboardCap-mistake {
   background-color: var(--var-color-mistake-red-01);
   background-image: 
-  repeating-radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%),
-  repeating-radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%);
+  radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%),
+  radial-gradient(var(--var-color-mistake-red-01-pattern-01) 50%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
 }
@@ -1573,9 +1573,9 @@ UNLOCKABLES
 
 
   background-image: 
-  radial-gradient(45px 45px at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0), 
-  radial-gradient(75px 40px at 50% 50%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
-  radial-gradient(180px 180px at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0);
+  radial-gradient(80% 80% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0), 
+  radial-gradient(150% 70% at 50% 50%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
+  radial-gradient(300% 300% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0);
 
 /*
   
@@ -1596,9 +1596,9 @@ UNLOCKABLES
   radial-gradient(180px 180px at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0),
 */
   
-  radial-gradient(40px 40px at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0),
-  radial-gradient(60px 60px at 50% 50%, var(--var-color-correct-green-01) 35%, transparent 0),
-  radial-gradient(400% 400% at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0);
+  radial-gradient(70% 70% at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0),
+  radial-gradient(120% 120% at 50% 50%, var(--var-color-correct-green-01) 35%, transparent 0),
+  radial-gradient(300% 300% at 50% 50%, var(--var-color-correct-green-01-pattern-01) 35%, transparent 0);
   
   
   ;
@@ -1608,9 +1608,9 @@ UNLOCKABLES
   
   background-color: var(--var-color-mistake-red-01);
   background-image: 
-  radial-gradient(40px 40px at 50% 50%, var(--var-color-mistake-red-01-pattern-01) 35%, transparent 0), 
-  radial-gradient(70px 15px at 50% 50%, var(--var-color-mistake-red-01) 35%, transparent 0),
-  radial-gradient(180px 180px at 50% 50%, var(--var-color-mistake-red-01-pattern-01) 35%, transparent 0);
+  radial-gradient(70% 70% at 50% 50%, var(--var-color-mistake-red-01-pattern-01) 35%, transparent 0), 
+  radial-gradient(150% 20% at 50% 50%, var(--var-color-mistake-red-01) 35%, transparent 0),
+  radial-gradient(300% 300% at 50% 50%, var(--var-color-mistake-red-01-pattern-01) 35%, transparent 0);
 
   /*
   radial-gradient(70px 40px at 50% 30%, var(--var-color-mistake-red-01-pattern-01) 35%, transparent 0), 
