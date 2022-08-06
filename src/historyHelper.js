@@ -50,3 +50,14 @@ export const getHighestSuperStreak = (history) => {
    // console.log("Highest SUPER streak: " + highestSuperStreak);
     return highestSuperStreak;
 }
+
+
+
+export const getNumDaysPlayed = (_history) => {
+
+    return 70;
+
+    if (Object.keys(_history).length === 0) return 0;
+    return _history.daysPlayed.length;
+
+};

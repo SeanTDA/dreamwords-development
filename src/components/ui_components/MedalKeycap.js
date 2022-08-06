@@ -1,20 +1,21 @@
 
 import React, { useContext } from 'react';
 import { AppContext } from "../../App.js";
+import {getKeycapUnlockProgress, getKeycapClassName} from "../../skins.js";
 
-
-function MedalKeycap({keycap, percent}) {
+function MedalKeycap({keycap}) {
 
     const appContext = useContext(AppContext);
-    const { selectedKeycap, setSelectedKeycap, onSelectKeycap, setMedalsShown } = appContext;
+    const { selectedKeycap, setSelectedKeycap, onSelectKeycap, setMedalsShown, history } = appContext;
 
-    console.log("selection: " + JSON.stringify(selectedKeycap));
+
 
     var isSelected = selectedKeycap === keycap;
 
 
 
     function onButtonClicked () {
+        if (isSelected) return;
         console.log("selected: " + keycap + "  ===== FIX not immediate");
         onSelectKeycap(keycap);    // saves it to data
         setMedalsShown(0);
@@ -22,15 +23,34 @@ function MedalKeycap({keycap, percent}) {
 
 
     
+    var unlockProgress = getKeycapUnlockProgress(keycap, history);
+ 
+    var isUnlocked = unlockProgress >= 1;
+    var className = "medals-item";
+    
 
-    if (percent < 1) {
+    if (!isUnlocked) {
         // locked
-        return (<div> {keycap} locked at {percent*100}%    {isSelected?"SELECTED":"NOT SELECTED"} </div>)
+        className += " medals-item-locked";
+        return (<div className={className}>
+            
+            <div className="medals-item-icon">{Math.floor(unlockProgress*100)}% </div> 
+            
+            </div>)
     }
 
 
 
-    return (<div onClick={onButtonClicked}> {keycap} {isSelected?"SELECTED":"NOT SELECTED"} </div> );
+    if (isSelected) className += " medals-item-selected";
+    if (isUnlocked && !isSelected) className += " selectable";
+    className += " " + getKeycapClassName(keycap) + "-icon";
+
+
+
+    return (<div className={className} onClick={onButtonClicked}> 
+    <div className="medals-item-icon">★</div> 
+    
+    </div> );
 
 };
 

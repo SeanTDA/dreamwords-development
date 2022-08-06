@@ -23,8 +23,6 @@ export const AppContext = createContext();
 
 
 
-
-
 function App() {
 
   // CONTEXT VARIABLE DECLARATION
@@ -68,7 +66,7 @@ function App() {
   const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
-  const VERSION_CODE = "1.0.6";
+  const VERSION_CODE = "1.1.0";
 
   const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;
@@ -557,3 +555,13 @@ function App() {
 }
 
 export default App;
+
+
+
+/*
+
+  TODO:
+  - More keycap skins
+  - Prompt players when they unlock a new skin
+
+*/
