@@ -38,8 +38,7 @@ function Header() {
                 </div>
 
                 <div className="header-right">
-
-                    {numDaysPlayed > 0 ? <MedalsButton/> : <div/>}
+                     <MedalsButton/>
                 
                     
 
