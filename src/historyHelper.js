@@ -3,7 +3,10 @@
 
 
 
+
+
 export const getHighestStreakWithLives = (history, livesThreshold = 3) => {
+    if (Object.keys(history).length === 0) return 0;
     if (history.daysPlayed.length === 0)
         return 0;
 
@@ -54,10 +57,26 @@ export const getHighestSuperStreak = (history) => {
 
 
 export const getNumDaysPlayed = (_history) => {
-
-    return 30;
-
     if (Object.keys(_history).length === 0) return 0;
     return _history.daysPlayed.length;
+};
 
+export const getNumDaysWon = (_history) => {
+    return 74;
+
+
+    if (Object.keys(_history).length === 0) return 0;
+
+    var numDaysWon = 0;
+
+    for (var i = 0; i < _history.daysPlayed.length; i++) {
+        var dayPlayed = _history.daysPlayed[i];
+        var dayResults = _history.results[dayPlayed];
+
+        if (dayResults.wrongLetters.length < 3) 
+            numDaysWon ++;
+
+    };
+ 
+    return numDaysWon;
 };

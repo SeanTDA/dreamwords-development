@@ -15,8 +15,6 @@ function MedalKeycap({keycap}) {
 
 
     function onButtonClicked () {
-        if (isSelected) return;
-        console.log("selected: " + keycap + "  ===== FIX not immediate");
         onSelectKeycap(keycap);    // saves it to data
         setMedalsShown(0);
     }
@@ -42,7 +40,7 @@ function MedalKeycap({keycap}) {
 
 
     if (isSelected) className += " medals-item-selected";
-    if (isUnlocked && !isSelected) className += " selectable";
+    if (isUnlocked) className += " selectable";
     className += " " + getKeycapClassName(keycap) + "-icon";
 
 
