@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { AppContext } from "../../App.js";
 
 
-import {getKeycapUnlockProgress} from "../../skins.js";
 import MedalKeycap from './MedalKeycap.js';
 
 function Medals() {
@@ -26,20 +25,6 @@ function Medals() {
 
 
 
-
-
-
-
-    var keycapDefaultUnlockProgress = getKeycapUnlockProgress("NONE");
-    var keycapStripeUnlockProgress = getKeycapUnlockProgress("STRIPE");
-    var keycapDotsUnlockProgress = getKeycapUnlockProgress("DOTS");
-    var keycapEyesUnlockProgress = getKeycapUnlockProgress("EYES");
-    var keycapGradUnlockProgress = getKeycapUnlockProgress("GRAD");
-    var keycapHeartUnlockProgress = getKeycapUnlockProgress("HEART");
-    var keycapCatUnlockProgress = getKeycapUnlockProgress("CAT");
-
-
-
     return (
 
         <div>
@@ -55,21 +40,23 @@ function Medals() {
 
 
 
+
+                        <div className="medals-shelf">
+                            <MedalKeycap keycap="NONE" />
+                            <MedalKeycap keycap="GRAD"/>
+                            <MedalKeycap keycap="STRIPE"/>
+                            <MedalKeycap keycap="DOTS"/>
+                            <MedalKeycap keycap="CAT"/>
+                            <MedalKeycap keycap="BOLT"/>
+                            <MedalKeycap keycap="HEART"/>
+                            <MedalKeycap keycap="EYES"/>
+                        </div>
+
                         <div className="simple-closeButton-container">
                             <div className="simple-closeButton" onClick={onCloseButtonClicked}>
                                 <img src="images/close.svg" alt="Close" />
                             </div>
                         </div>
-
-
-                        <MedalKeycap keycap="NONE" percent={keycapDefaultUnlockProgress}/>
-                        <MedalKeycap keycap="STRIPE" percent={keycapStripeUnlockProgress}/>
-                        <MedalKeycap keycap="DOTS" percent={keycapDotsUnlockProgress}/>
-                        <MedalKeycap keycap="EYES" percent={keycapEyesUnlockProgress}/>
-                        <MedalKeycap keycap="GRAD" percent={keycapGradUnlockProgress}/>
-                        <MedalKeycap keycap="HEART" percent={keycapHeartUnlockProgress}/>
-                        <MedalKeycap keycap="CAT" percent={keycapCatUnlockProgress}/>
-
 
                     </div>
 
