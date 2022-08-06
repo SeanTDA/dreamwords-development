@@ -35,6 +35,8 @@ function Medals() {
     var keycapDotsUnlockProgress = getKeycapUnlockProgress("DOTS");
     var keycapEyesUnlockProgress = getKeycapUnlockProgress("EYES");
     var keycapGradUnlockProgress = getKeycapUnlockProgress("GRAD");
+    var keycapHeartUnlockProgress = getKeycapUnlockProgress("HEART");
+    var keycapCatUnlockProgress = getKeycapUnlockProgress("CAT");
 
 
 
@@ -65,6 +67,8 @@ function Medals() {
                         <MedalKeycap keycap="DOTS" percent={keycapDotsUnlockProgress}/>
                         <MedalKeycap keycap="EYES" percent={keycapEyesUnlockProgress}/>
                         <MedalKeycap keycap="GRAD" percent={keycapGradUnlockProgress}/>
+                        <MedalKeycap keycap="HEART" percent={keycapHeartUnlockProgress}/>
+                        <MedalKeycap keycap="CAT" percent={keycapCatUnlockProgress}/>
 
 
                     </div>
