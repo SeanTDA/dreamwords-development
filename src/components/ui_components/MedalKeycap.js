@@ -34,7 +34,7 @@ function MedalKeycap({keycap}) {
         className += " medals-item-locked";
         return (<div className={className}>
             
-            <div className="medals-item-icon">{Math.floor(unlockProgress*100)}% </div> 
+            <div className="medals-item-icon">{Math.floor(unlockProgress*1000)/10}% </div> 
             
             </div>)
     }
