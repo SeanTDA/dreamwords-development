@@ -39,6 +39,10 @@ function Medals() {
                     <div className="medals-container">
 
 
+                        <div className="helpMenu-header">
+                            <div className="helpMenu-center"> MY COLLECTION </div>
+                            <div className="helpMenu-right"></div>
+                        </div>
 
 
                         <div className="medals-shelf">
