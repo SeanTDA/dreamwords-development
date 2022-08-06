@@ -55,7 +55,7 @@ export const getHighestSuperStreak = (history) => {
 
 export const getNumDaysPlayed = (_history) => {
 
-    return 70;
+    return 30;
 
     if (Object.keys(_history).length === 0) return 0;
     return _history.daysPlayed.length;
