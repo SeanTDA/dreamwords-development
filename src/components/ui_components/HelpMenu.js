@@ -3,10 +3,12 @@
 import React, { useContext } from 'react';
 import { AppContext } from "../../App.js";
 
+
 import Slider from "react-slick";
 import ImageCrop from '../game_components/imageCrop';
 
 import useCollapse from 'react-collapsed';
+
 
 
 function HelpMenu() {
@@ -45,9 +47,10 @@ function HelpMenu() {
                         </div>
                         <div className="helpMenu-guide"> Guess each letter from the set of <b>Daydreams.</b>
                             <br />
-                            <br /> Boost your 🔥 daily streak with daily wins.
+                            <br /> Boost your 🔥 daily streak by winning each day.
                             <br />Rack up a 🏆 super streak by surviving with all ❤️❤️❤️ hearts intact.
-                            <br />
+                            <br />Unlock new ⭐ keycaps by increasing your wins and highest streak.
+                            <br /><br />
                             <b>New Daydreams will appear every day!</b>
                             <br />
                             <br />

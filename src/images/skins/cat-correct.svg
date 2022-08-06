@@ -6,12 +6,11 @@
  version="1.1" xml:space="preserve"
  >
 
-<path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill="#538d4e"
- d="M20.1000,0.000 C25.639,0.000 48.354,19.650 49.1000,33.1000 C58.493,34.003 93.657,33.160 102.000,33.000 C103.810,17.692 125.467,0.169 129.1000,0.000 C134.897,0.401 151.1000,17.386 151.1000,45.000 L151.1000,172.1000 C151.1000,200.614 129.614,222.1000 102.000,222.1000 L49.1000,222.1000 C22.386,222.1000 0.000,200.614 0.000,172.1000 L0.000,45.000 C0.000,17.386 16.321,0.000 20.1000,0.000 Z"/>
-<path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill="#3d6939"
+<path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(83, 141, 78)"
+ d="M20.1000,-0.000 C25.639,-0.000 48.354,19.650 49.1000,34.000 C58.493,34.003 93.657,33.160 102.000,33.000 C103.810,17.692 125.467,0.169 129.1000,-0.000 C134.897,0.401 151.1000,17.386 151.1000,44.1000 L151.1000,298.000 C151.1000,325.614 129.614,326.000 102.000,326.000 L49.1000,326.000 C22.386,326.000 0.000,325.614 0.000,298.000 L0.000,44.1000 C0.000,17.386 16.321,-0.000 20.1000,-0.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(61, 105, 57)"
  d="M14.000,31.1000 C14.124,34.188 33.110,34.793 33.1000,31.1000 C35.318,27.862 27.606,16.727 22.000,16.1000 C17.365,17.225 13.726,27.172 14.000,31.1000 Z"/>
-<path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill="#3d6939"
+<path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(61, 105, 57)"
  d="M136.1000,32.111 C136.877,34.316 118.038,34.925 117.155,32.111 C115.847,27.943 123.500,16.725 129.062,16.1000 C133.661,17.227 137.272,27.247 136.1000,32.111 Z"/>
-
-
 </svg>
+

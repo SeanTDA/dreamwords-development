@@ -62,7 +62,10 @@ function Medals() {
                             </div>
                         </div>
 
+                        wins: 50 | highest 🔥: 50 | highest 🏆: 50
                     </div>
+
+
 
 
 

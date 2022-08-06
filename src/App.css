@@ -651,6 +651,7 @@ a.helpMenu-link-twitter {
 .medals-item-locked {
   background-color: var(--var-color-medal-locked);
   opacity: 100%;
+  font-size: 14px;
 }
 
 
@@ -679,27 +680,6 @@ a.helpMenu-link-twitter {
   100% {
     filter: brightness(110%);
   }
-
-/*
-  0% {
-    box-shadow:0px 0px 0px 5px #ff9a81 inset;
-  }
-
-  25% {
-    box-shadow:0px 0px 0px 5px #fffc44 inset;
-  }
-
-  50% {
-    box-shadow:0px 0px 0px 5px #92ff7f inset;
-  }
-
-  75% {
-    box-shadow:0px 0px 0px 5px #7fecff inset;
-  }
-
-  100% {
-    box-shadow:0px 0px 0px 5px #ff9a81 inset;
-  }*/
 }
 
 
@@ -711,6 +691,7 @@ a.helpMenu-link-twitter {
 @media only screen and (min-width: 700px) {
   .medals-item {
     width: 70px;
+    font-size: 20px;
   }
 }
 
@@ -729,6 +710,7 @@ a.helpMenu-link-twitter {
 @media only screen and (min-width: 2000px) {
   .medals-item {
     width: 140px;
+    font-size: 30px;
   }
 }
 
@@ -1831,37 +1813,37 @@ UNLOCKABLES
   opacity: 0%;
   animation-fill-mode: forwards;
 
-  background: var(--var-color-keyboard-key-enabled);
+  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
   background-image: url('images/skins/heart-enabled.svg');
   background-position: 50% 60%;
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 .unlockable-444678-keyboardCap-icon {
 
-  background: var(--var-color-keyboard-key-enabled);
+  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
   background-image: url('images/skins/heart-enabled.svg');
   background-position: 50% 60%;
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
  
 .unlockable-444678-keyboardCap-correct {
 
-  background: var(--var-color-correct-green-01);
+  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
   background-image: url('images/skins/heart-correct.svg');
   background-position: 50% 60%;
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat;
 
 
 }
  
 .unlockable-444678-keyboardCap-mistake {
-  background: var(--var-color-mistake-red-01);
+  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
   background-image: url('images/skins/heart-mistake.svg');
   background-position: 50% 60%;
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 

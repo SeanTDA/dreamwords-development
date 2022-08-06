@@ -1,6 +1,6 @@
 
 
-import {getNumDaysPlayed} from "./historyHelper.js";
+import {getNumDaysWon} from "./historyHelper.js";
 
 export const getKeycapClassName = (_keycap) => {
     var className = "keyboardKey";
@@ -21,17 +21,15 @@ export const getKeycapClassName = (_keycap) => {
 export const getKeycapUnlockProgress = (_keycap, _history) => {
     var unlockProgress = 0.8;
 
-    console.log(JSON.stringify(_history));
-
     if (_keycap === "NONE") unlockProgress = 1;
     else if (_keycap === "GRAD")  unlockProgress = 1;
-    else if (_keycap === "STRIPE") unlockProgress = getNumDaysPlayed(_history) / 3;
-    else if (_keycap === "DOTS") unlockProgress = getNumDaysPlayed(_history) / 10;
-    else if (_keycap === "CAT") unlockProgress = getNumDaysPlayed(_history) / 25;
-    else if (_keycap === "BOLT") unlockProgress = getNumDaysPlayed(_history) / 40;
-    else if (_keycap === "HEART") unlockProgress = getNumDaysPlayed(_history) / 52;
-    else if (_keycap === "EYES") unlockProgress = getNumDaysPlayed(_history) / 75;
-    if (unlockProgress < 0.01) unlockProgress = 0.01; // avoids 0% unlock
+    else if (_keycap === "STRIPE") unlockProgress = getNumDaysWon(_history) / 3;
+    else if (_keycap === "DOTS") unlockProgress = getNumDaysWon(_history) / 10;
+    else if (_keycap === "CAT") unlockProgress = getNumDaysWon(_history) / 25;
+    else if (_keycap === "BOLT") unlockProgress = getNumDaysWon(_history) / 40;
+    else if (_keycap === "HEART") unlockProgress = getNumDaysWon(_history) / 52;
+    else if (_keycap === "EYES") unlockProgress = getNumDaysWon(_history) / 75;
+    //if (unlockProgress < 0.01) unlockProgress = 0.01; // avoids 0% unlock
     return unlockProgress;
 }
  

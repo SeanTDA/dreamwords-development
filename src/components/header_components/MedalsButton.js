@@ -18,7 +18,7 @@ function MedalsButton() {
     return (
         <div className = "header-medalsButton" onClick={onButtonClicked}>
             <div className="header-medalsButton-symbol">
-                ★
+            ⭐
             </div>
         </div>
     );
