@@ -1813,37 +1813,37 @@ UNLOCKABLES
   opacity: 0%;
   animation-fill-mode: forwards;
 
-  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
+  background: var(--var-color-keyboard-key-enabled);
   background-image: url('images/skins/heart-enabled.svg');
   background-position: 50% 60%;
-  background-size: 100%;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
 .unlockable-444678-keyboardCap-icon {
 
-  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
+  background: var(--var-color-keyboard-key-enabled);
   background-image: url('images/skins/heart-enabled.svg');
   background-position: 50% 60%;
-  background-size: 100%;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
  
 .unlockable-444678-keyboardCap-correct {
 
-  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
+  background: var(--var-color-correct-green-01);
   background-image: url('images/skins/heart-correct.svg');
   background-position: 50% 60%;
-  background-size: 100%;
+  background-size: 90%;
   background-repeat: no-repeat;
 
 
 }
  
 .unlockable-444678-keyboardCap-mistake {
-  background: rgba(0,0,0,0);/* var(--var-color-keyboard-key-enabled);*/
+  background: var(--var-color-mistake-red-01);
   background-image: url('images/skins/heart-mistake.svg');
   background-position: 50% 60%;
-  background-size: 100%;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
 
