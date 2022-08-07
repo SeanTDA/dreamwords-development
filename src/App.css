@@ -784,8 +784,8 @@ a.helpMenu-link-twitter {
 
 
 .update-notification-fader-active {
-   background-color: #201e1fde;
-  transition: background-color 0ms;
+   background-color: #201e1fed;
+  transition: background-color 500ms;
   pointer-events: all;
 }
 
