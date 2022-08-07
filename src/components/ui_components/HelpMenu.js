@@ -97,7 +97,7 @@ function HelpMenu() {
                                 </a>
                                 <br />
                                 <br />
-                                <b>Bug Fixes</b>
+                                <b>Website Bug Fixes</b>
                                 <br /> Andrew Morton <br />
                                 <br />
                                 </div>

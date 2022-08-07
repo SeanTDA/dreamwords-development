@@ -1,7 +1,9 @@
 
 import React, { useContext } from 'react';
 import { AppContext } from "../../App.js";
-import {getKeycapUnlockProgress, getKeycapClassName} from "../../skins.js";
+import {getKeycapUnlockProgress, getKeycapUnlockRequirement, getKeycapUnlockCurrent, getKeycapClassName} from "../../skins.js";
+
+
 
 function MedalKeycap({keycap}) {
 
@@ -26,11 +28,16 @@ function MedalKeycap({keycap}) {
 
     
     var isSelected = selectedKeycap === keycap;
-    var unlockProgress = getKeycapUnlockProgress(keycap, history);
+    var unlockRequirement = getKeycapUnlockRequirement(keycap, history);
+    var unlockCurrent = getKeycapUnlockCurrent(keycap, history);
  
+    var unlockProgress = getKeycapUnlockProgress(keycap, history);
+
+
     var isUnlocked = unlockProgress >= 1;
     var className = "medals-item";
     
+    /*<div className="medals-item-icon">{Math.floor(unlockProgress*1000)/10}% </div> */
 
     if (!isUnlocked) {
         // locked
@@ -38,7 +45,7 @@ function MedalKeycap({keycap}) {
         var lockedOpacity = unlockProgress+0.1;
         return (<div style={{"--var-locked-item-opacity":lockedOpacity}} className={className}>
             
-            <div className="medals-item-icon">{Math.floor(unlockProgress*1000)/10}% </div> 
+            <div className="medals-item-icon">{unlockCurrent}/{unlockRequirement} </div> 
             
             </div>)
     }
