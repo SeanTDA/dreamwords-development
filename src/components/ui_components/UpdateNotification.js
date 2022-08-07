@@ -16,7 +16,7 @@ function UpdateNotification() {
 
     var showNotification = updateNotificationShown;
 
-    showNotification = true; // remove
+    //showNotification = true; // remove
 
 
     let faderClassName = "update-notification-fader";
