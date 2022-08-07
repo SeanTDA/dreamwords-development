@@ -45,7 +45,7 @@ function MedalKeycap({keycap}) {
         var lockedOpacity = unlockProgress+0.1;
         return (<div style={{"--var-locked-item-opacity":lockedOpacity}} className={className}>
             
-            <div className="medals-item-icon">{unlockCurrent}/{unlockRequirement} </div> 
+            <div className="medals-item-icon">{unlockCurrent} / {unlockRequirement} </div> 
             
             </div>)
     }

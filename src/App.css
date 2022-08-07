@@ -665,6 +665,8 @@ a.helpMenu-link-twitter {
   opacity: 100%;
   font-size: 14px;
   color: rgba(255, 255, 255, var(--var-locked-item-opacity));
+  overflow-wrap:break-word;
+  word-wrap: break-word;
 
 
   background-image: linear-gradient(var(--var-color-medal-locked), var(--var-color-medal-locked-pattern-01));
