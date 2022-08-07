@@ -5,10 +5,12 @@ import { AppContext } from "../../App.js";
 
 import MedalKeycap from './MedalKeycap.js';
 
+import {getNumDaysWon, getHighestStreak, getHighestSuperStreak} from  "../../historyHelper.js";
+
 function Medals() {
 
     const appContext = useContext(AppContext);
-    const { medalsShown, setMedalsShown } = appContext;
+    const { medalsShown, setMedalsShown, history } = appContext;
 
 
     function onCloseButtonClicked () {
@@ -39,9 +41,9 @@ function Medals() {
                     <div className="medals-container">
 
 
-                        <div className="helpMenu-header">
-                            <div className="helpMenu-center"> MY COLLECTION </div>
-                            <div className="helpMenu-right"></div>
+                        <div className="subMenu-header">
+                            <div className="subMenu-center"> MY COLLECTION </div>
+                            <div className="subMenu-right"></div>
                         </div>
 
 
@@ -54,6 +56,13 @@ function Medals() {
                             <MedalKeycap keycap="BOLT"/>
                             <MedalKeycap keycap="HEART"/>
                             <MedalKeycap keycap="EYES"/>
+
+
+
+                            
+                            <MedalKeycap keycap="DIAMONDS"/>
+                            <MedalKeycap keycap="GRID"/>
+                            <MedalKeycap keycap="LITERAL"/>
                         </div>
 
                         <div className="simple-closeButton-container">
@@ -62,7 +71,14 @@ function Medals() {
                             </div>
                         </div>
 
-                        wins: 50 | highest 🔥: 50 | highest 🏆: 50
+
+                        <div className="subMenu-footer"> 
+                            <div className="medals-footer"> 
+                            wins: {getNumDaysWon(history)}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;highest 🔥: {getHighestStreak(history)}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;highest 🏆: {getHighestSuperStreak(history)}
+                            </div>
+                        </div>
+
+                        
                     </div>
 
 

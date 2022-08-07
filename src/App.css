@@ -44,10 +44,10 @@ body {
  --var-color-share-background:  #4c8247;
 
  --var-font-body: Roboto, sans-serif; 
- 
-
-
  --var-font-size-lives: 35px;
+
+ --var-speed-keycap-icon-hover-on: 150ms;
+ --var-speed-keycap-icon-hover-off: 500ms;
 
  background-color: var( --var-color-background);
 }
@@ -282,40 +282,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-.helpMenu-header {
-  width: 100%;
-  height: 35px;
-  padding-top:15px;
-  white-space: nowrap;
-
-  
-  border-bottom-color: #414040;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-
-  
-  font-weight: 700;
-  font-size: 20px;
-}
-
-
-.helpMenu-left {
-  position:absolute;
-}
-
-.helpMenu-center {
-  position:absolute;
-  text-align: center;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.helpMenu-right {
-  position:absolute;
-  top: -10px;
-  left: 100%;
-  transform: translate(-100%, 0);
-}
 
 
 .helpMenu-guide {
@@ -551,6 +517,59 @@ a.helpMenu-link-twitter {
   transition: opacity 50ms;
 }
 
+/* SUBMENU */
+
+.subMenu-header {
+  width: 100%;
+  height: 35px;
+  padding-top:15px;
+  white-space: nowrap;
+
+  
+  border-bottom-color: #414040;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+  
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.subMenu-left {
+  position:absolute;
+}
+
+.subMenu-center {
+  position:absolute;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.subMenu-right {
+  position:absolute;
+  top: -10px;
+  left: 100%;
+  transform: translate(-100%, 0);
+
+}
+
+
+.subMenu-footer {
+  position:absolute;
+  width: 100%;
+  bottom: 10px;
+  left: 100%;
+  transform: translate(-100%, 0);
+
+  padding-top:15px;
+  
+  border-top-color: #414040;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+
 /* MEDALS */
 
 
@@ -596,31 +615,21 @@ a.helpMenu-link-twitter {
 
 
 .medals-shelf {
-  /*padding: 20px;
-  display: grid;*/
-
-
-  /*
-  padding: 20px;
-  display: grid;
-  grid-gap: 10px 2%;
-  grid-template-columns: repeat(8, 1fr);
-  list-style-type: none;*/
-
-
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   row-gap: 10px;
   column-gap: 10px;
-
-  /*
-  display: grid;
-  grid-auto-rows: 40px;
-  grid-auto-columns: auto;
-  grid-gap: 10px;*/
   
+}
+
+.medals-footer {
+  
+  font-weight: 300;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .medals-item {
@@ -652,6 +661,7 @@ a.helpMenu-link-twitter {
   background-color: var(--var-color-medal-locked);
   opacity: 100%;
   font-size: 14px;
+  color: rgba(255, 255, 255, var(--var-locked-item-opacity));
 }
 
 
@@ -1580,6 +1590,7 @@ HELPER
 UNLOCKABLES
 */
 
+
 /* NONE */
 
 .unlockable-64528-keyboardCap-enabled {
@@ -1591,6 +1602,11 @@ UNLOCKABLES
 
 .unlockable-64528-keyboardCap-icon {
   background: var(--var-color-keyboard-key-enabled);
+  transition: filter var(--var-speed-keycap-icon-hover-off);
+}
+.unlockable-64528-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
 }
 
 .unlockable-64528-keyboardCap-mistake {
@@ -1626,6 +1642,7 @@ UNLOCKABLES
 }
 
 .unlockable-125467-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
   background: radial-gradient(27px at center, var(--var-color-keyboard-key-enabled), #00000000), 
   repeating-linear-gradient(
   45deg,
@@ -1634,6 +1651,10 @@ UNLOCKABLES
   var(--var-color-keyboard-key-enabled-pattern-01) 10px,
   var(--var-color-keyboard-key-enabled-pattern-01) 20px
   );
+}
+.unlockable-125467-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
 }
 
 .unlockable-125467-keyboardCap-correct {
@@ -1685,12 +1706,17 @@ UNLOCKABLES
 }
 
 .unlockable-45218-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
   background-color: var(--var-color-keyboard-key-enabled-pattern-01);
   background-image: 
   radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%),
   radial-gradient(var(--var-color-keyboard-key-enabled) 20%, transparent 11%);
   background-size: 20px 20px;
   background-position: 0 0, 30px 30px;
+}
+.unlockable-45218-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
 }
  
 .unlockable-45218-keyboardCap-correct {
@@ -1739,6 +1765,7 @@ UNLOCKABLES
 
 
 .unlockable-766423-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
   background-color: var(--var-color-keyboard-key-enabled);
   background-image: 
   radial-gradient(80% 80% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0), 
@@ -1746,6 +1773,10 @@ UNLOCKABLES
   radial-gradient(300% 300% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0);
 }
 
+.unlockable-766423-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
+}
 
  
 .unlockable-766423-keyboardCap-correct {
@@ -1785,8 +1816,13 @@ UNLOCKABLES
   background-image: linear-gradient(var(--var-color-keyboard-key-enabled), var(--var-color-keyboard-key-enabled-pattern-01));
 }
 .unlockable-98642-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
   background-color: var(--var-color-keyboard-key-enabled);
-  background-image: linear-gradient(var(--var-color-keyboard-key-enabled), var(--var-color-keyboard-key-enabled-pattern-01));
+  background-image: linear-gradient(var(--var-color-keyboard-key-enabled) 30%, var(--var-color-keyboard-key-enabled-pattern-01) 70%);
+}
+.unlockable-98642-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
 }
  
  
@@ -1813,7 +1849,7 @@ UNLOCKABLES
   opacity: 0%;
   animation-fill-mode: forwards;
 
-  background: var(--var-color-keyboard-key-enabled);
+  background: #36363684;
   background-image: url('images/skins/heart-enabled.svg');
   background-position: 50% 60%;
   background-size: 90%;
@@ -1821,16 +1857,21 @@ UNLOCKABLES
 }
 .unlockable-444678-keyboardCap-icon {
 
-  background: var(--var-color-keyboard-key-enabled);
+  transition: filter var(--var-speed-keycap-icon-hover-off);
+  background: #36363684;
   background-image: url('images/skins/heart-enabled.svg');
   background-position: 50% 60%;
   background-size: 90%;
   background-repeat: no-repeat;
 }
+.unlockable-444678-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
+}
  
 .unlockable-444678-keyboardCap-correct {
 
-  background: var(--var-color-correct-green-01);
+  background: #3d693984;
   background-image: url('images/skins/heart-correct.svg');
   background-position: 50% 60%;
   background-size: 90%;
@@ -1840,7 +1881,7 @@ UNLOCKABLES
 }
  
 .unlockable-444678-keyboardCap-mistake {
-  background: var(--var-color-mistake-red-01);
+  background: #6b050584;
   background-image: url('images/skins/heart-mistake.svg');
   background-position: 50% 60%;
   background-size: 90%;
@@ -1874,10 +1915,15 @@ UNLOCKABLES
 }
  
 .unlockable-333875-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
   background: rgba(0, 0, 0, 0);
   background-image: url('images/skins/cat-enabled.svg');
   background-size: 100%, 100%;
 
+}
+.unlockable-333875-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
 }
 
 .unlockable-333875-keyboardCap-correct {
@@ -1922,6 +1968,7 @@ UNLOCKABLES
 }
 
 .unlockable-2244221-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
   background-color: var(--var-color-keyboard-key-enabled);
   
   background-image:
@@ -1930,6 +1977,10 @@ UNLOCKABLES
   radial-gradient(12px 12px at 80% 20%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
   radial-gradient(20px 20px at 80% 20%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0);
 
+}
+.unlockable-2244221-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
 }
  
 .unlockable-2244221-keyboardCap-correct {
@@ -1967,26 +2018,238 @@ UNLOCKABLES
 }
 
 
+/* DIAMONDS */
 
 
+.unlockable-777765-keyboardCap-enabled {
+  animation: unlockable-777765-letters-appear  500ms;
+  opacity: 0%;
+  animation-fill-mode: forwards;
 
-  /*
-  background-image: 
-  radial-gradient(70% 50% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0), 
-  radial-gradient(110% 30% at 50% 50%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
-  radial-gradient(150% 60% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0),
-  radial-gradient(160% 70% at 50% 50%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
-  radial-gradient(170% 90% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0),
-  radial-gradient(180% 100% at 50% 50%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
-  radial-gradient(200% 120% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0),
-  radial-gradient(240% 130% at 50% 50%, var(--var-color-keyboard-key-enabled) 35%, transparent 0),
-  radial-gradient(400% 400% at 50% 50%, var(--var-color-keyboard-key-enabled-pattern-01) 35%, transparent 0);*/
+  
+  background-color: var(--var-color-keyboard-key-enabled);
 
-
-/*
   background-image:
-  radial-gradient(30% 30% at 20% 20%, transparent 40%, var(--var-color-keyboard-key-enabled) 50%),
-  radial-gradient(20% 20% at 20% 20%, transparent 40%, var(--var-color-keyboard-key-enabled-pattern-01) 50%),
-  linear-gradient(45deg, var(--var-color-keyboard-key-enabled) 51%, var(--var-color-keyboard-key-enabled-pattern-01) 51%, var(--var-color-keyboard-key-enabled-pattern-01) 55%, var(--var-color-keyboard-key-enabled) 55%);
+  radial-gradient(27px at center, var(--var-color-keyboard-key-enabled), #00000000), 
+  repeating-linear-gradient(120deg, var(--var-color-keyboard-key-enabled-pattern-01),  
+  var(--var-color-keyboard-key-enabled-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px),
+  repeating-linear-gradient(60deg,  var(--var-color-keyboard-key-enabled-pattern-01),  
+  var(--var-color-keyboard-key-enabled-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px);
+} 
 
-  */
+
+.unlockable-777765-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
+  background-color: var(--var-color-keyboard-key-enabled);
+
+  background-image:
+  radial-gradient(27px at center, var(--var-color-keyboard-key-enabled), #00000000), 
+  repeating-linear-gradient(120deg, var(--var-color-keyboard-key-enabled-pattern-01),  
+  var(--var-color-keyboard-key-enabled-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px),
+  repeating-linear-gradient(60deg,  var(--var-color-keyboard-key-enabled-pattern-01),  
+  var(--var-color-keyboard-key-enabled-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px);
+
+}
+.unlockable-777765-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
+}
+ 
+.unlockable-777765-keyboardCap-correct {
+  background-color: var(--var-color-correct-green-01);
+
+  background-image:
+  radial-gradient(27px at center, var(--var-color-correct-green-01), #00000000), 
+  repeating-linear-gradient(120deg, var(--var-color-correct-green-01-pattern-01),  
+  var(--var-color-correct-green-01-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px),
+  repeating-linear-gradient(60deg,  var(--var-color-correct-green-01-pattern-01),  
+  var(--var-color-correct-green-01-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px);
+  
+}
+ 
+.unlockable-777765-keyboardCap-mistake {
+  background-color: var(--var-color-mistake-red-01);
+
+  background-image:
+  radial-gradient(27px at center, var(--var-color-mistake-red-01), #00000000), 
+  repeating-linear-gradient(140deg, var(--var-color-mistake-red-01-pattern-01),  
+  var(--var-color-mistake-red-01-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px),
+  repeating-linear-gradient(40deg,  var(--var-color-mistake-red-01-pattern-01),  
+  var(--var-color-mistake-red-01-pattern-01) 1px, 
+  transparent 15px, 
+  transparent 22px);
+  
+}
+
+
+
+@keyframes unlockable-777765-letters-appear {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+  
+
+
+
+/* GRID */
+
+
+.unlockable-689125-keyboardCap-enabled {
+  animation: unlockable-689125-letters-appear  500ms;
+  opacity: 0%;
+  animation-fill-mode: forwards;
+
+  background-color: var(--var-color-keyboard-key-enabled-pattern-01);
+
+  background-image:
+    linear-gradient(var(--var-color-keyboard-key-enabled) 2px, transparent 2px),
+    linear-gradient(90deg, var(--var-color-keyboard-key-enabled) 2px, transparent 2px),
+    linear-gradient(var(--var-color-keyboard-key-enabled-pattern-01) 1px, transparent 1px),
+    linear-gradient(90deg, var(--var-color-keyboard-key-enabled-pattern-01) 1px, transparent 1px);
+  background-size: 14px 14px, 14px 14px;
+  background-position: -1px 1px, 3px -1px;
+} 
+
+
+.unlockable-689125-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
+
+  background-color: var(--var-color-keyboard-key-enabled-pattern-01);
+
+  background-image:
+    linear-gradient(var(--var-color-keyboard-key-enabled) 2px, transparent 2px),
+    linear-gradient(90deg, var(--var-color-keyboard-key-enabled) 2px, transparent 2px),
+    linear-gradient(var(--var-color-keyboard-key-enabled-pattern-01) 1px, transparent 1px),
+    linear-gradient(90deg, var(--var-color-keyboard-key-enabled-pattern-01) 1px, transparent 1px);
+  background-size: 14px 14px, 14px 14px;
+  background-position: -1px 1px, 3px -1px;
+
+}
+.unlockable-689125-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
+}
+ 
+.unlockable-689125-keyboardCap-correct {
+  
+  background-color: var(--var-color-correct-green-01-pattern-01);
+
+  background-image:
+    linear-gradient(var(--var-color-correct-green-01) 2px, transparent 2px),
+    linear-gradient(90deg, var(--var-color-correct-green-01) 2px, transparent 2px),
+    linear-gradient(var(--var-color-correct-green-01-pattern-01) 1px, transparent 1px),
+    linear-gradient(90deg, var(--var-color-correct-green-01-pattern-01) 1px, transparent 1px);
+  background-size: 14px 14px, 14px 14px;
+  background-position: -1px 1px, 3px -1px;
+  
+}
+ 
+.unlockable-689125-keyboardCap-mistake {
+  
+  background-color: var(--var-color-mistake-red-01-pattern-01);
+
+  background-image:
+    linear-gradient(0deg, var(--var-color-mistake-red-01) 2px, transparent 2px),
+    linear-gradient(90deg, var(--var-color-mistake-red-01) 2px, transparent 2px),
+    linear-gradient(0deg, var(--var-color-mistake-red-01-pattern-01) 1px, transparent 1px),
+    linear-gradient(90deg, var(--var-color-mistake-red-01-pattern-01) 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px;
+  background-position: -1px 1px, 3px -1px;
+  
+}
+
+
+@keyframes unlockable-689125-letters-appear {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* LITERAL */
+
+
+.unlockable-223388-keyboardCap-enabled {
+  animation: unlockable-223388-letters-appear  500ms;
+  opacity: 0%;
+  animation-fill-mode: forwards;
+
+
+  background-color: var(--var-color-keyboard-key-enabled-pattern-01);
+  
+  background-image: url('images/skins/literal-enabled.svg');
+  background-size: 33.333%, 33.333%;
+  background-position: 0% 50%;
+
+} 
+
+
+.unlockable-223388-keyboardCap-icon {
+  transition: filter var(--var-speed-keycap-icon-hover-off);
+
+
+  background-color: var(--var-color-keyboard-key-enabled-pattern-01);
+  
+  background-image: url('images/skins/literal-enabled.svg');
+  background-size: 33.333%, 33.333%;
+  background-position: 0% 50%;
+
+}
+.unlockable-223388-keyboardCap-icon:hover {
+  transition: filter var(--var-speed-keycap-icon-hover-on);
+  filter: brightness(150%);
+}
+ 
+.unlockable-223388-keyboardCap-correct {
+  
+  background-color: var(--var-color-correct-green-01-pattern-01);
+
+
+  
+  background-image: url('images/skins/literal-correct.svg');
+  background-size: 33.333%, 33.333%;
+  background-position: 0% 50%;
+  
+}
+ 
+.unlockable-223388-keyboardCap-mistake {
+  
+  background-color: var(--var-color-mistake-red-01-pattern-01);
+
+
+  
+  background-image: url('images/skins/literal-mistake.svg');
+  background-size: 33.333%, 33.333%;
+  background-position: 0% 50%;
+  
+}
+
+
+
+@keyframes unlockable-223388-letters-appear {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
