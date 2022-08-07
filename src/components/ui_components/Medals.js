@@ -53,16 +53,27 @@ function Medals() {
                             <MedalKeycap keycap="STRIPE"/>
                             <MedalKeycap keycap="DOTS"/>
                             <MedalKeycap keycap="CAT"/>
-                            <MedalKeycap keycap="BOLT"/>
-                            <MedalKeycap keycap="HEART"/>
-                            <MedalKeycap keycap="EYES"/>
-
-
-
-                            
                             <MedalKeycap keycap="DIAMONDS"/>
                             <MedalKeycap keycap="GRID"/>
+                            <MedalKeycap keycap="BOLT"/>
+                            <MedalKeycap keycap="EYES"/>
                             <MedalKeycap keycap="LITERAL"/>
+                            <MedalKeycap keycap="HEART"/>
+
+
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="COMINGSOON"/>
+
+                            
                         </div>
 
                         <div className="simple-closeButton-container">

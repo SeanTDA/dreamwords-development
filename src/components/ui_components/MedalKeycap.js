@@ -9,8 +9,12 @@ function MedalKeycap({keycap}) {
     const { selectedKeycap, setSelectedKeycap, onSelectKeycap, setMedalsShown, history } = appContext;
 
 
+    if (keycap === "COMINGSOON")
+        return (<div style={{"--var-locked-item-opacity":0.5}} className="medals-item medals-item-locked">
+            <div className="medals-item-icon">⏳ </div> 
+            </div>)
+    
 
-    var isSelected = selectedKeycap === keycap;
 
 
 
@@ -21,6 +25,7 @@ function MedalKeycap({keycap}) {
 
 
     
+    var isSelected = selectedKeycap === keycap;
     var unlockProgress = getKeycapUnlockProgress(keycap, history);
  
     var isUnlocked = unlockProgress >= 1;

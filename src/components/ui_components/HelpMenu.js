@@ -106,14 +106,21 @@ function HelpMenu() {
                             <br />
                             Join the Discord Community
                             <br />
-                            <span className="helpMenu-socials">
-                                <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
-                                    <img src="images/discord-icon.svg" alt="Discord"/>
-                                </a>
-                                <a href="https://www.instagram.com/daydreams.ai" target="_blank" rel="noopener noreferrer" className = "instagramButton" >
-                                    <img src="images/instagram-icon.svg" alt="Instagram"/>
-                                </a>
-                            </span>
+
+                            <table className="helpMenu-socials">
+                                <tr>
+                                    <th>
+                                        <a href="https://discord.gg/jZZhcVXQtF" target="_blank" rel="noopener noreferrer" className = "helpMenu-discordButton" >
+                                            <img src="images/discord-icon.svg" alt="Discord"/>
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a href="https://www.instagram.com/daydreams.ai" target="_blank" rel="noopener noreferrer" className = "instagramButton" >
+                                            <img src="images/instagram-icon.svg" alt="Instagram"/>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </table>
 
                             <br />
                             <br /> Day {levelIndex+1}&nbsp;&nbsp;&nbsp;v{versionCode}
