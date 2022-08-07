@@ -58,9 +58,7 @@ function App() {
   const [updateNotificationShown, setUpdateNotificationShown] = useState(0);
 
   
-  const [history, setHistory] = useState({
-    "daysPlayed":[0] // remove
-  }); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
+  const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
   const [selectedKeycap, setSelectedKeycap] = useState("NONE");
 
 
@@ -451,8 +449,8 @@ function App() {
   // History Updated
   useEffect(() => {
 
+    // If I have played before, and no notification shown for this version exists, show the notification
     var playedBefore = Object.keys(history).length !== 0;
-
     const saveDataNewUpdateNotification = storageLoad("SAVE_UPDATE_NOTIFICATION_NEW_"+VERSION_CODE);
     if (saveDataNewUpdateNotification === null || saveDataNewUpdateNotification === undefined) {
       if (playedBefore) {

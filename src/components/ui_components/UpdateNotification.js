@@ -14,21 +14,27 @@ function UpdateNotification() {
     }
 
 
+    var showNotification = updateNotificationShown;
 
+    showNotification = true; // remove
+
+
+    let faderClassName = "update-notification-fader";
+    if (showNotification) {
+        faderClassName += " update-notification-fader-active";
+    }
 
 
     return (
 
         <div>
-            {updateNotificationShown ? 
+            {showNotification ? 
             <div>
                 
+                <div className={faderClassName}>
 
 
-
-
-
-                <div className="medals-container">
+                <div className="update-notification-container">
 
                     <div className="subMenu-header">
                         <div className="subMenu-center"> UPDATE &nbsp;-&nbsp; {versionCode} </div>
@@ -49,7 +55,7 @@ function UpdateNotification() {
 
 
 
-
+                    </div> 
 
 
 
