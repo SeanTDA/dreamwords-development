@@ -22,20 +22,48 @@ export const getKeycapClassName = (_keycap) => {
 
 
 export const getKeycapUnlockProgress = (_keycap, _history) => {
-    var unlockProgress = 0.8;
+    
+    var unlockProgress = 1;
 
-    if (_keycap === "NONE") unlockProgress = 1;
-    else if (_keycap === "GRAD")  unlockProgress = 1;
-    else if (_keycap === "STRIPE") unlockProgress = 1;
-    else if (_keycap === "DOTS") unlockProgress = getNumDaysWon(_history) / 3;
-    else if (_keycap === "CAT") unlockProgress = getNumDaysWon(_history) / 10;
-    else if (_keycap === "DIAMONDS") unlockProgress = getNumDaysWon(_history) / 15;
-    else if (_keycap === "GRID") unlockProgress = getNumDaysWon(_history) / 20;
-    else if (_keycap === "BOLT") unlockProgress = getNumDaysWon(_history) / 25;
-    else if (_keycap === "EYES") unlockProgress = getNumDaysWon(_history) / 40;
-    else if (_keycap === "LITERAL") unlockProgress = getNumDaysWon(_history) / 50;
-    else if (_keycap === "HEART") unlockProgress = getNumDaysWon(_history) / 52;
+    var unlockRequirement = getKeycapUnlockRequirement(_keycap, _history);
 
+
+    if (unlockRequirement === 0)
+        unlockProgress = 1;
+    else
+        unlockProgress = getNumDaysWon(_history) / unlockRequirement;
+    
     return unlockProgress;
 }
- 
+
+
+
+export const getKeycapUnlockRequirement = (_keycap, _history) => {
+    var unlockRequirement = 0;
+
+    if (_keycap === "NONE") unlockRequirement = 0;
+    else if (_keycap === "GRAD")  unlockRequirement = 0;
+    else if (_keycap === "STRIPE") unlockRequirement = 0;
+    else if (_keycap === "DOTS") unlockRequirement = 3;
+    else if (_keycap === "CAT") unlockRequirement = 10;
+    else if (_keycap === "DIAMONDS") unlockRequirement =  15;
+    else if (_keycap === "GRID") unlockRequirement = 20;
+    else if (_keycap === "BOLT") unlockRequirement =  25;
+    else if (_keycap === "EYES") unlockRequirement = 40;
+    else if (_keycap === "LITERAL") unlockRequirement =  50;
+    else if (_keycap === "HEART") unlockRequirement = 52;
+
+    return unlockRequirement;
+}
+
+export const getKeycapUnlockCurrent = (_keycap, _history) => {
+    var unlockCurrent = 0;
+
+    if (_keycap === "NONE" || _keycap === "GRAD" || _keycap === "STRIPE" ||
+    _keycap === "DOTS" || _keycap === "CAT" || _keycap === "DIAMONDS" || 
+    _keycap === "GRID" || _keycap === "BOLT" || _keycap === "EYES" ||  
+    _keycap === "LITERAL" || _keycap === "HEART") 
+    unlockCurrent = getNumDaysWon(_history);
+
+    return unlockCurrent;
+}
