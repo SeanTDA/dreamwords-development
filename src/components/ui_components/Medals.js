@@ -67,11 +67,6 @@ function Medals() {
                             <MedalKeycap keycap="COMINGSOON"/>
                             <MedalKeycap keycap="COMINGSOON"/>
                             <MedalKeycap keycap="COMINGSOON"/>
-                            <MedalKeycap keycap="COMINGSOON"/>
-                            <MedalKeycap keycap="COMINGSOON"/>
-                            <MedalKeycap keycap="COMINGSOON"/>
-                            <MedalKeycap keycap="COMINGSOON"/>
-                            <MedalKeycap keycap="COMINGSOON"/>
 
                             
                         </div>
