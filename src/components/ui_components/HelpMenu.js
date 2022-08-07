@@ -41,9 +41,9 @@ function HelpMenu() {
                 <div className="helpMenu-container-outer">
                     <div className="helpMenu-container">
                         <div className="helpMenu-contents">
-                        <div className="helpMenu-header">
-                            <div className="helpMenu-center"> HOW TO PLAY </div>
-                            <div className="helpMenu-right"></div>
+                        <div className="subMenu-header">
+                            <div className="subMenu-center"> HOW TO PLAY </div>
+                            <div className="subMenu-right"></div>
                         </div>
                         <div className="helpMenu-guide"> Guess each letter from the set of <b>Daydreams.</b>
                             <br />

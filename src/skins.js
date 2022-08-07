@@ -14,6 +14,13 @@ export const getKeycapClassName = (_keycap) => {
     else if (_keycap === "CAT") className = "unlockable-333875-keyboardCap";
     else if (_keycap === "BOLT") className = "unlockable-2244221-keyboardCap";
 
+
+    
+    else if (_keycap === "DIAMONDS") className =  "unlockable-777765-keyboardCap";
+    else if (_keycap === "GRID") className =  "unlockable-689125-keyboardCap";
+
+    else if (_keycap === "LITERAL") className =  "unlockable-223388-keyboardCap";
+
     return className;
 }
 
@@ -29,6 +36,15 @@ export const getKeycapUnlockProgress = (_keycap, _history) => {
     else if (_keycap === "BOLT") unlockProgress = getNumDaysWon(_history) / 40;
     else if (_keycap === "HEART") unlockProgress = getNumDaysWon(_history) / 52;
     else if (_keycap === "EYES") unlockProgress = getNumDaysWon(_history) / 75;
+
+    
+
+
+    else if (_keycap === "DIAMONDS") unlockProgress = getNumDaysWon(_history) / 1;
+    else if (_keycap === "GRID") unlockProgress = getNumDaysWon(_history) / 1;
+    else if (_keycap === "LITERAL") unlockProgress = getNumDaysWon(_history) / 1;
+
+
     //if (unlockProgress < 0.01) unlockProgress = 0.01; // avoids 0% unlock
     return unlockProgress;
 }
