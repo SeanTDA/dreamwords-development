@@ -755,7 +755,7 @@ a.helpMenu-link-twitter {
   top: 50%;
   transform: translate(-50%, -50%);
 
-  width: 50%;
+  width: 80%;
   height: 40%;
   margin: auto;
 
@@ -787,6 +787,19 @@ a.helpMenu-link-twitter {
    background-color: #201e1fde;
   transition: background-color 0ms;
   pointer-events: all;
+}
+
+
+.update-notification-notes {
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: var(--var-font-body);
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+
+
 }
 
 
