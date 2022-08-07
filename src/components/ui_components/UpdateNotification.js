@@ -37,11 +37,17 @@ function UpdateNotification() {
                 <div className="update-notification-container">
 
                     <div className="subMenu-header">
-                        <div className="subMenu-center"> UPDATE &nbsp;-&nbsp; {versionCode} </div>
+                        <div className="subMenu-center"> UPDATE &nbsp;|&nbsp; v{versionCode} </div>
                         <div className="subMenu-right"></div>
                     </div>
+                    
+                    <div className="update-notification-notes">
+                        + My Collections (Unlock new keycaps by playing!)<br/>
+                        + Keyboard intro animation<br/>
+                        + New update notifications
 
-                    + New Collectable Keycaps!
+                    </div>
+
 
                     <div className="simple-closeButton-container">
                         <div className="simple-closeButton" onClick={onCloseButtonClicked}>
