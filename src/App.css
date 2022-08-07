@@ -610,12 +610,16 @@ a.helpMenu-link-twitter {
   border-radius: 20px;
 
   background-color: #201e1f;
+
   overflow-x: hidden;
   overflow-y: scroll;
-
   font-size: 30px;
 }
 
+
+.medals-shelf-container {
+
+}
 
 .medals-shelf {
   padding: 20px;
@@ -624,6 +628,7 @@ a.helpMenu-link-twitter {
   align-items: center;
   row-gap: 10px;
   column-gap: 10px;
+  
   
 }
 

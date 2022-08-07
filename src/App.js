@@ -17,6 +17,7 @@ import Medals from "./components/ui_components/Medals.js";
 import { getHydranoidSpungus, getSprondlemonusTrobian } from './levelData';
 
 import { checkGameLost, checkGameWon } from './gameOver';
+import UpdateNotification from './components/ui_components/UpdateNotification';
 
 export const AppContext = createContext();
 
@@ -53,10 +54,13 @@ function App() {
   const [shareButtonClicked, setShareButtonClicked] = useState(false);
   const [helpMenuShown, setHelpMenuShown] = useState(-1);
   const [medalsShown, setMedalsShown] = useState(0);
+  const [newUpdateNotification, setNewUpdateNotification] = useState(-1);
+  const [updateNotificationShown, setUpdateNotificationShown] = useState(0);
 
   
-  
-  const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
+  const [history, setHistory] = useState({
+    "daysPlayed":[0] // remove
+  }); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
   const [selectedKeycap, setSelectedKeycap] = useState("NONE");
 
 
@@ -277,6 +281,8 @@ function App() {
 
 
 
+        
+
 
         // Display the help menu for first time players
         const isFirstTime = storageLoad("SAVE_FIRST_TIME");
@@ -444,7 +450,21 @@ function App() {
 
   // History Updated
   useEffect(() => {
-   if (Object.keys(history).length === 0) return;
+
+    var playedBefore = Object.keys(history).length !== 0;
+
+    const saveDataNewUpdateNotification = storageLoad("SAVE_UPDATE_NOTIFICATION_NEW_"+VERSION_CODE);
+    if (saveDataNewUpdateNotification === null || saveDataNewUpdateNotification === undefined) {
+      if (playedBefore) {
+        setUpdateNotificationShown(1);
+      }
+    }
+    setNewUpdateNotification(0);
+
+
+
+
+   if (!playedBefore) return;
 
 
 
@@ -511,8 +531,17 @@ function App() {
     storageSave("SAVE_HISTORY", JSON.stringify(history));
   }, [history]);
 
+  useEffect(() => {
+    storageSave("SAVE_UPDATE_NOTIFICATION_SHOWN_"+VERSION_CODE, 0);
+    console.log("SAVING: " + "SAVE_UPDATE_NOTIFICATION_SHOWN_"+VERSION_CODE + " to 0");
+    console.log("update notification set to --- " + updateNotificationShown);
+  }, [updateNotificationShown]);
 
-  
+
+  useEffect(() => {
+    if (newUpdateNotification === -1) return;
+    storageSave("SAVE_UPDATE_NOTIFICATION_NEW_"+VERSION_CODE, 0);
+  }, [newUpdateNotification]);
 
   return (
     <div className="App">
@@ -540,6 +569,8 @@ function App() {
         shareButtonClicked, setShareButtonClicked,
         helpMenuShown, setHelpMenuShown,
         medalsShown, setMedalsShown,
+        newUpdateNotification, setNewUpdateNotification,
+        updateNotificationShown, setUpdateNotificationShown,
         history, setHistory,
         selectedKeycap, setSelectedKeycap,
         onSelectKeycap
@@ -549,6 +580,8 @@ function App() {
         <Game />
         <HelpMenu />
         <Medals />
+        
+        <UpdateNotification/>
       </AppContext.Provider>
 
     </div>);
