@@ -47,6 +47,7 @@ function Medals() {
                         </div>
 
 
+                        <div className="medals-shelf-container">
                         <div className="medals-shelf">
                             <MedalKeycap keycap="NONE" />
                             <MedalKeycap keycap="GRAD"/>
@@ -67,8 +68,7 @@ function Medals() {
                             <MedalKeycap keycap="COMINGSOON"/>
                             <MedalKeycap keycap="COMINGSOON"/>
                             <MedalKeycap keycap="COMINGSOON"/>
-
-                            
+                        </div>
                         </div>
 
                         <div className="simple-closeButton-container">
