@@ -39,7 +39,8 @@ body {
  --var-color-keyboard-key-enabled:   #4a4a4a;
  --var-color-keyboard-key-enabled-pattern-01:   #363636;
 
- --var-color-medal-locked:  #282828;
+ --var-color-medal-locked:  #28282800;
+ --var-color-medal-locked-pattern-01:  #282828;
 
  --var-color-share-background:  #4c8247;
 
@@ -302,6 +303,7 @@ body {
 
 .helpMenu-socials {
   display: inline-block;
+  border-spacing: 15px 0px;
 }
 .helpMenu-discordButton {
   cursor: pointer;
@@ -563,6 +565,7 @@ a.helpMenu-link-twitter {
   transform: translate(-100%, 0);
 
   padding-top:15px;
+  padding-bottom:5px;
   
   border-top-color: #414040;
   border-top-width: 1px;
@@ -626,7 +629,7 @@ a.helpMenu-link-twitter {
 
 .medals-footer {
   
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px;
   padding-left: 5px;
   padding-right: 5px;
@@ -637,7 +640,7 @@ a.helpMenu-link-twitter {
   /*width: 10%;*/
   border-radius: 15%;
 
-  aspect-ratio: 10/16;
+  aspect-ratio: 11/16;
   
   display: flex;
   align-items: center;
@@ -662,6 +665,10 @@ a.helpMenu-link-twitter {
   opacity: 100%;
   font-size: 14px;
   color: rgba(255, 255, 255, var(--var-locked-item-opacity));
+
+
+  background-image: linear-gradient(var(--var-color-medal-locked), var(--var-color-medal-locked-pattern-01));
+
 }
 
 

@@ -63,7 +63,7 @@ export const getNumDaysPlayed = (_history) => {
 
 export const getNumDaysWon = (_history) => {
     
-    return 650;
+    return 18; 
 
 
     if (Object.keys(_history).length === 0) return 0;
