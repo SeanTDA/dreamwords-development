@@ -39,6 +39,18 @@ body {
  --var-color-keyboard-key-enabled:   #4a4a4a;
  --var-color-keyboard-key-enabled-pattern-01:   #363636;
 
+
+
+ 
+ --var-color-correct-gold-01:  #538d4e;
+ --var-color-correct-gold-01-pattern-01:  #3d6939;
+ --var-color-mistake-gold-01:  #9e0000;
+ --var-color-mistake-gold-01-pattern-01: #6b0505;
+ --var-color-keyboard-key-gold-enabled:   #e8c100;
+ --var-color-keyboard-key-gold-enabled-pattern-01:   #9c8c00;
+
+
+
  --var-color-medal-locked:  #28282800;
  --var-color-medal-locked-pattern-01:  #282828;
 
@@ -393,6 +405,10 @@ body {
   padding-bottom:30px;
 }
 
+.image-clue-harry-gold {
+    filter: contrast(1.5);
+}
+
 
 .image-clue-subtitle {
   text-align: center;
@@ -438,6 +454,10 @@ a.helpMenu-hyperlink:hover {
 
 #email {
   color:rgb(255, 86, 86);
+}
+
+#gold {
+    color: rgb(227, 204, 0);
 }
 
 
@@ -2248,7 +2268,7 @@ UNLOCKABLES
 
 
 @keyframes unlockable-689125-letters-appear {
-  0% {opacity: 0%;}
+    0% {opacity: 0%;}
   100% {opacity: 100%;}
 }
 
@@ -2320,9 +2340,66 @@ UNLOCKABLES
   
 }
 
-
-
 @keyframes unlockable-223388-letters-appear {
   0% {opacity: 0%;}
   100% {opacity: 100%;}
+}
+
+
+
+
+
+
+
+
+/* GOLD */
+
+
+.unlockable-5474865-keyboardCap-enabled {
+    animation: unlockable-5474865-letters-appear 500ms;
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    background: radial-gradient(27px at center, var(--var-color-keyboard-key-gold-enabled-pattern-01), #00000000), 
+        linear-gradient( 60deg, var(--var-color-keyboard-key-gold-enabled-pattern-01), var(--var-color-keyboard-key-gold-enabled-pattern-01) 30%, var(--var-color-keyboard-key-gold-enabled) 31%, var(--var-color-keyboard-key-gold-enabled) 36%, var(--var-color-keyboard-key-gold-enabled-pattern-01) 37%,
+    var(--var-color-keyboard-key-gold-enabled-pattern-01) 45%, var(--var-color-keyboard-key-gold-enabled) 46%, var(--var-color-keyboard-key-gold-enabled) 65%, var(--var-color-keyboard-key-gold-enabled-pattern-01) 66%
+    );
+}
+
+
+.unlockable-5474865-keyboardCap-icon {
+    transition: filter var(--var-speed-keycap-icon-hover-off);
+    background: radial-gradient(27px at center, var(--var-color-keyboard-key-gold-enabled-pattern-01), #00000000), 
+        linear-gradient( 60deg, var(--var-color-keyboard-key-gold-enabled-pattern-01), var(--var-color-keyboard-key-gold-enabled-pattern-01) 30%, var(--var-color-keyboard-key-gold-enabled) 31%, var(--var-color-keyboard-key-gold-enabled) 36%, var(--var-color-keyboard-key-gold-enabled-pattern-01) 37%,
+    var(--var-color-keyboard-key-gold-enabled-pattern-01) 45%, var(--var-color-keyboard-key-gold-enabled) 46%, var(--var-color-keyboard-key-gold-enabled) 65%, var(--var-color-keyboard-key-gold-enabled-pattern-01) 66%
+    );
+}
+
+.unlockable-5474865-keyboardCap-icon:hover {
+    transition: filter var(--var-speed-keycap-icon-hover-on);
+    filter: brightness(100%);
+}
+
+.unlockable-5474865-keyboardCap-correct {
+
+    background: radial-gradient(27px at center, var(--var-color-correct-gold-01-pattern-01), #00000000), 
+        linear-gradient( 60deg, var(--var-color-correct-gold-01-pattern-01), var(--var-color-correct-gold-01-pattern-01) 30%, var(--var-color-correct-gold-01) 31%, var(--var-color-correct-gold-01) 36%, var(--var-color-correct-gold-01-pattern-01) 37%,
+    var(--var-color-correct-gold-01-pattern-01) 45%, var(--var-color-correct-gold-01) 46%, var(--var-color-correct-gold-01) 65%, var(--var-color-correct-gold-01-pattern-01) 66%
+    );
+}
+
+.unlockable-5474865-keyboardCap-mistake {
+    background: radial-gradient(27px at center, var(--var-color-mistake-gold-01-pattern-01), #00000000), 
+        linear-gradient( 60deg, var(--var-color-mistake-gold-01-pattern-01), var(--var-color-mistake-gold-01-pattern-01) 33%, var(--var-color-mistake-gold-01) 34%, var(--var-color-mistake-gold-01) 35%, var(--var-color-mistake-gold-01-pattern-01) 36%,
+    var(--var-color-mistake-gold-01-pattern-01) 61%, var(--var-color-mistake-gold-01) 62%, var(--var-color-mistake-gold-01) 65%, var(--var-color-mistake-gold-01-pattern-01) 66%
+    );
+}
+
+@keyframes unlockable-5474865-letters-appear {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }

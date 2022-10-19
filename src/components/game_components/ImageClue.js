@@ -7,16 +7,21 @@ import ImageCrop from './imageCrop';
 function ImageClue () {
 
     const appContext = useContext(AppContext);
-    const {levelData, pressedLetters, wrongLetters } = appContext;
+    const {levelData, pressedLetters, wrongLetters, selectedKeycap } = appContext;
 
     let imagesToShow = ["1","2","3","4"];
     if (levelData.imageCount !== undefined) 
         imagesToShow = (levelData.imageCount).split(" ");
     
     
+
+    let imageClueClassName = "image-clue";
+
+    if (selectedKeycap === "GOLD") imageClueClassName += " image-clue-harry-gold"
+
     
     return (
-        <div className="image-clue">
+        <div className={imageClueClassName}>
             <Slider autoplay={true} dots={true} arrows={false} pauseOnFocus={true} autoplaySpeed={3800}>
                 { pressedLetters.length >= 0 && imagesToShow.includes("1") ? <ImageCrop index={0} imageUrl={levelData.imageURL} zoom={5}  borderRadius="20" /> : null}
                 { pressedLetters.length >= 0 && imagesToShow.includes("2")? <ImageCrop index={1} imageUrl={levelData.imageURL} zoom={5}  borderRadius="20" /> : null}

@@ -62,7 +62,7 @@ function Medals() {
                             <MedalKeycap keycap="HEART"/>
 
 
-                            <MedalKeycap keycap="COMINGSOON"/>
+                            <MedalKeycap keycap="GOLD"/>
                             <MedalKeycap keycap="COMINGSOON"/>
                             <MedalKeycap keycap="COMINGSOON"/>
                             <MedalKeycap keycap="COMINGSOON"/>

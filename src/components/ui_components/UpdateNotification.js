@@ -42,9 +42,7 @@ function UpdateNotification() {
                     </div>
                     
                     <div className="update-notification-notes">
-                        + My Collections (Unlock new keycaps by playing!)<br/>
-                        + Keyboard intro animation<br/>
-                        + New update notifications
+                        + New Keycap for 100 wins<br/>
 
                     </div>
 

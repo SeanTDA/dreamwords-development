@@ -100,6 +100,10 @@ function HelpMenu() {
                                 <b>Website Bug Fixes</b>
                                 <br /> Andrew Morton <br />
                                 <br />
+                                <b>Special Thanks to</b>
+                                <br/><b><a id="gold" className="helpMenu-hyperlink" href="https://www.youtube.com/channel/UC3FwaVaqMKb47gIsh8WDylA" target="_blank" rel="noopener noreferrer"> Harry Gold </a></b> for surpassing a 100x streak <br/>
+                                <br />
+                                
                                 </div>
                             </div>
                             </div>
