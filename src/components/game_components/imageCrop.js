@@ -1,6 +1,6 @@
 
-import { useEffect, useRef } from "react";
-
+import { useEffect, useRef, useContext } from "react";
+import {AppContext} from "../../App"; 
 
 /**
  * Renders the 4x4 image as single canvas element cropped
@@ -9,11 +9,15 @@ import { useEffect, useRef } from "react";
  * @returns 
  */
 
-const ImageCrop = ({ index, imageUrl, imageSubtitle, zoom = 5, imageClassName, borderRadius}) => {
+const ImageCrop = ({ index, imageUrl, resolution, imageSubtitle, zoom = 5, imageClassName, borderRadius}) => {
+
+
+    
 
   const canvasRef = useRef();
-  const IMAGE_WIDTH = 1792;
-  const IMAGE_HEIGHT = 1024;
+  let IMAGE_WIDTH = resolution[0];
+  let IMAGE_HEIGHT = resolution[1];
+
 
   useEffect(() => {
 

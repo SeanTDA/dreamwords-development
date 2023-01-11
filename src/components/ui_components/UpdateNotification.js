@@ -42,7 +42,7 @@ function UpdateNotification() {
                     </div>
                     
                     <div className="update-notification-notes">
-                        + New Keycap for 100 wins<br/>
+                        + New Daydreams generated using MidJourney v4 Coming Soon..<br/>
 
                     </div>
 

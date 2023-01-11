@@ -56,6 +56,7 @@ function App() {
   const [medalsShown, setMedalsShown] = useState(0);
   const [newUpdateNotification, setNewUpdateNotification] = useState(-1);
   const [updateNotificationShown, setUpdateNotificationShown] = useState(0);
+  const [todayIndex, setTodayIndex] = useState(0);
 
   
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
@@ -68,7 +69,7 @@ function App() {
   const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
-  const VERSION_CODE = "1.1.1";
+  const VERSION_CODE = "1.2";
 
   const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;
@@ -179,7 +180,8 @@ function App() {
         setGameState("RUNNING");
         setLevelData(dailyLevelData);
       }).then(() => {
-
+      
+        setTodayIndex(hybronuSprillabrib);
 
         // Check to see if new day has passed (compare it to the previous save time stamp and update it)
         let previousPageOpenDate = new Date(storageLoad("SAVE_TIMESTAMP_OPEN"));
@@ -280,7 +282,7 @@ function App() {
 
 
         
-
+          
 
         // Display the help menu for first time players
         const isFirstTime = storageLoad("SAVE_FIRST_TIME");
@@ -312,7 +314,7 @@ function App() {
     }
   }, [correctLetters, wrongLetters]);
 
-
+   
 
   // Level Data Updated
   useEffect(() => {
@@ -577,7 +579,8 @@ function App() {
         updateNotificationShown, setUpdateNotificationShown,
         history, setHistory,
         selectedKeycap, setSelectedKeycap,
-        onSelectKeycap
+        onSelectKeycap,
+        todayIndex
       }}>
 
         <Header />

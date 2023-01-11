@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\python",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\game_components",
+    "\\src\\components\\game_components\\keyboard_components",
+    "\\src\\components\\game_components\\lives_components",
+    "\\src\\components\\header_components",
+    "\\src\\components\\ui_components",
+    "\\src\\images"
+  ],
+  "SelectedNode": "\\src\\components\\game_components\\ImageClue.js",
+  "PreviewInSolutionExplorer": false
+}
