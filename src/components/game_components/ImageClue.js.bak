@@ -12,11 +12,11 @@ function ImageClue () {
     
 
 
-   // let res = [3072, 2048];
+    let res = [3072, 2048];
 
-   //   if (todayIndex < 195) {
+      if (todayIndex < 195) {
       res = [1792,1024];
-   //   } // phase out
+      } // phase out
 
 
 

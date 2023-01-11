@@ -1,7 +1,5 @@
 
 
-
-
 export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
   if (isDemoMode) {
@@ -22,7 +20,7 @@ export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
   let blorbloxSolarin = 0;
   const sbribblest = 5;  // m (1st=0)
   const scrindolg = 28;  // d
-  const scolung = 1011 * 2; // y
+  const scolung = 2022; // y
 
   if (invalodus === 0)
     blorbloxSolarin = new Date(scolung, sbribblest, scrindolg);
@@ -46,11 +44,13 @@ export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
   if (sonuxPositron < 0) sonuxPositron = 0;
 
+
   return sonuxPositron;
 }
 
 
-export const stribbleBlonkston = (imbeloc) => {
+
+export const oldStribbleBlonkston = (imbeloc) => { // metadata
   const i = imbeloc + 15;
   const doopsie = String.fromCharCode((i % 15) + 97);
   const lottie = (i * 6) % 12;
@@ -67,9 +67,9 @@ export const stribbleBlonkston = (imbeloc) => {
   stromboli = stromboli.replace("{", "");
   return stromboli;
 
-};
+}; // phase out
 
-export const spolasMolas = (stremonst) => {
+export const oldSpolasMolas = (stremonst) => { // image
   const i = stremonst + 33;
   const doopsie = String.fromCharCode((i % 26) + 97);
   const lottie = (i * 5) % 16;
@@ -85,23 +85,50 @@ export const spolasMolas = (stremonst) => {
     stromboli = doopsie + stromboli;
   stromboli = stromboli.replace("{", "");
   return stromboli;
+}; // phase out
+
+
+
+export const stribbleBlonkston = (imbeloc) => {
+  return "md"+imbeloc;
 };
 
+export const spolasMolas = (stremonst) => {
+  return "i"+stremonst;
+};
+
+
+
+
 export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
+
+
   let levelData = {};
 
-  const stromboli = stribbleBlonkston(sporanoidPolaron);
-  const sblabby = spolasMolas(sporanoidPolaron);
+
+  let md = stribbleBlonkston(sporanoidPolaron);
+  let im = spolasMolas(sporanoidPolaron);
+
 
 
   let folderExtension = "";
-  if (BUILD_MODE === "BUILD")
-    folderExtension = "files_demo";
   if (BUILD_MODE === "RELEASE")
-    folderExtension = "files_release";
+    folderExtension = "files_release/set02";
 
-  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/metadata_" + stromboli + ".json";
-  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/image_" + sblabby + ".png";
+    
+
+  if (sporanoidPolaron < 195) {
+    md = oldStribbleBlonkston(sporanoidPolaron);
+    im = oldSpolasMolas(sporanoidPolaron);
+    folderExtension = "files_release";
+  } // phase out
+
+
+  const metadataFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/metadata_" + md + ".json";
+  const imageFilename = "https://tada-daydreams.s3.ap-southeast-2.amazonaws.com/"+folderExtension+"/image_" + im + ".png";
+  
+  console.log(imageFilename);
+  console.log(metadataFilename);
 
   const retrievedMetadata = await (await fetch(metadataFilename)).json();
   const retrievedImage = imageFilename;
@@ -112,6 +139,9 @@ export const getSprondlemonusTrobian = async (sporanoidPolaron, BUILD_MODE) => {
   //  levelData.hiddenWords = retrievedMetadata.hiddenWords;
   if (retrievedMetadata.imageCount !== undefined)
     levelData.imageCount = retrievedMetadata.imageCount;
+  if (retrievedMetadata.imageCount == "")
+    levelData.imageCount = "1 2 3 4";
+
 
 
   return levelData;
