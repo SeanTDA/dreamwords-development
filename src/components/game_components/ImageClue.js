@@ -15,7 +15,7 @@ function ImageClue () {
    // let res = [3072, 2048];
 
    //   if (todayIndex < 195) {
-    let  res = [1792,1024];
+    let  res = [1536,1024];
    //   } // phase out
 
 

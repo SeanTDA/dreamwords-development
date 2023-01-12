@@ -15,11 +15,13 @@ import HelpMenu from "./components/ui_components/HelpMenu.js";
 import Medals from "./components/ui_components/Medals.js";
 
 import { getHydranoidSpungus, getSprondlemonusTrobian } from './levelData';
+import { newDate, newDateYMD, newDateYMDH, newDateYMDHM } from './date';
 
 import { checkGameLost, checkGameWon } from './gameOver';
 import UpdateNotification from './components/ui_components/UpdateNotification';
 
 export const AppContext = createContext();
+
 
 
 
@@ -142,20 +144,24 @@ function App() {
 
 
 
-
-
   // ------ INITIALISATION
 
-  const todayTimestamp = new Date();
 
-  let todayDay = new Date();
+  let todayTimestampUTC = newDate();
 
-  if (INTERVAL === 0)
-    todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate()); // day refresh
-  if (INTERVAL === 1)
-    todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate(), todayTimestamp.getHours(), todayTimestamp.getMinutes());   // minutes refresh
-  if (INTERVAL === 2)
-    todayDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate(), todayTimestamp.getHours());   // hours refresh
+  let todayDayUTC;
+  if (INTERVAL === 0) {
+        todayDayUTC = new Date(todayTimestampUTC.getFullYear(), todayTimestampUTC.getMonth(), todayTimestampUTC.getDate()); // day refresh
+  }
+  if (INTERVAL === 1){
+        todayDayUTC = new Date(todayTimestampUTC.getFullYear(), todayTimestampUTC.getMonth(), todayTimestampUTC.getDate(), todayTimestampUTC.getHours(), todayTimestampUTC.getMinutes());   // minutes refresh
+  }
+  if (INTERVAL === 2){
+        todayDayUTC = new Date(todayTimestampUTC.getFullYear(), todayTimestampUTC.getMonth(), todayTimestampUTC.getDate(), todayTimestampUTC.getHours());   // hours refresh
+  }
+
+  console.log( "current date: " +   (new Date()).toString()  );
+  console.log( "utc date: " +   (todayTimestampUTC).toString()  );
 
 
 
@@ -174,7 +180,7 @@ function App() {
 
 
     // Load Level
-    getHydranoidSpungus(todayDay, DEMO_MODE, INTERVAL).then((hybronuSprillabrib) => {
+    getHydranoidSpungus(todayDayUTC, DEMO_MODE, INTERVAL).then((hybronuSprillabrib) => {
       setLevelIndex(hybronuSprillabrib);
       getSprondlemonusTrobian(hybronuSprillabrib, BUILD_MODE).then((dailyLevelData) => {
         setGameState("RUNNING");
@@ -184,34 +190,35 @@ function App() {
         setTodayIndex(hybronuSprillabrib);
 
         // Check to see if new day has passed (compare it to the previous save time stamp and update it)
-        let previousPageOpenDate = new Date(storageLoad("SAVE_TIMESTAMP_OPEN"));
-        if (previousPageOpenDate === null)
-          previousPageOpenDate = todayTimestamp;
+        let previousPageOpenDateUTC = new Date(storageLoad("SAVE_TIMESTAMP_OPEN"));
+        if (previousPageOpenDateUTC === null)
+          previousPageOpenDateUTC = todayTimestampUTC;
 
-
-        let previousPageOpenDay = new Date();
-
+          
         // get a new date with just the DAY
+        let previousPageOpenDayUTC = newDate();
         if (INTERVAL === 0)
-          previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate()); // day previous
+          previousPageOpenDayUTC = new Date(previousPageOpenDateUTC.getFullYear(), previousPageOpenDateUTC.getMonth(), previousPageOpenDateUTC.getDate()); // day previous
         if (INTERVAL === 1)
-          previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate(), previousPageOpenDate.getHours(), previousPageOpenDate.getMinutes()); // minute previous
+          previousPageOpenDayUTC = new Date(previousPageOpenDateUTC.getFullYear(), previousPageOpenDateUTC.getMonth(), previousPageOpenDateUTC.getDate(), previousPageOpenDateUTC.getHours(), previousPageOpenDateUTC.getMinutes()); // minute previous
         if (INTERVAL === 2)
-          previousPageOpenDay = new Date(previousPageOpenDate.getFullYear(), previousPageOpenDate.getMonth(), previousPageOpenDate.getDate(), previousPageOpenDate.getHours()); // hour previous
+          previousPageOpenDayUTC = new Date(previousPageOpenDateUTC.getFullYear(), previousPageOpenDateUTC.getMonth(), previousPageOpenDateUTC.getDate(), previousPageOpenDateUTC.getHours()); // hour previous
 
 
-        let oneDayAfterPreviousPageOpenDay = new Date();
-
+        let oneDayAfterPreviousPageOpenDayUTC = newDate();
         if (INTERVAL === 0)
-          oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate() + 1);
+          oneDayAfterPreviousPageOpenDayUTC = new Date(previousPageOpenDayUTC.getFullYear(), previousPageOpenDayUTC.getMonth(), previousPageOpenDayUTC.getDate() + 1);
         if (INTERVAL === 1)
-          oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate(), previousPageOpenDay.getHours(), previousPageOpenDay.getMinutes() + 1);
+          oneDayAfterPreviousPageOpenDayUTC = new Date(previousPageOpenDayUTC.getFullYear(), previousPageOpenDayUTC.getMonth(), previousPageOpenDayUTC.getDate(), previousPageOpenDayUTC.getHours(), previousPageOpenDayUTC.getMinutes() + 1);
         if (INTERVAL === 2)
-          oneDayAfterPreviousPageOpenDay = new Date(previousPageOpenDay.getFullYear(), previousPageOpenDay.getMonth(), previousPageOpenDay.getDate(), previousPageOpenDay.getHours() +1);
+          oneDayAfterPreviousPageOpenDayUTC = new Date(previousPageOpenDayUTC.getFullYear(), previousPageOpenDayUTC.getMonth(), previousPageOpenDayUTC.getDate(), previousPageOpenDayUTC.getHours() +1);
 
 
-        let newDayArrived = previousPageOpenDay < todayDay;
-        let moreThanOneNewDayArrived = oneDayAfterPreviousPageOpenDay < todayDay;
+        let newDayArrived = previousPageOpenDayUTC < todayDayUTC;
+        let moreThanOneNewDayArrived = oneDayAfterPreviousPageOpenDayUTC < todayDayUTC;
+
+        console.log("new day? " + newDayArrived);
+        console.log("more? " + moreThanOneNewDayArrived);
 
         // ensures every refresh will clear data on demo mode
         if (DEMO_MODE)
@@ -236,7 +243,7 @@ function App() {
 
 
         // Update saved timestamp to now
-        storageSave("SAVE_TIMESTAMP_OPEN", (new Date()).toString());
+        storageSave("SAVE_TIMESTAMP_OPEN", (newDate()).toString());
 
         // Load Save Data
         const saveDataCompletedLevel = storageLoad("SAVE_COMPLETED_LEVEL");

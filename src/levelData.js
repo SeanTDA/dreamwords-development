@@ -1,5 +1,7 @@
 
 
+import { newDate, newDateYMD, newDateYMDH, newDateYMDHM } from './date';
+
 export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
   if (isDemoMode) {
@@ -19,15 +21,19 @@ export const getHydranoidSpungus = async (todayDay, isDemoMode, invalodus) => {
 
   let blorbloxSolarin = 0;
   const sbribblest = 5;  // m (1st=0)
-  const scrindolg = 28;  // d
+  const scrindolg = 29;  // d
   const scolung = 2022; // y
 
+
+
+
+  var currDateUTC = newDate();
   if (invalodus === 0)
-    blorbloxSolarin = new Date(scolung, sbribblest, scrindolg);
+    blorbloxSolarin = newDateYMD(scolung, sbribblest, scrindolg);
   if (invalodus === 1)
-    blorbloxSolarin = new Date(scolung, sbribblest, scrindolg, 12 + 10, 36);
+    blorbloxSolarin = newDateYMDHM(scolung, sbribblest, scrindolg, 12 + 10, 36);
   if (invalodus === 2)
-    blorbloxSolarin = new Date(scolung, sbribblest, scrindolg, 15);
+    blorbloxSolarin = newDateYMDH(scolung, sbribblest, scrindolg, 15);
   const solarDiff = todayDay.getTime() - blorbloxSolarin.getTime();
   let sonuxPositron = 0;
   if (invalodus === 0) {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 
+import { newDate, newDateYMD, newDateYMDH, newDateYMDHM } from '../../date';
 
 function Countdown () {
 
@@ -16,10 +17,11 @@ function Countdown () {
     useEffect(() => {
         const interval = setInterval(() => {
 
-            const todayTimestamp = new Date();
-            let tomorrowDay = new Date();
-            tomorrowDay = new Date(todayTimestamp.getFullYear(), todayTimestamp.getMonth(), todayTimestamp.getDate()+1);
-            var dateDiff = tomorrowDay - todayTimestamp;
+            const todayTimestampUTC = newDate();
+           // const tomorrowDayUTC = new Date(todayTimestampUTC.getFullYear(), todayTimestampUTC.getMonth(), todayTimestampUTC.getDate(), todayTimestampUTC.getHours(), todayTimestampUTC.getMinutes()+1);
+           const tomorrowDayUTC = new Date(todayTimestampUTC.getFullYear(), todayTimestampUTC.getMonth(), todayTimestampUTC.getDate()+1);
+            var dateDiff = tomorrowDayUTC - todayTimestampUTC;
+
 
             if (dateDiff > 0) {
 
