@@ -59,6 +59,7 @@ function App() {
   const [newUpdateNotification, setNewUpdateNotification] = useState(-1);
   const [updateNotificationShown, setUpdateNotificationShown] = useState(0);
   const [todayIndex, setTodayIndex] = useState(0);
+  const [streakFrozen, setStreakFrozen] = useState(false);
 
   
   const [history, setHistory] = useState({}); // { "daysPlayed": [0,1,2,3,4,8,9,34,35], "results" : { 0:{"correctLetters":[], "wrongLetters"[]},  1:{"correctLetters":[], "wrongLetters"[]}, ...  } }  
@@ -71,7 +72,7 @@ function App() {
   const GAME_URL = "https://daydreams.ai";
   const DEMO_MODE = false;
   const BUILD_MODE = "RELEASE"; // BUILD / RELEASE
-  const VERSION_CODE = "1.2";
+  const VERSION_CODE = "1.3";
 
   const INTERVAL = 0; // 0d1m2h
   const KEY_DELAY_MS = 0;
@@ -160,9 +161,6 @@ function App() {
         todayDayUTC = new Date(todayTimestampUTC.getFullYear(), todayTimestampUTC.getMonth(), todayTimestampUTC.getDate(), todayTimestampUTC.getHours());   // hours refresh
   }
 
-  console.log( "current date: " +   (new Date()).toString()  );
-  console.log( "utc date: " +   (todayTimestampUTC).toString()  );
-
 
 
 
@@ -216,9 +214,21 @@ function App() {
 
         let newDayArrived = previousPageOpenDayUTC < todayDayUTC;
         let moreThanOneNewDayArrived = oneDayAfterPreviousPageOpenDayUTC < todayDayUTC;
+        
 
-        console.log("new day? " + newDayArrived);
-        console.log("more? " + moreThanOneNewDayArrived);
+        // phase out
+        var freezeStreakDateEndUTC = newDateYMDH(2023, 0, 14, 13);
+        var freezeStreakDiff = todayTimestampUTC - freezeStreakDateEndUTC;
+        var freezeStreak = freezeStreakDiff < 0;
+        console.log("setting streak frozen to " + freezeStreak);
+        setStreakFrozen(freezeStreak);
+        if (freezeStreak) {
+            newDayArrived = false;
+            moreThanOneNewDayArrived = false;
+        }
+        // phase out
+
+
 
         // ensures every refresh will clear data on demo mode
         if (DEMO_MODE)
@@ -406,7 +416,8 @@ function App() {
       if (completedLevel === 0) {
 
         // win / lose
-        if (gameState === "GAME_WON") {
+        if (gameState === "GAME_WON" && !streakFrozen) {
+
           // increase streak
           setStreak(streak <= 0 ? 1 : streak + 1);
 
@@ -586,6 +597,7 @@ function App() {
         updateNotificationShown, setUpdateNotificationShown,
         history, setHistory,
         selectedKeycap, setSelectedKeycap,
+        streakFrozen, setStreakFrozen,
         onSelectKeycap,
         todayIndex
       }}>

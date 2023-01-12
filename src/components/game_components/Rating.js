@@ -5,13 +5,26 @@ import { AppContext } from "../../App";
 function Rating () {
 
     const appContext = useContext(AppContext);
-    const { streak, superStreak } = appContext;
+    const { streakFrozen, streak, superStreak } = appContext;
 
     let displayStreak = streak;
     let displaySuperStreak = superStreak;
 
     const showStreak = displayStreak > 0;
     const showSuperStreak = displaySuperStreak > 0; 
+
+
+
+
+    console.log("Streak Frozen: " + streakFrozen);
+
+    if (streakFrozen) {
+        return (<div>
+        <div className = "rating"> 
+            🔥🏆 Frozen until Day 200 (Timezone Calibration)
+        </div>
+        </div>);
+    } else {
 
     return (
     
@@ -37,9 +50,8 @@ function Rating () {
         <br/>
         
         </div>
-         
-         
          );
+     }
 }
 
 export default Rating;

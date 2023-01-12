@@ -42,7 +42,7 @@ function UpdateNotification() {
                     </div>
                     
                     <div className="update-notification-notes">
-                        + New Daydreams generated using MidJourney v4 Coming Soon..<br/>
+                        + Switched to UTC time <br/>
 
                     </div>
 
